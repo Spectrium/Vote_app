@@ -1,0 +1,135 @@
+  [1m[35m (387.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_test"[0m
+  [1m[35m (1324.2ms)[0m  [1m[35mCREATE DATABASE "voting_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "candidats" CASCADE[0m
+  [1m[35m (163.2ms)[0m  [1m[35mCREATE TABLE "candidats" ("id" bigserial primary key, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "communes" CASCADE[0m
+  [1m[35m (120.2ms)[0m  [1m[35mCREATE TABLE "communes" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (82.9ms)[0m  [1m[35mCREATE  INDEX  "index_communes_on_region_id" ON "communes"  ("region_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "fokontanies" CASCADE[0m
+  [1m[35m (98.4ms)[0m  [1m[35mCREATE TABLE "fokontanies" ("id" bigserial primary key, "name" character varying, "commune_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (61.2ms)[0m  [1m[35mCREATE  INDEX  "index_fokontanies_on_commune_id" ON "fokontanies"  ("commune_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "recensements" CASCADE[0m
+  [1m[35m (97.8ms)[0m  [1m[35mCREATE TABLE "recensements" ("id" bigserial primary key, "full_name" character varying, "cin" character varying, "contact" character varying, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (71.6ms)[0m  [1m[35mCREATE  INDEX  "index_recensements_on_fokontany_id" ON "recensements"  ("fokontany_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "regions" CASCADE[0m
+  [1m[35m (109.2ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (120.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nom" character varying, "is_admin" boolean, "email" character varying, "password" character varying, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_commune_id" ON "users"  ("commune_id")[0m
+  [1m[35m (51.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_fokontany_id" ON "users"  ("fokontany_id")[0m
+  [1m[35m (51.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_region_id" ON "users"  ("region_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "votes" CASCADE[0m
+  [1m[35m (75.7ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "recensement_id" bigint, "candidat_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (50.7ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_candidat_id" ON "votes"  ("candidat_id")[0m
+  [1m[35m (40.1ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_recensement_id" ON "votes"  ("recensement_id")[0m
+  [1m[35m (34.1ms)[0m  [1m[35mALTER TABLE "communes" ADD CONSTRAINT "fk_rails_9f434ab280"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+[0m
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "fokontanies" ADD CONSTRAINT "fk_rails_132f108351"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+[0m
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "recensements" ADD CONSTRAINT "fk_rails_99d0ceb6b3"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+[0m
+  [1m[35m (10.1ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_9184d5befc"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+[0m
+  [1m[35m (10.0ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_30f62a9966"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+[0m
+  [1m[35m (9.9ms)[0m  [1m[35mALTER TABLE "users" ADD CONSTRAINT "fk_rails_b3a8faedd1"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+[0m
+  [1m[35m (9.5ms)[0m  [1m[35mALTER TABLE "votes" ADD CONSTRAINT "fk_rails_be6e557969"
+FOREIGN KEY ("candidat_id")
+  REFERENCES "candidats" ("id")
+[0m
+  [1m[35m (10.2ms)[0m  [1m[35mALTER TABLE "votes" ADD CONSTRAINT "fk_rails_d447487f18"
+FOREIGN KEY ("recensement_id")
+  REFERENCES "recensements" ("id")
+[0m
+  [1m[35m (98.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (10.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20191105054035)[0m
+  [1m[35m (10.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20191105050357),
+(20191105034500),
+(20191105034821),
+(20191105044852),
+(20191105035018),
+(20191105033843);
+
+[0m
+  [1m[35m (97.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2019-11-05 11:57:03.903216"], ["updated_at", "2019-11-05 11:57:03.903216"]]
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "recensements" DISABLE TRIGGER ALL;ALTER TABLE "regions" DISABLE TRIGGER ALL;ALTER TABLE "candidats" DISABLE TRIGGER ALL;ALTER TABLE "fokontanies" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "communes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (5.5ms)[0m  [1m[31mDELETE FROM "communes";
+DELETE FROM "candidats";
+DELETE FROM "regions";
+DELETE FROM "users";
+DELETE FROM "recensements";
+DELETE FROM "fokontanies";
+DELETE FROM "votes";
+INSERT INTO "communes" ("id", "name", "region_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 980190962, '2019-11-05 12:01:03.609241', '2019-11-05 12:01:03.609241'), (298486374, 'MyString', 298486374, '2019-11-05 12:01:03.609241', '2019-11-05 12:01:03.609241');
+INSERT INTO "candidats" ("id", "description", "created_at", "updated_at") VALUES (980190962, 'MyText', '2019-11-05 12:01:03.622916', '2019-11-05 12:01:03.622916'), (298486374, 'MyText', '2019-11-05 12:01:03.622916', '2019-11-05 12:01:03.622916');
+INSERT INTO "regions" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2019-11-05 12:01:03.629356', '2019-11-05 12:01:03.629356'), (298486374, 'MyString', '2019-11-05 12:01:03.629356', '2019-11-05 12:01:03.629356');
+INSERT INTO "users" ("id", "nom", "is_admin", "email", "password", "region_id", "commune_id", "fokontany_id", "created_at", "updated_at") VALUES (980190962, 'MyString', FALSE, 'MyString', 'MyString', 980190962, 980190962, 980190962, '2019-11-05 12:01:03.636636', '2019-11-05 12:01:03.636636'), (298486374, 'MyString', FALSE, 'MyString', 'MyString', 298486374, 298486374, 298486374, '2019-11-05 12:01:03.636636', '2019-11-05 12:01:03.636636');
+INSERT INTO "recensements" ("id", "full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2019-11-05 12:01:03.646245', '2019-11-05 12:01:03.646245'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2019-11-05 12:01:03.646245', '2019-11-05 12:01:03.646245');
+INSERT INTO "fokontanies" ("id", "name", "commune_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 980190962, '2019-11-05 12:01:03.655490', '2019-11-05 12:01:03.655490'), (298486374, 'MyString', 298486374, '2019-11-05 12:01:03.655490', '2019-11-05 12:01:03.655490');
+INSERT INTO "votes" ("id", "recensement_id", "candidat_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2019-11-05 12:01:03.674025', '2019-11-05 12:01:03.674025'), (298486374, 298486374, 298486374, '2019-11-05 12:01:03.674025', '2019-11-05 12:01:03.674025')[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "recensements" ENABLE TRIGGER ALL;ALTER TABLE "regions" ENABLE TRIGGER ALL;ALTER TABLE "candidats" ENABLE TRIGGER ALL;ALTER TABLE "fokontanies" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "communes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+RecensementTest: test_the_truth
+-------------------------------
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "recensements" DISABLE TRIGGER ALL;ALTER TABLE "regions" DISABLE TRIGGER ALL;ALTER TABLE "candidats" DISABLE TRIGGER ALL;ALTER TABLE "fokontanies" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "votes" DISABLE TRIGGER ALL;ALTER TABLE "communes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (18.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFixtures Load (5.1ms)[0m  [1m[31mDELETE FROM "communes";
+DELETE FROM "candidats";
+DELETE FROM "regions";
+DELETE FROM "users";
+DELETE FROM "recensements";
+DELETE FROM "fokontanies";
+DELETE FROM "votes";
+INSERT INTO "communes" ("id", "name", "region_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 980190962, '2019-11-05 12:01:35.751329', '2019-11-05 12:01:35.751329'), (298486374, 'MyString', 298486374, '2019-11-05 12:01:35.751329', '2019-11-05 12:01:35.751329');
+INSERT INTO "candidats" ("id", "description", "created_at", "updated_at") VALUES (980190962, 'MyText', '2019-11-05 12:01:35.762573', '2019-11-05 12:01:35.762573'), (298486374, 'MyText', '2019-11-05 12:01:35.762573', '2019-11-05 12:01:35.762573');
+INSERT INTO "regions" ("id", "name", "created_at", "updated_at") VALUES (980190962, 'MyString', '2019-11-05 12:01:35.770195', '2019-11-05 12:01:35.770195'), (298486374, 'MyString', '2019-11-05 12:01:35.770195', '2019-11-05 12:01:35.770195');
+INSERT INTO "users" ("id", "nom", "is_admin", "email", "password", "region_id", "commune_id", "fokontany_id", "created_at", "updated_at") VALUES (980190962, 'MyString', FALSE, 'MyString', 'MyString', 980190962, 980190962, 980190962, '2019-11-05 12:01:35.777309', '2019-11-05 12:01:35.777309'), (298486374, 'MyString', FALSE, 'MyString', 'MyString', 298486374, 298486374, 298486374, '2019-11-05 12:01:35.777309', '2019-11-05 12:01:35.777309');
+INSERT INTO "recensements" ("id", "full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyString', 'MyString', 980190962, '2019-11-05 12:01:35.786659', '2019-11-05 12:01:35.786659'), (298486374, 'MyString', 'MyString', 'MyString', 298486374, '2019-11-05 12:01:35.786659', '2019-11-05 12:01:35.786659');
+INSERT INTO "fokontanies" ("id", "name", "commune_id", "created_at", "updated_at") VALUES (980190962, 'MyString', 980190962, '2019-11-05 12:01:35.795588', '2019-11-05 12:01:35.795588'), (298486374, 'MyString', 298486374, '2019-11-05 12:01:35.795588', '2019-11-05 12:01:35.795588');
+INSERT INTO "votes" ("id", "recensement_id", "candidat_id", "created_at", "updated_at") VALUES (980190962, 980190962, 980190962, '2019-11-05 12:01:35.804521', '2019-11-05 12:01:35.804521'), (298486374, 298486374, 298486374, '2019-11-05 12:01:35.804521', '2019-11-05 12:01:35.804521')[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "recensements" ENABLE TRIGGER ALL;ALTER TABLE "regions" ENABLE TRIGGER ALL;ALTER TABLE "candidats" ENABLE TRIGGER ALL;ALTER TABLE "fokontanies" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "votes" ENABLE TRIGGER ALL;ALTER TABLE "communes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+-------------------------------
+RecensementTest: test_the_truth
+-------------------------------
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
