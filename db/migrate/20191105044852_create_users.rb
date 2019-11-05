@@ -3,8 +3,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       t.string :nom
       t.boolean :is_admin
-      t.string :email
-      t.string :password
       t.references :region, foreign_key: true
       t.references :commune, foreign_key: true
       t.references :fokontany, foreign_key: true
