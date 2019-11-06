@@ -906,3 +906,38 @@ Migrating to AddDeviseToAdmins (20191106125501)
   ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Started GET "/" for ::1 at 2019-11-06 16:26:39 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 1190ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_path' for #<#<Class:0x00005628e4d947f8>:0x00005628e4d37878>
+Did you mean?  new_user_session_path):
+    35:           </li>
+    36:           <li class="nav-item">
+    37:     
+    38:             <a class="nav-link" href="<%= new_user_path %>">Create user</a>
+    39:           </li>
+    40:         <% end %>
+    41:       </ul>
+  
+app/views/layouts/application.html.erb:38:in `_app_views_layouts_application_html_erb___4557910606087578936_47366818512640'
+Started GET "/" for ::1 at 2019-11-06 16:27:11 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 60ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admins/new" for ::1 at 2019-11-06 16:27:15 +0300
+Processing by AdminsController#new as HTML
+  Rendering admins/new.html.erb within layouts/application
+  Rendered admins/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 65ms (Views: 30.4ms | ActiveRecord: 9.3ms)
+
+
