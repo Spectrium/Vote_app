@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_122129) do
+ActiveRecord::Schema.define(version: 2019_11_06_125501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password"
+    t.bigint "region_id"
+    t.bigint "commune_id"
+    t.bigint "fokontany_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["commune_id"], name: "index_admins_on_commune_id"
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["fokontany_id"], name: "index_admins_on_fokontany_id"
+    t.index ["region_id"], name: "index_admins_on_region_id"
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
 
   create_table "candidats", force: :cascade do |t|
     t.text "description"
@@ -82,6 +101,9 @@ ActiveRecord::Schema.define(version: 2019_11_05_122129) do
     t.index ["recensement_id"], name: "index_votes_on_recensement_id"
   end
 
+  add_foreign_key "admins", "communes"
+  add_foreign_key "admins", "fokontanies"
+  add_foreign_key "admins", "regions"
   add_foreign_key "communes", "regions"
   add_foreign_key "fokontanies", "communes"
   add_foreign_key "recensements", "fokontanies"

@@ -1,0 +1,6 @@
+<%= form_tag url_for(action:'create'), method:"patch" do %>
+	<input type="text" name="full_name" value="<%= @recensement.full_name %>"> <br>
+	<input type="text" name="cin" value="<%= @recensement.cin %>"> <br>
+	<input type="text" name="contact" value="<%= @recensement.contact %>"> <br>
+	<input type="submit" value="Sauvegarder">
+<% end %>
