@@ -1045,3 +1045,457 @@ Processing by AdminsController#new as HTML
 Completed 200 OK in 76ms (Views: 25.9ms | ActiveRecord: 3.8ms)
 
 
+  [1m[35m (9.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8648845049267613225)[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddFullNameToCandidates (20191107180448)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (31.5ms)[0m  [1m[35mALTER TABLE "candidates" ADD "full_name" character varying[0m
+  ↳ db/migrate/20191107180448_add_full_name_to_candidates.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8648845049267613225)[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (383.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (219.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (532.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (87.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRegions (20191105033843)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (112.3ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105033843_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (16.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105033843"]]
+  ↳ bin/rails:9
+  [1m[35m (24.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCommunes (20191105034500)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (118.3ms)[0m  [1m[35mCREATE TABLE "communes" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9f434ab280"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+)[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[35m (39.7ms)[0m  [1m[35mCREATE  INDEX  "index_communes_on_region_id" ON "communes"  ("region_id")[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034500"]]
+  ↳ bin/rails:9
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFokontanies (20191105034821)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (94.7ms)[0m  [1m[35mCREATE TABLE "fokontanies" ("id" bigserial primary key, "name" character varying, "commune_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_132f108351"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+)[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[35m (41.1ms)[0m  [1m[35mCREATE  INDEX  "index_fokontanies_on_commune_id" ON "fokontanies"  ("commune_id")[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034821"]]
+  ↳ bin/rails:9
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateRecensements (20191105035018)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (79.6ms)[0m  [1m[35mCREATE TABLE "recensements" ("id" bigserial primary key, "full_name" character varying, "cin" character varying, "contact" character varying, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_99d0ceb6b3"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE  INDEX  "index_recensements_on_fokontany_id" ON "recensements"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105035018"]]
+  ↳ bin/rails:9
+  [1m[35m (17.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20191105044852)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (68.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nom" character varying, "is_admin" boolean, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3a8faedd1"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_9184d5befc"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_30f62a9966"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (28.4ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_region_id" ON "users"  ("region_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_commune_id" ON "users"  ("commune_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (30.5ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_fokontany_id" ON "users"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105044852"]]
+  ↳ bin/rails:9
+  [1m[35m (14.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCandidats (20191105050357)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (81.7ms)[0m  [1m[35mCREATE TABLE "candidats" ("id" bigserial primary key, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105050357_create_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105050357"]]
+  ↳ bin/rails:9
+  [1m[35m (13.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVotes (20191105054035)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (38.9ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "recensement_id" bigint, "candidat_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d447487f18"
+FOREIGN KEY ("recensement_id")
+  REFERENCES "recensements" ("id")
+, CONSTRAINT "fk_rails_be6e557969"
+FOREIGN KEY ("candidat_id")
+  REFERENCES "candidats" ("id")
+)[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_recensement_id" ON "votes"  ("recensement_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_candidat_id" ON "votes"  ("candidat_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105054035"]]
+  ↳ bin/rails:9
+  [1m[35m (13.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToUsers (20191105122129)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:7
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:8
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:15
+  [1m[35m (56.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:40
+  [1m[35m (40.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105122129"]]
+  ↳ bin/rails:9
+  [1m[35m (11.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20191106125219)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (122.9ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_40c6f8ed2d"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_0a1859b170"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_f076676ad5"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (41.1ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_region_id" ON "admins"  ("region_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (97.4ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_commune_id" ON "admins"  ("commune_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (42.0ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_fokontany_id" ON "admins"  ("fokontany_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125219"]]
+  ↳ bin/rails:9
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAdmins (20191106125501)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "admins" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:15
+  [1m[35m (37.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:40
+  [1m[35m (31.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125501"]]
+  ↳ bin/rails:9
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDaties (20191107163206)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE TABLE "daties" ("id" bigserial primary key, "debut_propagande" timestamp, "fin_propagande" timestamp, "debut_vote" timestamp, "fin_vote" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191107163206_create_daties.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107163206"]]
+  ↳ bin/rails:9
+  [1m[35m (17.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddHasVotingToRecensements (20191107163516)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "recensements" ADD "has_voting" boolean[0m
+  ↳ db/migrate/20191107163516_add_has_voting_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107163516"]]
+  ↳ bin/rails:9
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddFullNameToCandidates (20191107180448)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "candidates" ADD "full_name" character varying[0m
+  ↳ db/migrate/20191107180448_add_full_name_to_candidates.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505)[0m
+  ↳ bin/rails:9
+  [1m[35m (1759.8ms)[0m  [1m[35mCREATE DATABASE "voting_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (876.4ms)[0m  [1m[35mCREATE DATABASE "voting_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (99.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (85.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8648845049267613225)[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateRegions (20191105033843)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (89.4ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105033843_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105033843"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (11.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateCommunes (20191105034500)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (73.7ms)[0m  [1m[35mCREATE TABLE "communes" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9f434ab280"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+)[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[35m (40.9ms)[0m  [1m[35mCREATE  INDEX  "index_communes_on_region_id" ON "communes"  ("region_id")[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034500"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateFokontanies (20191105034821)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (74.1ms)[0m  [1m[35mCREATE TABLE "fokontanies" ("id" bigserial primary key, "name" character varying, "commune_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_132f108351"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+)[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[35m (31.1ms)[0m  [1m[35mCREATE  INDEX  "index_fokontanies_on_commune_id" ON "fokontanies"  ("commune_id")[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034821"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateRecensements (20191105035018)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (86.8ms)[0m  [1m[35mCREATE TABLE "recensements" ("id" bigserial primary key, "full_name" character varying, "cin" character varying, "contact" character varying, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_99d0ceb6b3"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[35m (40.0ms)[0m  [1m[35mCREATE  INDEX  "index_recensements_on_fokontany_id" ON "recensements"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105035018"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateUsers (20191105044852)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (76.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nom" character varying, "is_admin" boolean, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3a8faedd1"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_9184d5befc"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_30f62a9966"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (30.3ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_region_id" ON "users"  ("region_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (40.4ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_commune_id" ON "users"  ("commune_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_fokontany_id" ON "users"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105044852"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateCandidats (20191105050357)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (77.6ms)[0m  [1m[35mCREATE TABLE "candidats" ("id" bigserial primary key, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105050357_create_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105050357"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateVotes (20191105054035)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (54.7ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "recensement_id" bigint, "candidat_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d447487f18"
+FOREIGN KEY ("recensement_id")
+  REFERENCES "recensements" ("id")
+, CONSTRAINT "fk_rails_be6e557969"
+FOREIGN KEY ("candidat_id")
+  REFERENCES "candidats" ("id")
+)[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (32.3ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_recensement_id" ON "votes"  ("recensement_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (31.2ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_candidat_id" ON "votes"  ("candidat_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105054035"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddDeviseToUsers (20191105122129)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:7
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:15
+  [1m[35m (38.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:40
+  [1m[35m (31.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105122129"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (17.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateAdmins (20191106125219)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (83.0ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_40c6f8ed2d"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_0a1859b170"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_f076676ad5"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (29.8ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_region_id" ON "admins"  ("region_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_commune_id" ON "admins"  ("commune_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (30.9ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_fokontany_id" ON "admins"  ("fokontany_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125219"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddDeviseToAdmins (20191106125501)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "admins" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:15
+  [1m[35m (32.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:40
+  [1m[35m (31.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125501"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to CreateDaties (20191107163206)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (39.2ms)[0m  [1m[35mCREATE TABLE "daties" ("id" bigserial primary key, "debut_propagande" timestamp, "fin_propagande" timestamp, "debut_vote" timestamp, "fin_vote" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191107163206_create_daties.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107163206"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddHasVotingToRecensements (20191107181341)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recensements" ADD "has_voting" boolean[0m
+  ↳ db/migrate/20191107181341_add_has_voting_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181341"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddFullNameToCandidats (20191107181353)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "candidats" ADD "full_name" character varying[0m
+  ↳ db/migrate/20191107181353_add_full_name_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181353"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+Migrating to AddPartiToCandidats (20191107181402)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "candidats" ADD "parti" character varying[0m
+  ↳ db/migrate/20191107181402_add_parti_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181402"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-07 18:14:17.145960"], ["updated_at", "2019-11-07 18:14:17.145960"]]
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8648845049267613225)[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/bin/rake:23
