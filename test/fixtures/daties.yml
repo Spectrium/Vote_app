@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  debut_propagande: 2019-11-07 19:32:06
+  fin_propagande: 2019-11-07 19:32:06
+  debut_vote: 2019-11-07 19:32:06
+  fin_vote: 2019-11-07 19:32:06
+
+two:
+  debut_propagande: 2019-11-07 19:32:06
+  fin_propagande: 2019-11-07 19:32:06
+  debut_vote: 2019-11-07 19:32:06
+  fin_vote: 2019-11-07 19:32:06

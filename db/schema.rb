@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_06_125501) do
+ActiveRecord::Schema.define(version: 2019_11_07_163516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 2019_11_06_125501) do
     t.index ["region_id"], name: "index_communes_on_region_id"
   end
 
+  create_table "daties", force: :cascade do |t|
+    t.datetime "debut_propagande"
+    t.datetime "fin_propagande"
+    t.datetime "debut_vote"
+    t.datetime "fin_vote"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fokontanies", force: :cascade do |t|
     t.string "name"
     t.bigint "commune_id"
@@ -63,6 +72,7 @@ ActiveRecord::Schema.define(version: 2019_11_06_125501) do
     t.bigint "fokontany_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "has_voting"
     t.index ["fokontany_id"], name: "index_recensements_on_fokontany_id"
   end
 
