@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
-  get 'daties/new'
-  get 'daties/create'
-  get 'daties/edit'
-  get 'daties/update'
-  get 'daties/destroy'
-  devise_for :admins
+
+  get 'fokontanies/index'
   root 'home#index'
+  devise_for :admins
   
   devise_for :users
 
   resources :daties
+  resources :regions
+  resources :communes
   resources :candidats
   resources :admins
   resources :recensements

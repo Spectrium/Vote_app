@@ -1,7 +1,7 @@
 <h1>Recensements#index</h1>
 <p>Find me in app/views/recensements/index.html.erb</p>
-<% @recensement.each do |recensement|
-	Nom : recensement.full_name
-	CIN : recensement.cin
-	Contact : recensement.contact
-end %>
+<% @recensement.each do |recensement| %>
+	<p>Nom : </p><%= recensement.full_name %><br>
+	<p>IN : </p><%= recensement.cin %><br>
+	<p>Contact : </p><%= recensement.contact %><br><br>
+<% end %>
