@@ -1,7 +1,7 @@
 class CandidatsController < ApplicationController
 
 	def index
-		
+		@candidat = Candidat.all
 	end
 
 	def show
@@ -13,7 +13,7 @@ class CandidatsController < ApplicationController
 	end
 
 	def create
-		@candidat = Candidat.new(description: params[:description])
+		@candidat = Candidat.new(full_name: params[:full_name], parti: params[:parti], description: params[:description])
 		if @candidat.save
 			redirect_to "/"
 		else
@@ -22,15 +22,22 @@ class CandidatsController < ApplicationController
 	end
 
 	def edit
-		
+		@candidat = Candidat.find(id: params[:id])
 	end
 
 	def update
-		
+		@candidat = Candidat.update(full_name: params[:full_name], parti: params[:parti], description: params[:description])
+		if @candidat.save
+			redirect_to "/"
+		else
+			render "edit"
+		end
 	end
 
 	def destroy
-		
+		@candidat = Candidat.find(id: params[:id])
+		@candidat.destroy
+		redirect_to "/"
 	end
 
 end

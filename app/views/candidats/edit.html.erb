@@ -1,0 +1,6 @@
+<%= form_tag url_for(action:'update'), method:'put' do %>
+	<input type="text" name="full_name" value="<%= @candidat.full_name %>"><br>
+	<input type="text" name="parti" value="<%= @candidat.parti %>"><br>
+	<input type="text" name="description" value="<%= @candidat.description %>"><br>
+	<input type="submit" value="Sauvegarder"><br>
+<%end%>

@@ -1,1 +1,6 @@
-new.html.erb
+<%= form_tag url_for(action:'create'), method:'post' do %>
+	<input type="text" name="full_name" placeholder="Nom complet"><br>
+	<input type="text" name="parti" placeholder="Mouvance"><br>
+	<input type="text" name="description" placeholder="Description"><br>
+	<input type="submit" value="Créer"><br>
+<%end%>
