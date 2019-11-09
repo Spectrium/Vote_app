@@ -1,19 +1,40 @@
-
-<% @people.each do |recensement| %>
-	<p>Nom : </p><%= recensement.full_name %><br>
-	<p>IN : </p><%= recensement.cin %><br>
-	<p>Contact : </p><%= recensement.contact %><br><br>
-<%= link_to "Supprimer", recensement_path(recensement.id), method:"delete", data:{confirm:"Supprimé?"} %>
-<% end %>
-
+<div>
+<p> Recherche </p>
 <%= search_form_for @q do |f| %>
 
   <%= f.label :full_name %>
-  <%= f.text_field :full_name_cont %> </br>
-
+  <%= f.text_field :full_name_cont %>
+<span>  </span>
   <%= f.label :CIN %>
-  <%= f.text_field :cin_start %> </br>
+  <%= f.text_field :cin_start %> 
 
   <%= f.submit %>
 <% end %>
+</div>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nom et Prénons</th>
+      <th scope="col">CIN</th>
+      <th scope="col">Télephone</th>
+      <th scope="col">delete</th>
+    </tr>
+  </thead>
+    <% i = 0 %>
+  <% @people.each do |recensement| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= i += 1%></th>
+      <td><%= recensement.full_name %></td>
+      <td><%= recensement.cin %></td>
+      <td><%= recensement.contact %></td>
+      <td><a href="/recensements/<%=recensement.id%>", data-confirm="are you ok?", data-method="DELETE" > supprimer </a>
+</td>
+    </tr>
+    <% end %> 
+  </tbody>
+</table>
+
 
