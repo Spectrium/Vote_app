@@ -9964,3 +9964,11 @@ textarea.form-control {
   background-position-y: 30em;
 }
 
+#background-first{
+  background-color: rgba(43, 43, 43, 0.521);
+}
+
+.sous-title{
+  margin-bottom: 5em;
+  font-size: 1.5em;
+}
