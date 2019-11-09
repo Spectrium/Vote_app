@@ -1,5 +1,6 @@
 class AdminsController < ApplicationController
-
+	before_action :authenticate_user!, except: [:edit]
+	before_action :test_user,only: [:new,:destroy]
 	def index
 		@admin = Admin.all
 	end
@@ -145,5 +146,22 @@ class AdminsController < ApplicationController
 		@admin.destroy
 		redirect_to "/"
 	end
-
+	private
+	def test_user
+		@user = User.all
+		val = 0
+		@user.each do |user|
+			if current_user == user
+				val = 1
+				break
+			else
+				val = 0
+			end
+		end
+		if val == 1
+			return true
+		else
+			redirect_to root_path
+		end		
+	end
 end

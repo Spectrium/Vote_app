@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'fokontanies/index'
   get 'votes/verification', as: "verification"
   post 'votes/verifiee', as: "verifiee"
   get 'votes/validation', as: "validation"
@@ -12,14 +10,19 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :daties
-  resources :regions
-  resources :communes
+  resources :regions do 
+    resources :communes 
+  end 
+  resources :communes  do
+    resources :fokontanies
+  end
+  resources :fokontanies do
+    resources :recensements
+  end
   resources :admins
-  resources :recensements
   resources :votes, only: [:new]
   resources :candidats do
     resources :votes, except: [:new]
   end
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
