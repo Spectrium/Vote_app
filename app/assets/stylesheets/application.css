@@ -27,3 +27,12 @@
  *= require_tree .
  *= require_self
  */
+
+a.nav-link:hover{
+    color: blueviolet;
+    border-bottom: solid blue 1px;
+}
+
+#sign-in{
+  margin: 2em 20em 0em 20em;
+}

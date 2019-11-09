@@ -9,11 +9,26 @@
 
 Recensement.destroy_all
 Fokontany.destroy_all
+Commune.destroy_all
+Region.destroy_all
 
+reg = ["analamanga", "diana", "sava"]
+com = ["antananarivo", "talatamaty", "ivato"]
 fkt = ["ivandry", "Androdra", "Ambomanarina"]
 
+reg.length.times do |i|
+    Region.create(name: reg[i])
+end
+
+com.length.times do |i|
+    Commune.create(name: com[i],
+                region_id: rand(Region.first.id .. Region.last.id)
+            )
+end
+
 fkt.length.times do |i|
-    Fokontany.create(name: fkt[i])
+    Fokontany.create(name: fkt[i],
+                    commune_id: rand(Commune.first.id .. Commune.last.id))
 end
 
 5.times do |i|
