@@ -65381,3 +65381,94 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 171ms (Views: 169.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-11-09 23:22:00 +0100
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (940.6ms)
+Completed 200 OK in 1484ms (Views: 1469.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-09 23:23:27 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (579.4ms)
+Completed 500 Internal Server Error in 583ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `verification_path' for #<#<Class:0x000055b39f4d82a0>:0x00007f9559ef34b8>):
+    559:       </div>
+    560:     </section>  
+    561:     <br>
+    562: <%= link_to "Verification", verification_path  %>
+  
+app/views/home/index.html.erb:562:in `_app_views_home_index_html_erb__2117180789100019285_70139717852800'
+Started GET "/" for ::1 at 2019-11-09 23:23:37 +0100
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1176.9ms)
+Completed 500 Internal Server Error in 1202ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `verification_path' for #<#<Class:0x0000563c6552d120>:0x0000563c65577950>):
+    559:       </div>
+    560:     </section>  
+    561:     <br>
+    562: <%= link_to "Verification", verification_path  %>
+  
+app/views/home/index.html.erb:562:in `_app_views_home_index_html_erb___2450695763742320635_47408698981020'
+Started GET "/" for ::1 at 2019-11-09 23:24:04 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (585.8ms)
+Completed 500 Internal Server Error in 590ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `verification_path' for #<#<Class:0x0000563c6552d120>:0x00007f234bf8a3c0>):
+    559:       </div>
+    560:     </section>  
+    561:     <br>
+    562: <%= link_to "Verification", verification_path  %>
+  
+app/views/home/index.html.erb:562:in `_app_views_home_index_html_erb___2450695763742320635_69894787585520'
+Started GET "/" for ::1 at 2019-11-09 23:24:34 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 273ms (Views: 272.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-09 23:25:20 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 141ms (Views: 139.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-09 23:27:21 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 127ms (Views: 123.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-09 23:27:44 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 152ms (Views: 151.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-09 23:28:24 +0100
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 156ms (Views: 155.3ms | ActiveRecord: 0.0ms)
+
+
