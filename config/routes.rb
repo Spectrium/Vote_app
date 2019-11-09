@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'fokontanies/index'
   get 'votes/verification', as: "verification"
   post 'votes/verifiee', as: "verifiee"
+  get 'votes/validation', as: "validation"
+  post 'votes/valider', as: "valider"
+  get 'votes/reset', as: "reset"
   root 'home#index'
   devise_for :admins
   

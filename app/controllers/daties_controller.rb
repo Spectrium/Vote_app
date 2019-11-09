@@ -29,6 +29,12 @@ class DatiesController < ApplicationController
   end
 
   def destroy
+    @date = Daty.all
+    @date.each do |date|
+      if date.fin_vote < Time.now
+        date.destroy
+      end
+    end
   end
 
 end
