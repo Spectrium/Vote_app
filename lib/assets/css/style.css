@@ -9960,6 +9960,7 @@ textarea.form-control {
 }
 
 .bg-pers{
-  background-image: url('nav-bar.jpg');
+  background-color: rgb(29, 29, 29);
   background-position-y: 30em;
 }
+
