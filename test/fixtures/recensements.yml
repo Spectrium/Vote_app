@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  cin: MyString
+  contact: MyString
+  fokontany: one
+
+two:
+  full_name: MyString
+  cin: MyString
+  contact: MyString
+  fokontany: two

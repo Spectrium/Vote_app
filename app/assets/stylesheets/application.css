@@ -10,6 +10,28 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+*= require candidats
+*= require communes
+*= require daties
+*= require fokontanies
+*= require home
+*= require recensements
+*= require regions
+*= require users
+
+*= require assets/css/open-iconic-bootstrap.min
+*= require assets/css/animate
+*= require assets/css/owl.carousel.min
+*= require assets/css/owl.theme.default.min
+*= require assets/css/magnific-popup
+*= require assets/css/aos
+*= require assets/css/ionicons.min
+*= require assets/css/bootstrap-datepicker
+*= require assets/css/jquery.timepicker
+*= require assets/css/flaticon
+*= require assets/css/icomoon
+*= require assets/css/style
+
  *= require_tree .
  *= require_self
  */

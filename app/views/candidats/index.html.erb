@@ -1,0 +1,6 @@
+<h1>Liste de tous les candidats : </h1>
+<%= @candidat.each do |candidat| %>
+	<p>Nom et prénom : </p><%= candidat.full_name %><br>
+	<p>Mouvance : </p><%= candidat.parti %><br>
+	<p>Description : </p><%= candidat.description %><br><br>
+<% end %>

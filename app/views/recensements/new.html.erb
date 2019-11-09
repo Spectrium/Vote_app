@@ -1,0 +1,6 @@
+<%= form_tag url_for(action:'create'), method:"post" do %>
+	<input type="text" name="full_name" placeholder="Nom complet"> <br>
+	<input type="text" name="cin" placeholder="CIN"> <br>
+	<input type="text" name="contact" placeholder="Contact"> <br>
+	<input type="submit" value="Créer">
+<% end %>

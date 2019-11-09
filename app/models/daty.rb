@@ -1,0 +1,2 @@
+class Daty < ApplicationRecord
+end

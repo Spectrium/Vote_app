@@ -10,7 +10,29 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+require("@rails/ujs").start()
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require("jquery")
+
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+
+//= require js/jquery.min
+//= require js/jquery-migrate-3.0.1.min
+//= require js/popper.min
+//= require js/bootstrap.min
+//= require js/jquery.easing.1.3
+//= require js/jquery.waypoints.min
+//= require js/jquery.stellar.min
+//= require js/owl.carousel.min
+//= require js/jquery.magnific-popup.min
+//= require js/aos
+//= require js/jquery.animateNumber.min
+//= require js/scrollax.min
+//= require js/google-map
+//= require js/main
+
 //= require_tree .
