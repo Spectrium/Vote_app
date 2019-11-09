@@ -12,6 +12,14 @@ class RecensementsController < ApplicationController
   end
 
   def create
+    @recensement = Recensement.all
+    @recensement.each do |recensement|
+      if recensement.cin == params[:cin]
+        flash[:danger] = "Habitant déjà éxisté"
+        render "new"
+      end
+    end
+    
   	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_user.fokontany)
   	if @recensement.save
   		redirect_to "/recensements"
@@ -34,7 +42,8 @@ class RecensementsController < ApplicationController
   end
 
   def destroy
-  	
+  	@recensement = Recensement.find(id: params[:id])
+    @recensement.destroy
   end
 
 end
