@@ -4,11 +4,20 @@ class RecensementsController < ApplicationController
 	  @recensement = Recensement.all
 	  
 	  @q = @recensement.search(params[:q])
-  	@people = @q.result
+    @people = @q.result
+  end
+
+  def show
+    @recensement = Recensement.find(id: params[:id])
   end
 
   def new
   	
+  end
+  
+  def show
+    
+ 
   end
 
   def create
@@ -42,8 +51,9 @@ class RecensementsController < ApplicationController
   end
 
   def destroy
-  	@recensement = Recensement.find(id: params[:id])
+  	@recensement = Recensement.find(params[:id])
     @recensement.destroy
+    redirect_to root_path
   end
 
 end

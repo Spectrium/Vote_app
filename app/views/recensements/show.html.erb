@@ -1,0 +1,11 @@
+<h1>A propos de notre electeur : </h1>
+
+<p>Nom : </p><%= @recensement.full_name %><br><br>
+<p>CIN : </p><%= @recensement.cin %><br><br>
+<p>Nom du père : </p><%= @recensement.pere %><br><br>
+<p>Nom de la mère : </p><%= @recensement.mere %><br><br>
+<p>Logement : </p><%= @recensement.domicile %><br><br>
+<p>Profession : </p><%= @recensement.travail %><br><br>
+<p>Contact : </p><%= @recensement.contact %><br><br>
+
+<%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
