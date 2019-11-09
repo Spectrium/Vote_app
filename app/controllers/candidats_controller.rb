@@ -36,6 +36,7 @@ class CandidatsController < ApplicationController
 
 	def destroy
 		@candidat = Candidat.find(id: params[:id])
+		@candidat.vote.destroy_all
 		@candidat.destroy
 		redirect_to "/"
 	end

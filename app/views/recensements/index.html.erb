@@ -4,4 +4,5 @@
 	<p>Nom : </p><%= recensement.full_name %><br>
 	<p>IN : </p><%= recensement.cin %><br>
 	<p>Contact : </p><%= recensement.contact %><br><br>
+	<%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
 <% end %>

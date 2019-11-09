@@ -1,4 +1,5 @@
 <h1>Liste de toutes les commune : </h1>
 <%= @region.commune.each do |commune| %>
 	<%= commune.name %><br>
+	<%= link_to Supprimer, commune_path, method:"delete", data:{confirm:"Supprimé?"} %>
 <% end %>
