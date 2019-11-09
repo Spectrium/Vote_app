@@ -48,6 +48,7 @@ class RecensementsController < ApplicationController
   def destroy
   	@recensement = Recensement.find(id: params[:id])
     @recensement.destroy
+    redirect_to root_path
   end
 
 end
