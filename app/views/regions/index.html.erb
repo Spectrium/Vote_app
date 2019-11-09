@@ -1,4 +1,5 @@
 <h1>Liste de toutes les régions : </h1>
 <%= @region.each do |region| %>
 	<%= region.name %><br>
+	<%= link_to Supprimer, region_path(region.id), method:"delete", data:{confirm:"Supprimé?"} %>
 <% end %>

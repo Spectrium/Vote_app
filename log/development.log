@@ -5147,6 +5147,259 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  [1m[35m (22.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (505.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (328.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1035.1ms)[0m  [1m[35mCREATE DATABASE "voting_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (843.5ms)[0m  [1m[35mCREATE DATABASE "voting_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (152.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (86.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (13.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8648845049267613225)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRegions (20191105033843)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (94.7ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105033843_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105033843"]]
+  ↳ bin/rails:9
+  [1m[35m (19.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCommunes (20191105034500)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (108.8ms)[0m  [1m[35mCREATE TABLE "communes" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9f434ab280"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+)[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[35m (37.4ms)[0m  [1m[35mCREATE  INDEX  "index_communes_on_region_id" ON "communes"  ("region_id")[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034500"]]
+  ↳ bin/rails:9
+  [1m[35m (21.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFokontanies (20191105034821)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (89.8ms)[0m  [1m[35mCREATE TABLE "fokontanies" ("id" bigserial primary key, "name" character varying, "commune_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_132f108351"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+)[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[35m (69.7ms)[0m  [1m[35mCREATE  INDEX  "index_fokontanies_on_commune_id" ON "fokontanies"  ("commune_id")[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034821"]]
+  ↳ bin/rails:9
+  [1m[35m (15.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateRecensements (20191105035018)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (91.7ms)[0m  [1m[35mCREATE TABLE "recensements" ("id" bigserial primary key, "full_name" character varying, "cin" character varying, "contact" character varying, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_99d0ceb6b3"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[35m (56.5ms)[0m  [1m[35mCREATE  INDEX  "index_recensements_on_fokontany_id" ON "recensements"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105035018"]]
+  ↳ bin/rails:9
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20191105044852)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (96.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nom" character varying, "is_admin" boolean, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3a8faedd1"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_9184d5befc"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_30f62a9966"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_region_id" ON "users"  ("region_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (63.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_commune_id" ON "users"  ("commune_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (47.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_fokontany_id" ON "users"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105044852"]]
+  ↳ bin/rails:9
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCandidats (20191105050357)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (84.8ms)[0m  [1m[35mCREATE TABLE "candidats" ("id" bigserial primary key, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105050357_create_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105050357"]]
+  ↳ bin/rails:9
+  [1m[35m (18.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVotes (20191105054035)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (66.2ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "recensement_id" bigint, "candidat_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d447487f18"
+FOREIGN KEY ("recensement_id")
+  REFERENCES "recensements" ("id")
+, CONSTRAINT "fk_rails_be6e557969"
+FOREIGN KEY ("candidat_id")
+  REFERENCES "candidats" ("id")
+)[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (37.3ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_recensement_id" ON "votes"  ("recensement_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (56.0ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_candidat_id" ON "votes"  ("candidat_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105054035"]]
+  ↳ bin/rails:9
+  [1m[35m (45.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToUsers (20191105122129)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (318.8ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:7
+  [1m[35m (242.0ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:8
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:11
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:12
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:15
+  [1m[35m (30.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:40
+  [1m[35m (40.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105122129"]]
+  ↳ bin/rails:9
+  [1m[35m (22.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20191106125219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (170.8ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_40c6f8ed2d"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_0a1859b170"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_f076676ad5"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (59.2ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_region_id" ON "admins"  ("region_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (66.8ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_commune_id" ON "admins"  ("commune_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (45.8ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_fokontany_id" ON "admins"  ("fokontany_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125219"]]
+  ↳ bin/rails:9
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAdmins (20191106125501)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "admins" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:15
+  [1m[35m (52.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:40
+  [1m[35m (40.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125501"]]
+  ↳ bin/rails:9
+  [1m[35m (14.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDaties (20191107163206)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (53.6ms)[0m  [1m[35mCREATE TABLE "daties" ("id" bigserial primary key, "debut_propagande" timestamp, "fin_propagande" timestamp, "debut_vote" timestamp, "fin_vote" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191107163206_create_daties.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107163206"]]
+  ↳ bin/rails:9
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddHasVotingToRecensements (20191107181341)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "recensements" ADD "has_voting" boolean[0m
+  ↳ db/migrate/20191107181341_add_has_voting_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181341"]]
+  ↳ bin/rails:9
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddFullNameToCandidats (20191107181353)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "candidats" ADD "full_name" character varying[0m
+  ↳ db/migrate/20191107181353_add_full_name_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181353"]]
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddPartiToCandidats (20191107181402)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "candidats" ADD "parti" character varying[0m
+  ↳ db/migrate/20191107181402_add_parti_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181402"]]
+  ↳ bin/rails:9
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-09 12:11:46.827261"], ["updated_at", "2019-11-09 12:11:46.827261"]]
+  ↳ bin/rails:9
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8648845049267613225)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-09 15:12:18 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/s-toky/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 550ms (Views: 543.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 15:12:19 +0300
+=======
 Started GET "/" for ::1 at 2019-11-09 15:35:18 +0100
   [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -5157,6 +5410,7 @@ Completed 200 OK in 781ms (Views: 767.4ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 15:35:21 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
   
@@ -5187,7 +5441,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 15:12:19 +0300
+=======
 Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 15:35:21 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-2.jpg"):
   
@@ -5218,8 +5476,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 15:12:19 +0300
+Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 15:12:19 +0300
+Started GET "/images/bg_1.jpg" for ::1 at 2019-11-09 15:12:19 +0300
+=======
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 15:35:21 +0100
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 15:35:21 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
   
@@ -5280,7 +5544,10 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/images/bg_1.jpg" for ::1 at 2019-11-09 15:35:21 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/bg_1.jpg"):
   
@@ -5311,11 +5578,17 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 15:12:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+=======
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 15:35:22 +0100
 Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 15:35:22 +0100
   
 Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 15:35:22 +0100
 ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5344,9 +5617,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 15:12:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+=======
   
 ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
   
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5375,6 +5654,17 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 15:12:21 +0300
+Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 15:12:21 +0300
+Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 15:12:21 +0300
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
+  
+=======
 ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
@@ -5407,6 +5697,7 @@ puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 15:35:22 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5435,9 +5726,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+=======
 Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 15:35:22 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5466,10 +5761,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 15:35:23 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
   
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -5497,9 +5795,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 15:12:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
+=======
 Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 15:35:23 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5528,10 +5832,16 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 15:12:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 15:35:23 +0100
 Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 15:35:23 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5560,6 +5870,10 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 15:12:22 +0300
+=======
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
   
@@ -5590,6 +5904,9 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 15:12:22 +0300
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 15:35:23 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
@@ -5623,6 +5940,7 @@ puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 15:35:23 +0100
 Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 15:35:23 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
   
@@ -5653,8 +5971,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 15:12:23 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
+=======
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5683,7 +6007,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 15:12:23 +0300
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 15:35:24 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
   
@@ -5714,6 +6042,21 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/" for ::1 at 2019-11-09 15:30:55 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/s-toky/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 349ms (Views: 341.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 15:30:56 +0300
+Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 15:30:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
+=======
 Started GET "/fonts/open-iconic/open-iconic.woff" for ::1 at 2019-11-09 15:39:39 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/open-iconic/open-iconic.woff"):
@@ -5836,6 +6179,7 @@ Completed 200 OK in 79ms (Views: 75.4ms | ActiveRecord: 0.0ms)
 Started GET "/users/contact.html" for ::1 at 2019-11-09 15:44:31 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/contact.html"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5864,9 +6208,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-2.jpg"):
+=======
 Started GET "/users/new-post.html" for ::1 at 2019-11-09 15:44:39 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/new-post.html"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5895,9 +6244,17 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 15:30:56 +0300
+Started GET "/images/bg_1.jpg" for ::1 at 2019-11-09 15:30:56 +0300
+Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 15:30:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
+=======
 Started GET "/users/index.html" for ::1 at 2019-11-09 15:44:44 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/index.html"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5926,9 +6283,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 15:30:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+=======
 Started GET "/users/index.html" for ::1 at 2019-11-09 15:44:53 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/index.html"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -5957,6 +6320,10 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
+=======
 Started GET "/users/sign_up" for ::1 at 2019-11-09 15:44:56 +0100
 Processing by Devise::RegistrationsController#new as HTML
   Rendering devise/registrations/new.html.erb within layouts/application
@@ -6003,6 +6370,7 @@ Completed 200 OK in 68ms (Views: 67.0ms | ActiveRecord: 0.0ms)
 Started GET "/users/index.html" for ::1 at 2019-11-09 15:45:04 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/index.html"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -6031,6 +6399,10 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/images/bg_1.jpg"):
+=======
 Started GET "/users/index.html" for ::1 at 2019-11-09 15:45:36 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/index.html"):
@@ -6072,6 +6444,7 @@ Completed 200 OK in 53ms (Views: 51.4ms | ActiveRecord: 0.0ms)
 Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 15:45:39 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -6100,6 +6473,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 15:30:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+=======
 Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 15:45:39 +0100
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 15:45:39 +0100
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 15:45:39 +0100
@@ -40577,6 +40955,7 @@ puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 18:17:58 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40605,10 +40984,20 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 15:30:57 +0300
+Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 15:30:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+  
+  
+Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 15:30:57 +0300
+=======
 Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 18:17:58 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
   
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -40636,9 +41025,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
+Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 15:30:57 +0300
+=======
 Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 18:17:59 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40667,9 +41061,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+=======
 Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 18:17:59 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40698,8 +41097,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 18:17:59 +0100
 Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 18:17:59 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
   
@@ -40730,8 +41132,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 15:30:57 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
+=======
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40760,9 +41168,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 15:30:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+=======
 Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 18:17:59 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40791,9 +41205,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 15:30:58 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
+=======
 Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 18:18:00 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40822,9 +41242,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 15:30:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 18:18:00 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40853,9 +41279,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 15:30:59 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
+=======
 Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 18:18:00 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40884,6 +41316,16 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/" for ::1 at 2019-11-09 15:31:21 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 70ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 15:31:21 +0300
+=======
 Started GET "/" for ::1 at 2019-11-09 18:18:33 +0100
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
@@ -40892,6 +41334,7 @@ Completed 200 OK in 52ms (Views: 51.0ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 18:18:34 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
   
@@ -40922,7 +41365,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 15:31:21 +0300
+=======
 Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 18:18:34 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-2.jpg"):
   
@@ -40953,9 +41400,18 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 15:31:22 +0300
+Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 15:31:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
+Started GET "/images/bg_1.jpg" for ::1 at 2019-11-09 15:31:22 +0300
+  
+=======
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 18:18:34 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -40984,10 +41440,17 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/images/bg_1.jpg"):
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
+=======
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 18:18:34 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
   
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -41015,9 +41478,12 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 18:18:34 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41046,9 +41512,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 15:31:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+=======
 Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 18:18:34 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41077,7 +41549,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 15:31:22 +0300
+=======
 Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 18:18:34 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
   
@@ -41108,7 +41584,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/" for ::1 at 2019-11-09 15:31:23 +0300
+Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 15:31:23 +0300
+Processing by HomeController#index as HTML
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 18:18:34 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
   
@@ -41139,7 +41621,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 15:31:23 +0300
+=======
 Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 18:18:35 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
   
@@ -41170,9 +41658,19 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 15:31:23 +0300
+Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 15:31:23 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
+  
+=======
 Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 18:18:35 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41201,10 +41699,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 18:18:35 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
   
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -41232,7 +41733,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 15:31:24 +0300
+=======
 Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 18:18:35 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
   
@@ -41263,9 +41768,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 15:31:24 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 18:18:35 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41294,9 +41805,16 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 15:31:24 +0300
+Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 15:31:24 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
+=======
 Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 18:18:35 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41325,9 +41843,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 18:18:36 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41356,6 +41879,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Completed 200 OK in 1736ms (Views: 1690.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 15:31:24 +0300
+Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 15:31:24 +0300
+=======
 Started GET "/" for ::1 at 2019-11-09 18:19:47 +0100
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
@@ -41364,6 +41894,7 @@ Completed 200 OK in 205ms (Views: 202.9ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 18:19:48 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
   
@@ -41394,7 +41925,10 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 18:19:48 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-2.jpg"):
   
@@ -41425,8 +41959,12 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 15:31:25 +0300
+=======
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 18:19:48 +0100
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 18:19:48 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
   
@@ -41457,9 +41995,17 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 15:31:25 +0300
   
 ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
   
+Started GET "/images/bg_1.jpg" for ::1 at 2019-11-09 15:31:25 +0300
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
+  
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -41487,9 +42033,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/images/bg_1.jpg"):
+=======
 Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 18:19:48 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41518,8 +42069,12 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 15:31:25 +0300
+=======
 Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 18:19:49 +0100
 Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 18:19:49 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
   
@@ -41550,6 +42105,41 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 15:31:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 15:31:26 +0300
+=======
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
   
@@ -41580,9 +42170,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 15:31:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
+=======
 Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 18:19:49 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41611,9 +42207,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 15:31:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+=======
 Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 18:19:49 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41642,7 +42244,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 15:31:26 +0300
+=======
 Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 18:19:49 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
   
@@ -41673,9 +42279,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 15:31:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+=======
 Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 18:19:49 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41704,11 +42316,19 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 15:31:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+  
+Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 15:31:27 +0300
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 18:19:50 +0100
 Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 18:19:50 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
   
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -41766,7 +42386,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 15:31:27 +0300
+=======
 Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 18:19:50 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
   
@@ -41797,7 +42421,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 15:31:28 +0300
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 18:19:50 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
   
@@ -41828,6 +42456,74 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mRecensement Load (1.1ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "925164181428"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "2293274367"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (17.3ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Jacklyn Shanahan"], ["cin", "925164181428"], ["contact", "2293274367"], ["created_at", "2019-11-09 12:46:42.065289"], ["updated_at", "2019-11-09 12:46:42.065289"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (17.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "796346582388"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "4383896037"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (0.4ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Enola Shields"], ["cin", "796346582388"], ["contact", "4383896037"], ["created_at", "2019-11-09 12:46:42.105896"], ["updated_at", "2019-11-09 12:46:42.105896"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "389236603729"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "3664240770"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (0.4ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Elden Baumbach"], ["cin", "389236603729"], ["contact", "3664240770"], ["created_at", "2019-11-09 12:46:42.117887"], ["updated_at", "2019-11-09 12:46:42.117887"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "554115133770"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "2535779441"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (0.3ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Corene Renner"], ["cin", "554115133770"], ["contact", "2535779441"], ["created_at", "2019-11-09 12:46:42.128458"], ["updated_at", "2019-11-09 12:46:42.128458"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "494688165938"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "4546153528"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (0.5ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Hobert Wilkinson"], ["cin", "494688165938"], ["contact", "4546153528"], ["created_at", "2019-11-09 12:46:42.140035"], ["updated_at", "2019-11-09 12:46:42.140035"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+Started GET "/" for ::1 at 2019-11-09 16:00:01 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/s-toky/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 557ms (Views: 549.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 16:00:02 +0300
+=======
 Started GET "/" for ::1 at 2019-11-09 18:20:18 +0100
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
@@ -41836,6 +42532,7 @@ Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 18:20:18 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
   
@@ -41866,7 +42563,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 16:00:02 +0300
+=======
 Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 18:20:18 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-2.jpg"):
   
@@ -41897,10 +42598,18 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 16:00:02 +0300
+Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 16:00:02 +0300
+Started GET "/images/bg_1.jpg" for ::1 at 2019-11-09 16:00:02 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
+=======
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 18:20:18 +0100
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 18:20:19 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41930,7 +42639,11 @@ puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
   
+<<<<<<< HEAD
+ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
+=======
 ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41959,9 +42672,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/images/bg_1.jpg"):
+=======
 Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 18:20:19 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -41990,10 +42708,24 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 16:00:03 +0300
+Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 16:00:03 +0300
+Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 16:00:03 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+  
+  
+Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 16:00:03 +0300
+  
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 18:20:19 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
   
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -42021,10 +42753,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 18:20:19 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
   
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -42052,10 +42787,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+=======
 Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 18:20:19 +0100
 Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 18:20:19 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42084,7 +42824,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 16:00:03 +0300
+=======
   
+>>>>>>> T-front
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
@@ -42114,9 +42858,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+=======
 Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 18:20:19 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42145,7 +42894,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 16:00:04 +0300
+=======
 Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 18:20:20 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
   
@@ -42176,9 +42929,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 16:00:04 +0300
+=======
 Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 18:20:20 +0100
 Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 18:20:20 +0100
 Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 18:20:20 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
   
@@ -42209,38 +42966,52 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 16:00:04 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
+>>>>>>> T-front
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 16:00:04 +0300
+Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 16:00:04 +0300
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
   
-actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
-web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
-web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
-web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
-railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.7) lib/rack/method_override.rb:22:in `call'
-rack (2.0.7) lib/rack/runtime.rb:22:in `call'
-activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
-rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
-railties (5.2.3) lib/rails/engine.rb:524:in `call'
-puma (3.12.1) lib/puma/configuration.rb:227:in `call'
-puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
-puma (3.12.1) lib/puma/server.rb:474:in `process_client'
-puma (3.12.1) lib/puma/server.rb:334:in `block in run'
-puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+=======
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42269,9 +43040,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 18:20:21 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42300,8 +43075,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 16:00:05 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
+=======
   
 ActionController::RoutingError (No route matches [GET] "/assets/aos.css.map"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42315,12 +43096,16 @@ activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+<<<<<<< HEAD
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+=======
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
 activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
 activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
 activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
 activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
 rack (2.0.7) lib/rack/method_override.rb:22:in `call'
@@ -42335,6 +43120,86 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/recensements" for ::1 at 2019-11-09 16:00:10 +0300
+Processing by RecensementsController#index as HTML
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (1.2ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (408.8ms)
+Completed 200 OK in 575ms (Views: 459.7ms | ActiveRecord: 9.2ms)
+
+
+Started GET "/recensements" for ::1 at 2019-11-09 16:00:45 +0300
+Processing by RecensementsController#index as HTML
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.4ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 77ms (Views: 73.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recensements?utf8=%E2%9C%93&q%5Bfull_name_cont%5D=Hobert&q%5Bcin_start%5D=&commit=Search" for ::1 at 2019-11-09 16:00:56 +0300
+Processing by RecensementsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"full_name_cont"=>"Hobert", "cin_start"=>""}, "commit"=>"Search"}
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.8ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 67ms (Views: 63.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/recensements?utf8=%E2%9C%93&q%5Bfull_name_cont%5D=Hobert&q%5Bcin_start%5D=&commit=Search" for ::1 at 2019-11-09 16:01:11 +0300
+Processing by RecensementsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"full_name_cont"=>"Hobert", "cin_start"=>""}, "commit"=>"Search"}
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (47.2ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements" WHERE "recensements"."full_name" ILIKE '%Hobert%'[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (56.7ms)
+Completed 200 OK in 127ms (Views: 76.7ms | ActiveRecord: 47.2ms)
+
+
+Started GET "/recensements?utf8=%E2%9C%93&q%5Bfull_name_cont%5D=Hobert&q%5Bcin_start%5D=&commit=Search" for ::1 at 2019-11-09 16:01:21 +0300
+Processing by RecensementsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"full_name_cont"=>"Hobert", "cin_start"=>""}, "commit"=>"Search"}
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.4ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements" WHERE "recensements"."full_name" ILIKE '%Hobert%'[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 67ms (Views: 64.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recensements?utf8=%E2%9C%93&q%5Bfull_name_cont%5D=corene&q%5Bcin_start%5D=&commit=Search" for ::1 at 2019-11-09 16:01:35 +0300
+Processing by RecensementsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"full_name_cont"=>"corene", "cin_start"=>""}, "commit"=>"Search"}
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.6ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements" WHERE "recensements"."full_name" ILIKE '%corene%'[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 74ms (Views: 70.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recensements?utf8=%E2%9C%93&q%5Bfull_name_cont%5D=corene&q%5Bcin_start%5D=554115133770&commit=Search" for ::1 at 2019-11-09 16:02:25 +0300
+Processing by RecensementsController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"full_name_cont"=>"corene", "cin_start"=>"554115133770"}, "commit"=>"Search"}
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.9ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements" WHERE ("recensements"."full_name" ILIKE '%corene%' AND "recensements"."cin" ILIKE '554115133770%')[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 76ms (Views: 71.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-11-09 16:46:11 +0300
+  [1m[35m (37.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/s-toky/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 796ms (Views: 786.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 16:46:14 +0300
+=======
 Started GET "/" for ::1 at 2019-11-09 18:21:05 +0100
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
@@ -42343,6 +43208,7 @@ Completed 200 OK in 160ms (Views: 158.4ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 18:21:06 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
   
@@ -42373,7 +43239,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 16:46:14 +0300
+=======
 Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 18:21:06 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-2.jpg"):
   
@@ -42404,7 +43274,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 16:46:16 +0300
+=======
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 18:21:06 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
   
@@ -42435,9 +43309,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/bg_1.jpg" for ::1 at 2019-11-09 16:46:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/bg_1.jpg"):
+=======
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 18:21:06 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42466,9 +43346,19 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 16:46:16 +0300
+Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 16:46:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
+=======
 Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 18:21:06 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42497,10 +43387,13 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 18:21:06 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
   
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
 web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
@@ -42528,9 +43421,16 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 16:46:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 16:46:16 +0300
+=======
 Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 18:21:06 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42559,9 +43459,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 18:21:07 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42590,7 +43495,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 16:46:16 +0300
+=======
 Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 18:21:07 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
   
@@ -42621,8 +43530,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 16:46:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
+=======
   
 ActionController::RoutingError (No route matches [GET] "/assets/aos.css.map"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42636,12 +43551,16 @@ activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+<<<<<<< HEAD
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+=======
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
 activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
 activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
 activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
 activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
 rack (2.0.7) lib/rack/method_override.rb:22:in `call'
@@ -42656,9 +43575,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 16:46:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
+=======
 Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 18:21:07 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42687,9 +43612,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 16:46:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+=======
 Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 18:21:07 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42718,9 +43649,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 16:46:17 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
+=======
 Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 18:21:08 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42749,9 +43686,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 16:46:18 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
+=======
 Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 18:21:08 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42780,9 +43723,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 16:46:18 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 18:21:08 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42811,7 +43760,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 16:46:18 +0300
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 18:21:09 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
   
@@ -42842,6 +43795,394 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/recensements" for ::1 at 2019-11-09 16:47:35 +0300
+Processing by RecensementsController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/s-toky/Bureau/projet_hack/hackaton/app/controllers/recensements_controller.rb:6)
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (101.5ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (4254.8ms)
+Completed 200 OK in 4368ms (Views: 4190.0ms | ActiveRecord: 114.8ms)
+
+
+Started GET "/recensements" for ::1 at 2019-11-09 16:48:06 +0300
+Processing by RecensementsController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/s-toky/Bureau/projet_hack/hackaton/app/controllers/recensements_controller.rb:6)
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.6ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recensements" for ::1 at 2019-11-09 16:48:28 +0300
+Processing by RecensementsController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/s-toky/Bureau/projet_hack/hackaton/app/controllers/recensements_controller.rb:6)
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.6ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 56ms (Views: 52.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/recensements" for ::1 at 2019-11-09 16:48:46 +0300
+Processing by RecensementsController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/s-toky/Bureau/projet_hack/hackaton/app/controllers/recensements_controller.rb:6)
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.4ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 53ms (Views: 50.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recensements" for ::1 at 2019-11-09 16:49:01 +0300
+Processing by RecensementsController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/s-toky/Bureau/projet_hack/hackaton/app/controllers/recensements_controller.rb:6)
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.6ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:3
+  Rendered recensements/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 52ms (Views: 49.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (38.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (662.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (222.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1291.7ms)[0m  [1m[35mCREATE DATABASE "voting_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (787.1ms)[0m  [1m[35mCREATE DATABASE "voting_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (188.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (109.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8648845049267613225)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRegions (20191105033843)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (99.1ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105033843_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105033843"]]
+  ↳ bin/rails:9
+  [1m[35m (14.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCommunes (20191105034500)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (121.2ms)[0m  [1m[35mCREATE TABLE "communes" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9f434ab280"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+)[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[35m (52.5ms)[0m  [1m[35mCREATE  INDEX  "index_communes_on_region_id" ON "communes"  ("region_id")[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034500"]]
+  ↳ bin/rails:9
+  [1m[35m (20.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFokontanies (20191105034821)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (141.6ms)[0m  [1m[35mCREATE TABLE "fokontanies" ("id" bigserial primary key, "name" character varying, "commune_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_132f108351"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+)[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[35m (73.9ms)[0m  [1m[35mCREATE  INDEX  "index_fokontanies_on_commune_id" ON "fokontanies"  ("commune_id")[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034821"]]
+  ↳ bin/rails:9
+  [1m[35m (42.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateRecensements (20191105035018)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (154.9ms)[0m  [1m[35mCREATE TABLE "recensements" ("id" bigserial primary key, "full_name" character varying, "cin" character varying, "contact" character varying, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_99d0ceb6b3"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[35m (114.1ms)[0m  [1m[35mCREATE  INDEX  "index_recensements_on_fokontany_id" ON "recensements"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105035018"]]
+  ↳ bin/rails:9
+  [1m[35m (45.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20191105044852)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (101.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nom" character varying, "is_admin" boolean, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3a8faedd1"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_9184d5befc"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_30f62a9966"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (63.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_region_id" ON "users"  ("region_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (47.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_commune_id" ON "users"  ("commune_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (40.8ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_fokontany_id" ON "users"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105044852"]]
+  ↳ bin/rails:9
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCandidats (20191105050357)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (120.2ms)[0m  [1m[35mCREATE TABLE "candidats" ("id" bigserial primary key, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105050357_create_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105050357"]]
+  ↳ bin/rails:9
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVotes (20191105054035)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (40.6ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "recensement_id" bigint, "candidat_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d447487f18"
+FOREIGN KEY ("recensement_id")
+  REFERENCES "recensements" ("id")
+, CONSTRAINT "fk_rails_be6e557969"
+FOREIGN KEY ("candidat_id")
+  REFERENCES "candidats" ("id")
+)[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (46.3ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_recensement_id" ON "votes"  ("recensement_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (49.5ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_candidat_id" ON "votes"  ("candidat_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105054035"]]
+  ↳ bin/rails:9
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToUsers (20191105122129)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (277.0ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:7
+  [1m[35m (257.1ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:8
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:15
+  [1m[35m (41.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:40
+  [1m[35m (41.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105122129"]]
+  ↳ bin/rails:9
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20191106125219)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (125.0ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_40c6f8ed2d"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_0a1859b170"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_f076676ad5"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (51.4ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_region_id" ON "admins"  ("region_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (50.5ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_commune_id" ON "admins"  ("commune_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (64.5ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_fokontany_id" ON "admins"  ("fokontany_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125219"]]
+  ↳ bin/rails:9
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAdmins (20191106125501)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "admins" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:15
+  [1m[35m (55.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:40
+  [1m[35m (127.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125501"]]
+  ↳ bin/rails:9
+  [1m[35m (254.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDaties (20191107163206)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (178.3ms)[0m  [1m[35mCREATE TABLE "daties" ("id" bigserial primary key, "debut_propagande" timestamp, "fin_propagande" timestamp, "debut_vote" timestamp, "fin_vote" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191107163206_create_daties.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107163206"]]
+  ↳ bin/rails:9
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddHasVotingToRecensements (20191107181341)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "recensements" ADD "has_voting" boolean[0m
+  ↳ db/migrate/20191107181341_add_has_voting_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181341"]]
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddFullNameToCandidats (20191107181353)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "candidats" ADD "full_name" character varying[0m
+  ↳ db/migrate/20191107181353_add_full_name_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181353"]]
+  ↳ bin/rails:9
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddPartiToCandidats (20191107181402)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "candidats" ADD "parti" character varying[0m
+  ↳ db/migrate/20191107181402_add_parti_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181402"]]
+  ↳ bin/rails:9
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-09 13:54:31.272345"], ["updated_at", "2019-11-09 13:54:31.272345"]]
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8648845049267613225)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mRecensement Load (0.6ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "296517462550"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "7948279334"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (1.0ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Layne Wolff"], ["cin", "296517462550"], ["contact", "7948279334"], ["created_at", "2019-11-09 13:54:31.550887"], ["updated_at", "2019-11-09 13:54:31.550887"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (26.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "235846953328"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "4005723440"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (0.5ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Shirley Langworth"], ["cin", "235846953328"], ["contact", "4005723440"], ["created_at", "2019-11-09 13:54:31.586116"], ["updated_at", "2019-11-09 13:54:31.586116"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "590013955669"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "2139483147"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (0.4ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Kimbery Langworth"], ["cin", "590013955669"], ["contact", "2139483147"], ["created_at", "2019-11-09 13:54:31.596392"], ["updated_at", "2019-11-09 13:54:31.596392"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "976913906378"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "9216485007"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (0.3ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Miss Elwood Ziemann"], ["cin", "976913906378"], ["contact", "9216485007"], ["created_at", "2019-11-09 13:54:31.606294"], ["updated_at", "2019-11-09 13:54:31.606294"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "796815599731"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "1996438198"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mRecensement Create (0.5ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["full_name", "Bridgette Sawayn"], ["cin", "796815599731"], ["contact", "1996438198"], ["created_at", "2019-11-09 13:54:31.617702"], ["updated_at", "2019-11-09 13:54:31.617702"]]
+  ↳ db/seeds.rb:13
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:13
+Started GET "/" for ::1 at 2019-11-09 17:00:30 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/s-toky/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 580ms (Views: 573.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 17:00:31 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 17:00:31 +0300
+=======
 Started GET "/" for ::1 at 2019-11-09 18:21:24 +0100
 Processing by HomeController#index as HTML
   Rendering home/index.html.erb within layouts/application
@@ -42851,6 +44192,7 @@ Completed 200 OK in 198ms (Views: 196.3ms | ActiveRecord: 0.0ms)
 
 Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 18:21:24 +0100
 Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 18:21:24 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-2.jpg"):
   
@@ -42881,8 +44223,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 17:00:31 +0300
+Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 17:00:31 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
+=======
   
 ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42911,8 +44260,12 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/bg_1.jpg" for ::1 at 2019-11-09 17:00:31 +0300
+=======
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 18:21:24 +0100
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 18:21:24 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
   
@@ -42944,7 +44297,11 @@ puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
   
+<<<<<<< HEAD
+ActionController::RoutingError (No route matches [GET] "/images/bg_1.jpg"):
+=======
 ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -42973,7 +44330,12 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 17:00:32 +0300
+Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 17:00:32 +0300
+=======
 Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 18:21:24 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/image_1.jpg"):
   
@@ -43004,10 +44366,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+=======
 Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 18:21:25 +0100
 Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 18:21:25 +0100
   
 ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -43036,6 +44403,17 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 17:00:32 +0300
+Started GET "/images/company-2.jpg" for ::1 at 2019-11-09 17:00:32 +0300
+Started GET "/images/image_2.jpg" for ::1 at 2019-11-09 17:00:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-2.jpg"):
+=======
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/image_2.jpg"):
   
@@ -43066,9 +44444,12 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/fonts/icomoon/icomoon.ttf?6tt51o" for ::1 at 2019-11-09 18:21:25 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.ttf"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -43097,9 +44478,42 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/images/image_3.jpg" for ::1 at 2019-11-09 17:00:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/image_3.jpg"):
+=======
 Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 18:21:25 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.woff"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -43128,8 +44542,15 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 17:00:33 +0300
+Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 17:00:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
+=======
   
 ActionController::RoutingError (No route matches [GET] "/assets/aos.css.map"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -43143,12 +44564,16 @@ activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+<<<<<<< HEAD
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+=======
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
 activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
 activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
 activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
 activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+>>>>>>> T-front
 actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
 rack (2.0.7) lib/rack/method_override.rb:22:in `call'
@@ -43163,7 +44588,10 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/images/image_4.jpg" for ::1 at 2019-11-09 18:21:25 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/images/image_4.jpg"):
   
@@ -43194,9 +44622,16 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/images/company-1.jpg" for ::1 at 2019-11-09 17:00:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/images/company-1.jpg"):
+Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 17:00:33 +0300
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 18:21:26 +0100
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff2"):
+>>>>>>> T-front
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -43225,7 +44660,10 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+=======
 Started GET "/fonts/icomoon/icomoon.woff?6tt51o" for ::1 at 2019-11-09 18:21:26 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/icomoon/icomoon.woff"):
   
@@ -43256,7 +44694,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 17:00:34 +0300
+=======
 Started GET "/fonts/flaticon/font/Flaticon.ttf" for ::1 at 2019-11-09 18:21:26 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/flaticon/font/Flaticon.ttf"):
   
@@ -43287,7 +44729,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 17:00:34 +0300
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff?v=4.0.0-19" for ::1 at 2019-11-09 18:21:26 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.woff"):
   
@@ -43318,7 +44764,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
+Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 17:00:35 +0300
+=======
 Started GET "/fonts/ionicons/fonts/ionicons.ttf?v=4.0.0-19" for ::1 at 2019-11-09 18:21:27 +0100
+>>>>>>> T-front
   
 ActionController::RoutingError (No route matches [GET] "/fonts/ionicons/fonts/ionicons.ttf"):
   
@@ -43349,6 +44799,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/" for ::1 at 2019-11-09 18:39:21 +0100
   [1m[35m (13.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -43423,6 +44874,111 @@ puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
 Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 18:39:23 +0100
 Started GET "/images/company-4.jpg" for ::1 at 2019-11-09 18:39:23 +0100
   
+=======
+<<<<<<< HEAD
+Started GET "/recensements" for ::1 at 2019-11-09 17:02:38 +0300
+Processing by RecensementsController#index as HTML
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.9ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:2
+  Rendered recensements/index.html.erb within layouts/application (185.2ms)
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 10.1ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Supprimer):
+    16: 
+    17:   <%= f.submit %>
+    18: 
+    19: 	<%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
+    20: 
+    21: <% end %>
+  
+app/views/recensements/index.html.erb:19:in `block in _app_views_recensements_index_html_erb___3576174138541285682_70113986464220'
+app/views/recensements/index.html.erb:9:in `_app_views_recensements_index_html_erb___3576174138541285682_70113986464220'
+Started GET "/recensements" for ::1 at 2019-11-09 17:03:25 +0300
+Processing by RecensementsController#index as HTML
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.4ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:2
+  Rendered recensements/index.html.erb within layouts/application (33.1ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Supprimer):
+    17:   <%= f.submit %>
+    18: <% end %>
+    19: 
+    20: <%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
+  
+app/views/recensements/index.html.erb:20:in `_app_views_recensements_index_html_erb___3576174138541285682_70114035515660'
+Started GET "/recensements" for ::1 at 2019-11-09 17:03:27 +0300
+Processing by RecensementsController#index as HTML
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.4ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:2
+  Rendered recensements/index.html.erb within layouts/application (9.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Supprimer):
+    17:   <%= f.submit %>
+    18: <% end %>
+    19: 
+    20: <%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
+  
+app/views/recensements/index.html.erb:20:in `_app_views_recensements_index_html_erb___3576174138541285682_70114067590040'
+Started GET "/recensements" for ::1 at 2019-11-09 17:04:32 +0300
+Processing by RecensementsController#index as HTML
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.6ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:2
+  Rendered recensements/index.html.erb within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Supprimer):
+    17:   <%= f.submit %>
+    18: <% end %>
+    19: 
+    20: <%= link_to Supprimer, recensement_path, method:"delete" %>
+  
+app/views/recensements/index.html.erb:20:in `_app_views_recensements_index_html_erb___3576174138541285682_70113901001500'
+Started GET "/recensements" for ::1 at 2019-11-09 17:04:52 +0300
+Processing by RecensementsController#index as HTML
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.3ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:2
+  Rendered recensements/index.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"recensements"}, missing required keys: [:id]):
+    17:   <%= f.submit %>
+    18: <% end %>
+    19: 
+    20: <%= link_to "Supprimer", recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
+  
+app/views/recensements/index.html.erb:20:in `_app_views_recensements_index_html_erb___3576174138541285682_70114072086700'
+Started GET "/recensements" for ::1 at 2019-11-09 17:07:14 +0300
+Processing by RecensementsController#index as HTML
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (0.6ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:2
+  Rendered recensements/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 65ms (Views: 61.8ms | ActiveRecord: 0.6ms)
+
+
+=======
+>>>>>>> T-front
+Started GET "/images/company-3.jpg" for ::1 at 2019-11-09 18:33:18 +0100
+  [1m[35m (25.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+>>>>>>> development
   
 ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
   
@@ -43453,6 +45009,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 ActionController::RoutingError (No route matches [GET] "/images/company-4.jpg"):
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
@@ -61212,3 +62769,257 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+=======
+  [1m[35m (30.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (818.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (361.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (2009.3ms)[0m  [1m[35mCREATE DATABASE "voting_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (953.2ms)[0m  [1m[35mCREATE DATABASE "voting_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (295.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (107.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8648845049267613225)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRegions (20191105033843)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (138.4ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105033843_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105033843"]]
+  ↳ bin/rails:9
+  [1m[35m (21.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCommunes (20191105034500)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (125.2ms)[0m  [1m[35mCREATE TABLE "communes" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9f434ab280"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+)[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[35m (66.6ms)[0m  [1m[35mCREATE  INDEX  "index_communes_on_region_id" ON "communes"  ("region_id")[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034500"]]
+  ↳ bin/rails:9
+  [1m[35m (23.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFokontanies (20191105034821)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (159.8ms)[0m  [1m[35mCREATE TABLE "fokontanies" ("id" bigserial primary key, "name" character varying, "commune_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_132f108351"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+)[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[35m (41.7ms)[0m  [1m[35mCREATE  INDEX  "index_fokontanies_on_commune_id" ON "fokontanies"  ("commune_id")[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034821"]]
+  ↳ bin/rails:9
+  [1m[35m (22.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateRecensements (20191105035018)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (113.0ms)[0m  [1m[35mCREATE TABLE "recensements" ("id" bigserial primary key, "full_name" character varying, "cin" character varying, "contact" character varying, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_99d0ceb6b3"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[35m (50.1ms)[0m  [1m[35mCREATE  INDEX  "index_recensements_on_fokontany_id" ON "recensements"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105035018"]]
+  ↳ bin/rails:9
+  [1m[35m (21.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20191105044852)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (127.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nom" character varying, "is_admin" boolean, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3a8faedd1"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_9184d5befc"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_30f62a9966"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (39.4ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_region_id" ON "users"  ("region_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (41.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_commune_id" ON "users"  ("commune_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (42.5ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_fokontany_id" ON "users"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105044852"]]
+  ↳ bin/rails:9
+  [1m[35m (19.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCandidats (20191105050357)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (116.8ms)[0m  [1m[35mCREATE TABLE "candidats" ("id" bigserial primary key, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105050357_create_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105050357"]]
+  ↳ bin/rails:9
+  [1m[35m (18.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVotes (20191105054035)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (47.6ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "recensement_id" bigint, "candidat_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d447487f18"
+FOREIGN KEY ("recensement_id")
+  REFERENCES "recensements" ("id")
+, CONSTRAINT "fk_rails_be6e557969"
+FOREIGN KEY ("candidat_id")
+  REFERENCES "candidats" ("id")
+)[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (40.4ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_recensement_id" ON "votes"  ("recensement_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (40.8ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_candidat_id" ON "votes"  ("candidat_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105054035"]]
+  ↳ bin/rails:9
+  [1m[35m (28.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToUsers (20191105122129)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (23.2ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:7
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:15
+  [1m[35m (56.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:40
+  [1m[35m (42.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105122129"]]
+  ↳ bin/rails:9
+  [1m[35m (49.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20191106125219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (93.7ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "name" character varying, "email" character varying, "password" character varying, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_40c6f8ed2d"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_0a1859b170"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_f076676ad5"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (51.9ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_region_id" ON "admins"  ("region_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (73.1ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_commune_id" ON "admins"  ("commune_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (56.7ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_fokontany_id" ON "admins"  ("fokontany_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125219"]]
+  ↳ bin/rails:9
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAdmins (20191106125501)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "admins" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:15
+  [1m[35m (55.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:40
+  [1m[35m (52.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (14.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125501"]]
+  ↳ bin/rails:9
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDaties (20191107163206)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (48.9ms)[0m  [1m[35mCREATE TABLE "daties" ("id" bigserial primary key, "debut_propagande" timestamp, "fin_propagande" timestamp, "debut_vote" timestamp, "fin_vote" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191107163206_create_daties.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107163206"]]
+  ↳ bin/rails:9
+  [1m[35m (24.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddHasVotingToRecensements (20191107181341)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "recensements" ADD "has_voting" boolean[0m
+  ↳ db/migrate/20191107181341_add_has_voting_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181341"]]
+  ↳ bin/rails:9
+  [1m[35m (19.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddFullNameToCandidats (20191107181353)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "candidats" ADD "full_name" character varying[0m
+  ↳ db/migrate/20191107181353_add_full_name_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181353"]]
+  ↳ bin/rails:9
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddPartiToCandidats (20191107181402)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "candidats" ADD "parti" character varying[0m
+  ↳ db/migrate/20191107181402_add_parti_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181402"]]
+  ↳ bin/rails:9
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-09 19:58:53.029189"], ["updated_at", "2019-11-09 19:58:53.029189"]]
+  ↳ bin/rails:9
+  [1m[35m (12.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8648845049267613225)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (5.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+>>>>>>> development
+Started GET "/" for ::1 at 2019-11-09 21:01:32 +0100
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (5451.9ms)
+Completed 200 OK in 5846ms (Views: 5833.4ms | ActiveRecord: 0.0ms)
+
+

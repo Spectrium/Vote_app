@@ -1,7 +1,7 @@
 class AdminsController < ApplicationController
 
 	def index
-		
+		@admin = Admin.all
 	end
 
 	def show
@@ -31,7 +31,7 @@ class AdminsController < ApplicationController
 			@region_name = Region.find_by(name: params[:region_name])
 		end
 
-		@commune = Commune.all
+		@commune = @region_name.communes.all
 		teste = 0
 		@commune.each do |commune|
 			if commune.name == params[:commune_name]
@@ -47,7 +47,7 @@ class AdminsController < ApplicationController
 			@commune_name = Commune.find_by(name: params[:commune_name])
 		end
 
-		@fokontany = Fokontany.all
+		@fokontany = @commune_name.fokontanies.all
 		teste = 0
 		@fokontany.each do |fokontany|
 			if fokontany.name == params[:fokontany_name]
@@ -59,18 +59,19 @@ class AdminsController < ApplicationController
 		end
 		if teste == 0
 			@fokontany_name = Fokontany.create(name: params[:fokontany_name], commune: @commune_name)
+			@admin.region = @region_name
+			@admin.commune = @commune_name
+			@admin.fokontany = @fokontany_name
+			if @admin.save
+				redirect_to "/"
+			else
+				render "new"
+			end
 		else
-			@fokontany_name = Fokontany.find_by(name: params[:fokontany_name])
+			flash[:danger] = "Responsable déjà créé"
+			redirect_to "/"
 		end
 
-		@admin.region = @region_name
-		@admin.commune = @commune_name
-		@admin.fokontany = @fokontany_name
-		if @admin.save
-			redirect_to "/"
-		else
-			render "new"
-		end
 	end
 
 	def edit
@@ -96,7 +97,7 @@ class AdminsController < ApplicationController
 			@region_name = Region.find_by(name: params[:region_name])
 		end
 
-		@commune = Commune.all
+		@commune = @region_name.communes.all
 		teste = 0
 		@commune.each do |commune|
 			if commune.name == params[:commune_name]
@@ -112,7 +113,7 @@ class AdminsController < ApplicationController
 			@commune_name = Commune.find_by(name: params[:commune_name])
 		end
 
-		@fokontany = Fokontany.all
+		@fokontany = @commune_name.fokontanies.all
 		teste = 0
 		@fokontany.each do |fokontany|
 			if fokontany.name == params[:fokontany_name]
@@ -124,18 +125,19 @@ class AdminsController < ApplicationController
 		end
 		if teste == 0
 			@fokontany_name = Fokontany.create(name: params[:fokontany_name], commune: @commune_name)
+			@admin.region = @region_name
+			@admin.commune = @commune_name
+			@admin.fokontany = @fokontany_name
+			if @admin.save
+				redirect_to "/"
+			else
+				render "new"
+			end
 		else
-			@fokontany_name = Fokontany.find_by(name: params[:fokontany_name])
+			flash[:danger] = "Responsable déjà créé"
+			redirect_to "/"
 		end
 
-		@admin.region = @region_name
-		@admin.commune = @commune_name
-		@admin.fokontany = @fokontany_name
-		if @admin.save
-			redirect_to "/"
-		else
-			render "new"
-		end
 	end
 
 	def destroy
