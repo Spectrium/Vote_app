@@ -14668,3 +14668,127 @@ Processing by RecensementsController#index as HTML
   Rendered recensements/index.html.erb within layouts/application (8.1ms)
 Completed 200 OK in 74ms (Views: 69.8ms | ActiveRecord: 0.5ms)
 
+Started GET "/recensements/" for ::1 at 2019-11-10 01:04:35 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RecensementsController#index as HTML
+DEPRECATION WARNING: #search is deprecated and will be removed in 2.3, please use #ransack instead (called from index at /home/alymiratana/projet/Vote_app/app/controllers/recensements_controller.rb:7)
+  Rendering recensements/index.html.erb within layouts/application
+  [1m[36mRecensement Load (1.0ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/views/recensements/index.html.erb:26
+  Rendered recensements/index.html.erb within layouts/application (717.6ms)
+Completed 200 OK in 2539ms (Views: 2463.6ms | ActiveRecord: 28.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-10 01:04:40 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 114ms (Views: 112.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-10 01:05:57 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 125ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-11-10 01:22:13 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (21.6ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (25.1ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 29.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `fin_vote' for nil:NilClass):
+    558:       </div>
+    559:     </section>  
+    560:     <br>
+    561:     <%if @date.fin_vote <= Tim.now && @date.fin_vote != nil %>
+    562:     <p>date de debut de propagande</p>
+    563:     <%= @date.debut_propagande%>
+    564:     <p>fin propagand</p>
+  
+app/views/home/index.html.erb:561:in `_app_views_home_index_html_erb__3941480930324493253_70332282243960'
+Started GET "/" for ::1 at 2019-11-10 01:23:08 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `fin_vote' for nil:NilClass):
+    558:       </div>
+    559:     </section>  
+    560:     <br>
+    561:     <%if @date.fin_vote <= Tim.now || @date.fin_vote != nil %>
+    562:     <p>date de debut de propagande</p>
+    563:     <%= @date.debut_propagande%>
+    564:     <p>fin propagand</p>
+  
+app/views/home/index.html.erb:561:in `_app_views_home_index_html_erb__3941480930324493253_70332300683540'
+Started GET "/" for ::1 at 2019-11-10 01:23:38 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `fin_vote' for nil:NilClass):
+    558:       </div>
+    559:     </section>  
+    560:     <br>
+    561:     <%if @date.fin_vote != nil %>
+    562:     <p>date de debut de propagande</p>
+    563:     <%= @date.debut_propagande%>
+    564:     <p>fin propagand</p>
+  
+app/views/home/index.html.erb:561:in `_app_views_home_index_html_erb__3941480930324493253_70332296435060'
+Started GET "/" for ::1 at 2019-11-10 01:23:51 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 128ms (Views: 125.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-10 01:24:14 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.9ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (13.8ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `fin_vote' for nil:NilClass):
+    558:       </div>
+    559:     </section>  
+    560:     <br>
+    561:     <%if @date != nil ||  @date.fin_vote <= Tim.now %>
+    562:     <p>date de debut de propagande</p>
+    563:     <%= @date.debut_propagande%>
+    564:     <p>fin propagand</p>
+  
+app/views/home/index.html.erb:561:in `_app_views_home_index_html_erb__3941480930324493253_70332289665140'
+Started GET "/" for ::1 at 2019-11-10 01:25:29 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 110ms (Views: 106.9ms | ActiveRecord: 0.5ms)
+
+

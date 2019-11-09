@@ -474,8 +474,6 @@
 				</div>
 			</div>
 		</section>
-
-<<<<<<< HEAD
     <section class="ftco-section ftco-candidates bg-primary">
     	<div class="container">
     		<div class="row justify-content-center pb-3">
@@ -560,6 +558,17 @@
       </div>
     </section>  
     <br>
+    <%if @date != nil %>
+	    <%if  @date.fin_vote <= Tim.now %>
+		    @date.fin_vote <= Tim.now 
+		    <p>date de debut de propagande</p>
+		    <%= @date.debut_propagande%>
+		    <p>fin propagand</p>
+		    <%= @date.fin_propagande  %>
+		    <p>date debut vote</p>
+		    <%= @date.debut_vote %>
+		    <p>date fin</p>
+		    <%= @date.fin_vote%>
+	    <%end%>
+	<%end%>
 <%= link_to "Verification", verification_path  %>
-=======
->>>>>>> T-front

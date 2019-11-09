@@ -2,10 +2,14 @@ class RecensementsController < ApplicationController
   before_action :authenticate_admin!,except: [:index]
 
   def index
-	  @recensement = Recensement.all
+    @fokontany = Fokontany.find(id: params[:id_fokontany])
+	  @recensement = @fokontany.recensement.all
 	  
 	  @q = @recensement.search(params[:q])
     @people = @q.result
+  end
+  def affiche
+    
   end
 
   def create
