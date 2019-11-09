@@ -3,7 +3,7 @@
 	<p>Nom : </p><%= recensement.full_name %><br>
 	<p>IN : </p><%= recensement.cin %><br>
 	<p>Contact : </p><%= recensement.contact %><br><br>
-
+<%= link_to "Supprimer", recensement_path(recensement.id), method:"delete", data:{confirm:"Supprimé?"} %>
 <% end %>
 
 <%= search_form_for @q do |f| %>
@@ -15,7 +15,5 @@
   <%= f.text_field :cin_start %> </br>
 
   <%= f.submit %>
-
-	<%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
-
 <% end %>
+
