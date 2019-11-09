@@ -1,7 +1,10 @@
 class RecensementsController < ApplicationController
 
   def index
-  	@recensement = Recensement.all
+	  @recensement = Recensement.all
+	  
+	  @q = @recensement.search(params[:q])
+  	@people = @q.result
   end
 
   def new

@@ -1,5 +1,5 @@
 class Recensement < ApplicationRecord
-  belongs_to :fokontany
+  belongs_to :fokontany, optional: true
 
   validates :full_name,
   presence: true
