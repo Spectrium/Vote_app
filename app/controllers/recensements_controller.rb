@@ -8,19 +8,6 @@ class RecensementsController < ApplicationController
     @people = @q.result
   end
 
-  def show
-    @recensement = Recensement.find(id: params[:id])
-  end
-
-  def new
-  	
-  end
-  
-  def show
-    
- 
-  end
-
   def create
     @recensement = Recensement.all
     @recensement.each do |recensement|
@@ -39,7 +26,7 @@ class RecensementsController < ApplicationController
   end
 
   def edit
-  	@recensement = Recensement.find(params[:id])
+    @recensement = Recensement.find(params[:id])
   end
 
   def update
@@ -49,6 +36,11 @@ class RecensementsController < ApplicationController
   	else
   		render "edit"
   	end
+  end
+
+  def show
+    @recensements = Recensement.find(params[:id])
+    @recensement = Fokontany.find(@recensements.fokontany_id)
   end
 
   def destroy

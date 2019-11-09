@@ -29,4 +29,7 @@
 //= require js/google-map
 //= require js/main
 
+//= require jquery
+//= require jquery_ujs
+
 //= require_tree .
