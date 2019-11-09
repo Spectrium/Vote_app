@@ -9,4 +9,12 @@ class VotesController < ApplicationController
 		@vote = Vote.new()
 	end
 
+	def verification
+		
+	end
+
+	def verifiee
+		redirect_to new_vote_path
+	end
+
 end

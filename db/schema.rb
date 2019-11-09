@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_07_181402) do
+ActiveRecord::Schema.define(version: 2019_11_09_155148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,12 @@ ActiveRecord::Schema.define(version: 2019_11_07_181402) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "has_voting"
+    t.string "naissance"
+    t.string "pere"
+    t.string "mere"
+    t.string "logement"
+    t.string "travail"
+    t.string "code_vote"
     t.index ["fokontany_id"], name: "index_recensements_on_fokontany_id"
   end
 

@@ -7,6 +7,10 @@ class RecensementsController < ApplicationController
     @people = @q.result
   end
 
+  def show
+    @recensement = Recensement.find(id: params[:id])
+  end
+
   def new
   	
   end

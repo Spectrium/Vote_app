@@ -9433,7 +9433,7 @@ ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplate
     16: 
     17:   <%= f.submit %>
     18: 
-    19: 	<%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
+    19:   <%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
     20: 
     21: <% end %>
   
@@ -14668,7 +14668,6 @@ Processing by RecensementsController#index as HTML
   Rendered recensements/index.html.erb within layouts/application (8.1ms)
 Completed 200 OK in 74ms (Views: 69.8ms | ActiveRecord: 0.5ms)
 
-
 Started GET "/recensements?utf8=%E2%9C%93&q%5Bfull_name_cont%5D=chin&q%5Bcin_start%5D=&commit=Search" for ::1 at 2019-11-09 19:44:56 +0300
 Processing by RecensementsController#index as HTML
   Parameters: {"utf8"=>"✓", "q"=>{"full_name_cont"=>"chin", "cin_start"=>""}, "commit"=>"Search"}
@@ -14714,5 +14713,6 @@ Processing by RecensementsController#index as HTML
   ↳ app/views/recensements/index.html.erb:26
   Rendered recensements/index.html.erb within layouts/application (4.9ms)
 Completed 200 OK in 68ms (Views: 65.4ms | ActiveRecord: 0.5ms)
+
 
 
