@@ -1,11 +1,22 @@
 <h1>A propos de notre electeur : </h1>
 
-<p>Nom : </p><%= @recensement.full_name %><br><br>
-<p>CIN : </p><%= @recensement.cin %><br><br>
-<p>Nom du père : </p><%= @recensement.pere %><br><br>
-<p>Nom de la mère : </p><%= @recensement.mere %><br><br>
-<p>Logement : </p><%= @recensement.domicile %><br><br>
-<p>Profession : </p><%= @recensement.travail %><br><br>
-<p>Contact : </p><%= @recensement.contact %><br><br>
+<%
+=begin%>
+ <%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %> 
+<%
+=end%>
 
-<%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %>
+<div class="card">
+  <div class="card-header bg-secondary">
+    Fokontany : <%= @recensement.name %>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Nom : <%= @recensements.full_name %></li>
+    <li class="list-group-item">CIN : <%= @recensements.cin %></li>
+    <li class="list-group-item">Nom du père : <%= @recensements.pere %></li>
+    <li class="list-group-item">Nom de la mère : <%= @recensements.mere %></li>
+    <li class="list-group-item">Logement : <%= @recensements.logement %></li>
+    <li class="list-group-item">Profession : <%= @recensements.travail %></li>
+    <li class="list-group-item">Contact : <%= @recensements.contact %></li>
+  </ul>
+<a href="/recensements/<%=@recensements.id%>" data-method="delete"><i class="fa fa-trash"></i></a></div>
