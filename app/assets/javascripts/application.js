@@ -10,11 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
-require("jquery")
 
 //= require rails-ujs
 //= require activestorage
@@ -34,5 +29,8 @@ require("jquery")
 //= require js/scrollax.min
 //= require js/google-map
 //= require js/main
+
+//= require jquery
+//= require jquery_ujs
 
 //= require_tree .

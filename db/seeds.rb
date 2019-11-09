@@ -8,11 +8,24 @@
 
 
 Recensement.destroy_all
+Fokontany.destroy_all
+
+fkt = ["ivandry", "Androdra", "Ambomanarina"]
+
+fkt.length.times do |i|
+    Fokontany.create(name: fkt[i])
+end
 
 5.times do |i|
     Recensement.create(full_name: Faker::Name.name,
                         cin: Faker::Number.number(digits: 12),
-                        contact: Faker::Number.number(digits: 10)
+                        contact: Faker::Number.number(digits: 10),
+                        pere: Faker::JapaneseMedia::DragonBall.character,
+                        mere: Faker::JapaneseMedia::OnePiece.character,
+                        logement: Faker::Address.street_address,
+                        travail: Faker::Job.position,
+                        fokontany_id: rand(Fokontany.first.id .. Fokontany.last.id)
+                      
                     )
 end 
 
