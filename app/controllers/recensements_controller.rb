@@ -4,6 +4,10 @@ class RecensementsController < ApplicationController
   	@recensement = Recensement.all
   end
 
+  def show
+    @recensement = Recensement.find(id: params[:id])
+  end
+
   def new
   	
   end
