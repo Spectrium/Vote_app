@@ -1,4 +1,5 @@
 class RecensementsController < ApplicationController
+  before_action :authenticate_admin!,except: [:index]
 
   def index
 	  @recensement = Recensement.all
@@ -29,7 +30,7 @@ class RecensementsController < ApplicationController
       end
     end
     
-  	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_user.fokontany)
+  	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_admin.fokontany)
   	if @recensement.save
   		redirect_to "/recensements"
   	else
@@ -42,7 +43,7 @@ class RecensementsController < ApplicationController
   end
 
   def update
-  	@recensement = Recensement.update(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_user.fokontany)
+  	@recensement = Recensement.update(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_admin.fokontany)
   	if @recensement.save
   		redirect_to "/recensements"
   	else
