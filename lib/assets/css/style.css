@@ -8398,7 +8398,9 @@ h1, h2, h3, h4, h5,
           font-size: 40px; } }
     .hero-wrap .slider-text p {
       color: rgba(255, 255, 255, 0.8);
-      font-weight: 400; }
+      font-weight: 400;
+      padding:1em;
+    }
       .hero-wrap .slider-text p .number {
         color: #fdab44; }
     .hero-wrap .slider-text .btn-custom {
@@ -9969,6 +9971,15 @@ textarea.form-control {
 }
 
 .sous-title{
-  margin-bottom: 5em;
+  margin-bottom: 3em;
   font-size: 1.5em;
+  transition: transform .2s; /* Animation */
+}
+
+p.sous-title:hover{
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+a{
+  text-decoration: none!important;
 }
