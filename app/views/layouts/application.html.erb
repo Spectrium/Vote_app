@@ -33,7 +33,7 @@
             <% end %>
             <% if Time.now >= @date.debut_vote && Time.now <= @date.fin_vote %>
               <li class="nav-item">
-                <a class="nav-link" href="#">Vote</a>
+                <a class="nav-link" href="<%= verification_path %>">Vote</a>
               </li>
             <% end %>
           <% end %>
