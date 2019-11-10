@@ -12,9 +12,9 @@ Fokontany.destroy_all
 Commune.destroy_all
 Region.destroy_all
 
-reg = ["analamanga", "diana", "sava"]
-com = ["antananarivo", "talatamaty", "ivato"]
-fkt = ["ivandry", "Androdra", "Ambomanarina"]
+reg = ["Analamanga", "Diana", "Sava"]
+com = ["Antananarivo", "Talatamaty", "Ivato"]
+fkt = ["Ivandry", "Androdra", "Ambomanarina"]
 
 reg.length.times do |i|
     Region.create(name: reg[i])
