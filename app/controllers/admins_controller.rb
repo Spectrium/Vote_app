@@ -1,12 +1,8 @@
 class AdminsController < ApplicationController
-<<<<<<< HEAD
-	
-=======
 	before_action :authenticate_user!, except: [:edit]
 	before_action :test_user,only: [:new,:destroy]
 
 
->>>>>>> 24b1c3edeeeba5889fae644c030357e27cf55c4a
 	def index
 		@admin = Admin.all
 	end

@@ -33,7 +33,17 @@ class VotesController < ApplicationController
 	end
 
 	def valider
-		if @@electeur.code_vote == params[:code_de_vérification]
+		@electeur = Recensement.all
+		test = 0
+		@eleceur.each do |elect|
+			if elect.code_vote == params[:code_de_vérification]
+				test = 1
+				break
+			else
+				test = 0
+			end
+		end
+		if test == 1 
 			redirect_to new_vote_path
 		else
 			render "validation"
