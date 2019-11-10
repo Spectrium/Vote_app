@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'votes/reset', as: "reset"
   get 'admins/sign', as: "sign_admin"
   get 'users/sign', as: "sign_user"
+  get 'recensements/affiche'
   root 'home#index'
   devise_for :admins
   

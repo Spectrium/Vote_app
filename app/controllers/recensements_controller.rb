@@ -8,6 +8,10 @@ class RecensementsController < ApplicationController
     @people = @q.result
   end
   def affiche
+    @recensement = Recensement.all
+
+    @q = @recensement.search(params[:q])
+    @people = @q.result
     
   end
 
