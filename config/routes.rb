@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post 'votes/valider', as: "valider"
   get 'votes/reset', as: "reset"
   get 'admins/sign', as: "sign_admin"
+  get 'users/sign', as: "sign_user"
   root 'home#index'
   devise_for :admins
   

@@ -29,10 +29,19 @@ class VotesController < ApplicationController
 	end
 
 	def validation
-		@recensement = @@electeur
+		@@code = rand(999999)
+		puts "********************************************"
+		puts @@code
+		puts "********************************************"
+		# @@electeur.update(code_vote: @code)
+		# @recensement = @@electeur
+		# puts "********************************************"
+		# puts "electeur code_vote : #{@recensement.code_vote}" 
+		# puts "********************************************"
 	end
 
 	def valider
+<<<<<<< HEAD
 		@electeur = Recensement.all
 		test = 0
 		@eleceur.each do |elect|
@@ -44,17 +53,31 @@ class VotesController < ApplicationController
 			end
 		end
 		if test == 1 
+=======
+		puts "********************************************"
+		puts "METHODE VALIDER"
+		puts @@code
+		puts "********************************************"
+		code_valeur = params[:code_de_vérification].to_i
+		if @@code == code_valeur  
+>>>>>>> 5f2ba8963c8e4f4c936d9ed34657ff342669ac7d
 			redirect_to new_vote_path
 		else
 			render "validation"
 		end
+		
 	end
 	def reset
 		redirect_to "validation"
 	end
+
 	private
 	def validat
-		@@electeur.update(code_vote: rand(999999))
+		@@code = rand(999999)
+		puts "********************************************"
+		puts @@code
+		puts "********************************************"
+		@@electeur.update(code_vote: @code)
 	end
 
 	def daty
