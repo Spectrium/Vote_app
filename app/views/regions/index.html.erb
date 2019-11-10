@@ -1,11 +1,6 @@
 <h1>Liste de toutes les régions : </h1>
-<<<<<<< HEAD
+
 <% @region.each do |region| %>
 	<%= region.name %><br>
 	<%= link_to 'Supprimer', region_path(region.id), method:"delete", data:{confirm:"Supprimé?"} %>
-=======
-<%= @region.each do |region| %>
-	<%= link_to region.name, region_communes_path(region.id) %><br>
-	<%= link_to Supprimer, region_path(region.id), method:"delete", data:{confirm:"Supprimé?"} %>
->>>>>>> development
 <% end %>
