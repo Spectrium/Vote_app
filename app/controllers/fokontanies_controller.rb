@@ -3,7 +3,7 @@ class FokontaniesController < ApplicationController
 	before_action :test_user,only: [:destroy]
 
   def index
-  	@commune = Commune.find(id: params[:id_commune])
+  	@commune = Commune.find_by(id: params[:commune_id])
   end
 
   def destroy
