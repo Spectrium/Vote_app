@@ -24946,3 +24946,1262 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/regions" for 127.0.0.1 at 2019-11-10 03:47:43 +0000
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RegionsController#index as HTML
+  Rendering regions/index.html.erb within layouts/application
+  [1m[36mRegion Load (1.8ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/regions/index.html.erb:10
+  Rendered regions/index.html.erb within layouts/application (14.4ms)
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 476ms (Views: 455.6ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 03:47:44 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 03:47:48 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 118ms (Views: 113.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 03:47:49 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/votes/new" for 127.0.0.1 at 2019-11-10 03:52:11 +0000
+Processing by VotesController#new as HTML
+  Rendering votes/new.html.erb within layouts/application
+  [1m[36mCandidat Load (0.7ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/views/votes/new.html.erb:15
+  Rendered votes/new.html.erb within layouts/application (9.7ms)
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 320ms (Views: 299.3ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/votes/js/script.js" for 127.0.0.1 at 2019-11-10 03:52:12 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/votes/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 03:52:19 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 03:52:19 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 03:55:21 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 90ms (Views: 86.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 03:55:22 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 03:57:44 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.3ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 89ms (Views: 85.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 03:57:45 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 03:59:41 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.2ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 87ms (Views: 85.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 03:59:42 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/regions" for 127.0.0.1 at 2019-11-10 04:03:49 +0000
+Processing by RegionsController#index as HTML
+  Rendering regions/index.html.erb within layouts/application
+  [1m[36mRegion Load (0.5ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/regions/index.html.erb:10
+  Rendered regions/index.html.erb within layouts/application (2.5ms)
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 88ms (Views: 84.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 04:03:50 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/regions/2/communes" for 127.0.0.1 at 2019-11-10 04:04:04 +0000
+Processing by CommunesController#index as HTML
+  Parameters: {"region_id"=>"2"}
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/communes_controller.rb:6
+  Rendering communes/index.html.erb within layouts/application
+  [1m[36mCommune Load (0.4ms)[0m  [1m[34mSELECT "communes".* FROM "communes" WHERE "communes"."region_id" = $1[0m  [["region_id", 2]]
+  ↳ app/views/communes/index.html.erb:2
+  Rendered communes/index.html.erb within layouts/application (37.2ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 7.9ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Supprimer):
+    1: <h1>Liste de toutes les commune : </h1>
+    2: <% @region.communes.each do |commune| %>
+    3: 	<%= link_to commune.name, commune_fokontanies_path(commune.id) %><br>
+    4: 	<%= link_to Supprimer, commune_path(commune.id), method:"delete", data:{confirm:"Supprimé?"} %>
+    5: <% end %>
+  
+app/views/communes/index.html.erb:4:in `block in _app_views_communes_index_html_erb__1314539172568068114_70299555854420'
+app/views/communes/index.html.erb:2:in `_app_views_communes_index_html_erb__1314539172568068114_70299555854420'
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:05:17 +0000
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.2ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 588ms (Views: 571.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 04:05:19 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:05:38 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 127ms (Views: 124.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 04:05:39 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:07:28 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.2ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 78ms (Views: 75.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 04:07:29 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (171.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (116.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_test"[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:11:44 +0000
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "voting_development" does not exist
+):
+  
+activerecord (5.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:696:in `rescue in connect'
+activerecord (5.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:691:in `connect'
+activerecord (5.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.3) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:811:in `new_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:855:in `checkout_new_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:834:in `try_to_checkout_new_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:795:in `acquire_connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:523:in `checkout'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.3) lib/active_record/connection_adapters/abstract/connection_pool.rb:1014:in `retrieve_connection'
+activerecord (5.2.3) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.3) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.3) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (596.7ms)[0m  [1m[35mCREATE DATABASE "voting_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (583.5ms)[0m  [1m[35mCREATE DATABASE "voting_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:16:11 +0000
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8648845049267613225)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateRegions (20191105033843)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105033843_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105033843"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCommunes (20191105034500)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "communes" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9f434ab280"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+)[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_communes_on_region_id" ON "communes"  ("region_id")[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034500"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateFokontanies (20191105034821)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "fokontanies" ("id" bigserial primary key, "name" character varying, "commune_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_132f108351"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+)[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE  INDEX  "index_fokontanies_on_commune_id" ON "fokontanies"  ("commune_id")[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034821"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateRecensements (20191105035018)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "recensements" ("id" bigserial primary key, "full_name" character varying, "cin" character varying, "contact" character varying, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_99d0ceb6b3"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_recensements_on_fokontany_id" ON "recensements"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105035018"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20191105044852)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nom" character varying, "is_admin" boolean, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3a8faedd1"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_9184d5befc"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_30f62a9966"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_region_id" ON "users"  ("region_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_commune_id" ON "users"  ("commune_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_fokontany_id" ON "users"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105044852"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateCandidats (20191105050357)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "candidats" ("id" bigserial primary key, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105050357_create_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105050357"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateVotes (20191105054035)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "recensement_id" bigint, "candidat_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d447487f18"
+FOREIGN KEY ("recensement_id")
+  REFERENCES "recensements" ("id")
+, CONSTRAINT "fk_rails_be6e557969"
+FOREIGN KEY ("candidat_id")
+  REFERENCES "candidats" ("id")
+)[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_recensement_id" ON "votes"  ("recensement_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_candidat_id" ON "votes"  ("candidat_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105054035"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToUsers (20191105122129)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (12.1ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:7
+  [1m[35m (14.7ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:8
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:15
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:40
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105122129"]]
+  ↳ bin/rails:9
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateAdmins (20191106125219)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_40c6f8ed2d"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_0a1859b170"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_f076676ad5"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_region_id" ON "admins"  ("region_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_commune_id" ON "admins"  ("commune_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_fokontany_id" ON "admins"  ("fokontany_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125219"]]
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddDeviseToAdmins (20191106125501)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (11.3ms)[0m  [1m[35mALTER TABLE "admins" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:7
+  [1m[35m (15.1ms)[0m  [1m[35mALTER TABLE "admins" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:12
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "admins" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:15
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:40
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20191106125501_add_devise_to_admins.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125501"]]
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to CreateDaties (20191107163206)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "daties" ("id" bigserial primary key, "debut_propagande" timestamp, "fin_propagande" timestamp, "debut_vote" timestamp, "fin_vote" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191107163206_create_daties.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107163206"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddHasVotingToRecensements (20191107181341)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "recensements" ADD "has_voting" boolean[0m
+  ↳ db/migrate/20191107181341_add_has_voting_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181341"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddFullNameToCandidats (20191107181353)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "candidats" ADD "full_name" character varying[0m
+  ↳ db/migrate/20191107181353_add_full_name_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181353"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddPartiToCandidats (20191107181402)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "candidats" ADD "parti" character varying[0m
+  ↳ db/migrate/20191107181402_add_parti_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181402"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddNaissanceToRecensements (20191109155027)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "recensements" ADD "naissance" character varying[0m
+  ↳ db/migrate/20191109155027_add_naissance_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155027"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddPereToRecensements (20191109155047)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "recensements" ADD "pere" character varying[0m
+  ↳ db/migrate/20191109155047_add_pere_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155047"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddMereToRecensements (20191109155100)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "recensements" ADD "mere" character varying[0m
+  ↳ db/migrate/20191109155100_add_mere_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155100"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddLogementToRecensements (20191109155117)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "recensements" ADD "logement" character varying[0m
+  ↳ db/migrate/20191109155117_add_logement_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155117"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddTravailToRecensements (20191109155130)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "recensements" ADD "travail" character varying[0m
+  ↳ db/migrate/20191109155130_add_travail_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155130"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+Migrating to AddCodeVoteToRecensements (20191109155148)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "recensements" ADD "code_vote" character varying[0m
+  ↳ db/migrate/20191109155148_add_code_vote_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155148"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-10 04:16:27.084825"], ["updated_at", "2019-11-10 04:16:27.084825"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8648845049267613225)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mRecensement Load (0.5ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT "fokontanies".* FROM "fokontanies"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCommune Load (0.5ms)[0m  [1m[34mSELECT "communes".* FROM "communes"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRegion Create (0.5ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Analamanga"], ["created_at", "2019-11-10 04:16:38.783996"], ["updated_at", "2019-11-10 04:16:38.783996"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Diana"], ["created_at", "2019-11-10 04:16:38.787518"], ["updated_at", "2019-11-10 04:16:38.787518"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRegion Create (0.2ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sava"], ["created_at", "2019-11-10 04:16:38.789326"], ["updated_at", "2019-11-10 04:16:38.789326"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mCommune Create (0.8ms)[0m  [1m[32mINSERT INTO "communes" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Antananarivo"], ["region_id", 2], ["created_at", "2019-11-10 04:16:38.815901"], ["updated_at", "2019-11-10 04:16:38.815901"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mCommune Create (0.3ms)[0m  [1m[32mINSERT INTO "communes" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Talatamaty"], ["region_id", 2], ["created_at", "2019-11-10 04:16:38.821709"], ["updated_at", "2019-11-10 04:16:38.821709"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.2ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mCommune Create (0.8ms)[0m  [1m[32mINSERT INTO "communes" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ivato"], ["region_id", 2], ["created_at", "2019-11-10 04:16:38.827872"], ["updated_at", "2019-11-10 04:16:38.827872"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCommune Load (0.5ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCommune Load (0.2ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFokontany Create (0.7ms)[0m  [1m[32mINSERT INTO "fokontanies" ("name", "commune_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ivandry"], ["commune_id", 1], ["created_at", "2019-11-10 04:16:38.840923"], ["updated_at", "2019-11-10 04:16:38.840923"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mCommune Load (0.2ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCommune Load (0.3ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFokontany Create (0.5ms)[0m  [1m[32mINSERT INTO "fokontanies" ("name", "commune_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Androdra"], ["commune_id", 2], ["created_at", "2019-11-10 04:16:38.846590"], ["updated_at", "2019-11-10 04:16:38.846590"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mCommune Load (0.2ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCommune Load (0.2ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFokontany Create (0.3ms)[0m  [1m[32mINSERT INTO "fokontanies" ("name", "commune_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ambomanarina"], ["commune_id", 1], ["created_at", "2019-11-10 04:16:38.850882"], ["updated_at", "2019-11-10 04:16:38.850882"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.2ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "757026349152"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "1596287666"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.6ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Yong Medhurst"], ["cin", "757026349152"], ["contact", "1596287666"], ["fokontany_id", 1], ["created_at", "2019-11-10 04:16:39.060483"], ["updated_at", "2019-11-10 04:16:39.060483"], ["pere", "Su Shenlong"], ["mere", "Shanks"], ["logement", "46136 Metz Expressway"], ["travail", "Analyst"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.2ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.2ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "886249551225"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "3834956380"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.4ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Ms. Greta Parisian"], ["cin", "886249551225"], ["contact", "3834956380"], ["fokontany_id", 2], ["created_at", "2019-11-10 04:16:39.066535"], ["updated_at", "2019-11-10 04:16:39.066535"], ["pere", "Launch"], ["mere", "Hakuba"], ["logement", "88645 Fidela Knolls"], ["travail", "Supervisor"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.2ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.2ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "682639272093"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "8996365709"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.3ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Noella Bednar Sr."], ["cin", "682639272093"], ["contact", "8996365709"], ["fokontany_id", 1], ["created_at", "2019-11-10 04:16:39.072077"], ["updated_at", "2019-11-10 04:16:39.072077"], ["pere", "Bulma"], ["mere", "Scratchmen Apoo"], ["logement", "45242 Justine Islands"], ["travail", "Administrator"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.2ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.1ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "100514966968"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "9037252931"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.4ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Stan Abbott"], ["cin", "100514966968"], ["contact", "9037252931"], ["fokontany_id", 2], ["created_at", "2019-11-10 04:16:39.077547"], ["updated_at", "2019-11-10 04:16:39.077547"], ["pere", "Puar"], ["mere", "Doc Q"], ["logement", "2007 Claudie Estates"], ["travail", "Liaison"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.2ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.3ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "482821451862"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "3070717536"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.4ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Remedios Conroy"], ["cin", "482821451862"], ["contact", "3070717536"], ["fokontany_id", 3], ["created_at", "2019-11-10 04:16:39.085139"], ["updated_at", "2019-11-10 04:16:39.085139"], ["pere", "Super Saiyan Blue Vegeta"], ["mere", "Enel"], ["logement", "422 Lasandra Shoals"], ["travail", "Specialist"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@user.user"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-11-10 04:16:39.260007"], ["updated_at", "2019-11-10 04:16:39.260007"], ["email", "user@user.user"], ["encrypted_password", "$2a$11$4oRRu1eSvNvzHT0hRjLXdOMrSqjnWtd.bkj2QlR63aiIgryyYfZ3i"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mAdmin Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = $1 LIMIT $2[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.5ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Smart people underestimate the ordinarity of ordinary people."], ["created_at", "2019-11-10 04:16:39.295507"], ["updated_at", "2019-11-10 04:16:39.295507"], ["full_name", "Fado"], ["parti", "Blue Mail"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.3ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Language designers want to design the perfect language. They want to be able to say, 'My language is perfect. It can do everything.' But it's just plain impossible to design a perfect language, because there are two ways to look at a language. One way is by looking at what can be done with that language. The other is by looking at how we feel using that language-how we feel while programming."], ["created_at", "2019-11-10 04:16:39.298797"], ["updated_at", "2019-11-10 04:16:39.298797"], ["full_name", "Zauz"], ["parti", "Hero's Bow"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.3ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "It is not the responsibility of the language to force good looking code, but the language should make good looking code possible."], ["created_at", "2019-11-10 04:16:39.301321"], ["updated_at", "2019-11-10 04:16:39.301321"], ["full_name", "Mrs. Marie"], ["parti", "Lokomo Sword"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.2ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "From the viewpoint of what you can do, therefore, languages do differ - but the differences are limited. For example, Python and Ruby provide almost the same power to the programmer."], ["created_at", "2019-11-10 04:16:39.303823"], ["updated_at", "2019-11-10 04:16:39.303823"], ["full_name", "Owl"], ["parti", "Stamina Scroll"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.3ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Language designers want to design the perfect language. They want to be able to say, 'My language is perfect. It can do everything.' But it's just plain impossible to design a perfect language, because there are two ways to look at a language. One way is by looking at what can be done with that language. The other is by looking at how we feel using that language-how we feel while programming."], ["created_at", "2019-11-10 04:16:39.306456"], ["updated_at", "2019-11-10 04:16:39.306456"], ["full_name", "Schule Donavitch"], ["parti", "Ice Rod"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:16:53 +0000
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.7ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 376ms (Views: 360.3ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 04:16:54 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:19:56 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 114ms (Views: 110.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 04:19:57 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:20:18 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.2ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 90ms (Views: 87.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 04:20:18 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-11-10 04:20:49 +0000
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.1ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 81ms (Views: 78.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/js/script.js" for 127.0.0.1 at 2019-11-10 04:20:49 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
