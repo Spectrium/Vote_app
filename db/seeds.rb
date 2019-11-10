@@ -44,4 +44,13 @@ end
                     )
 end 
 
+User.create(email: "user@user.user", password: "useruser")
+Admin.create(email: "admin@admin.com", encrypted_password: "adminadmin")
+
+5.times do |i|
+    Candidat.create(description: Faker::Quote.matz,
+                full_name: Faker::Games::Zelda.character,
+            parti: Faker::Games::Zelda.item
+        )
+    end
 puts 'vita'
