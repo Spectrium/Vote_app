@@ -1,6 +1,8 @@
 class AdminsController < ApplicationController
 	before_action :authenticate_user!, except: [:edit]
 	before_action :test_user,only: [:new,:destroy]
+
+
 	def index
 		@admin = Admin.all
 	end
