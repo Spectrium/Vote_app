@@ -5,7 +5,9 @@ class CommunesController < ApplicationController
 	def index
 		@region = Region.find_by(id: params[:region_id])
 	end
-
+	def result 
+		@commune = Commune.all
+	end
 	def destroy
 		@commune = Commune.find(id: params[:id])
 		@fokontany = commune.fokontanies.all

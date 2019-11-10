@@ -1,0 +1,14 @@
+<% @region.each do |region|%>
+<% k=0 %>
+    <%= region.name %>
+    <% region.communes.each do |commune|%>
+    
+        <%= commune.name %>
+        <% commune.fokontanies.each do |fokontany| %>
+        <% fokontany.recensements.each do |recensement|
+    k += recensement.votes.count %>
+        <% end %>
+    <% end %>
+<% end %>
+<%= k %>
+<% end %>

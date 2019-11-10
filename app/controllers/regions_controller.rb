@@ -5,7 +5,9 @@ class RegionsController < ApplicationController
 	def index
 		@region = Region.all
 	end
-
+	def result 
+		@region = Region.all
+	end
 	def destroy
 		@region = Region.find(id: params[:id])
 		@commune = @region.communes.all
