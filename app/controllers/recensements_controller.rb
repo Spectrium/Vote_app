@@ -1,5 +1,5 @@
 class RecensementsController < ApplicationController
-  before_action :authenticate_admin!,except: [:index]
+
 
   def index
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
