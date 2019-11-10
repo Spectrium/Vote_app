@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 2019_11_09_155148) do
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "password"
     t.bigint "region_id"
     t.bigint "commune_id"
     t.bigint "fokontany_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

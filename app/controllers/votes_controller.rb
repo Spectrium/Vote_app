@@ -1,7 +1,7 @@
 class VotesController < ApplicationController
-	before_action :daty
-	before_action :validat,only: [:reset]
-	after_action :validat ,only: [:verifiee]
+	# before_action :daty
+	# before_action :validat,only: [:reset]
+	# after_action :validat ,only: [:verifiee]
 	def new
 		@candidat = Candidat.all
 		@vote = Vote.new
