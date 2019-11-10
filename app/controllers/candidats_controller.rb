@@ -1,5 +1,6 @@
 class CandidatsController < ApplicationController
-
+	before_action :authenticate_user!
+	before_action :test_user
 	def index
 		@candidat = Candidat.all
 	end
@@ -40,5 +41,22 @@ class CandidatsController < ApplicationController
 		@candidat.destroy
 		redirect_to "/"
 	end
-
+	private
+	def test_user
+		@user = User.all
+		val = 0
+		@user.each do |user|
+			if current_user == user
+				val = 1
+				break
+			else
+				val = 0
+			end
+		end
+		if val == 1
+			return true
+		else
+			redirect_to root_path
+		end		
+	end
 end

@@ -1,0 +1,7 @@
+<h1>Liste de tous les candidats : </h1>
+<%= @candidat.each do |candidat| %>
+	<%= candidat.full_name %><br>
+	<%= candidat.parti %><br>
+	<%= candidat.description %><br><br>
+	<%= link_to "VOTER", candidat_votes_path(candidat_id), method:'post', data:{confirm:"Confirmé?"} %>
+<%= end %>

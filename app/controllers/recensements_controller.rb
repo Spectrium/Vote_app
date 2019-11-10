@@ -1,14 +1,15 @@
 class RecensementsController < ApplicationController
+  before_action :authenticate_admin!,except: [:index]
 
   def index
-	  @recensement = Recensement.all
+    @fokontany = Fokontany.find(id: params[:id_fokontany])
+	  @recensement = @fokontany.recensement.all
 	  
 	  @q = @recensement.search(params[:q])
-  	@people = @q.result
+    @people = @q.result
   end
-
-  def new
-  	
+  def affiche
+    
   end
 
   def create
@@ -20,7 +21,7 @@ class RecensementsController < ApplicationController
       end
     end
     
-  	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_user.fokontany)
+  	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_admin.fokontany)
   	if @recensement.save
   		redirect_to "/recensements"
   	else
@@ -29,11 +30,11 @@ class RecensementsController < ApplicationController
   end
 
   def edit
-  	@recensement = Recensement.find(params[:id])
+    @recensement = Recensement.find(params[:id])
   end
 
   def update
-  	@recensement = Recensement.update(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_user.fokontany)
+  	@recensement = Recensement.update(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_admin.fokontany)
   	if @recensement.save
   		redirect_to "/recensements"
   	else
@@ -41,9 +42,15 @@ class RecensementsController < ApplicationController
   	end
   end
 
+  def show
+    @recensements = Recensement.find(params[:id])
+    @recensement = Fokontany.find(@recensements.fokontany_id)
+  end
+
   def destroy
-  	@recensement = Recensement.find(id: params[:id])
+  	@recensement = Recensement.find(params[:id])
     @recensement.destroy
+    redirect_to root_path
   end
 
 end
