@@ -1,0 +1,19 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Liste de toutes les régions :</h1>
+</div>
+
+<% @region.each do |region| %>
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <%= link_to region.name, region_communes_path(region.id) %>
+        </div>
+        <% if user_signed_in? %>
+        	<%= link_to 'Supprimer', region_path(region.id), :class => "btn btn-danger", data:{confirm:"Supprimé?"} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %> 
+

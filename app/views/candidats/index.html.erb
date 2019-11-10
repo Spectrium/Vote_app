@@ -1,0 +1,7 @@
+<h1>Liste de tous les candidats : </h1>
+<% @candidat.each do |candidat| %>
+	<p>Nom et prénom : </p><%= candidat.full_name %><br>
+	<p>Mouvance : </p><%= candidat.parti %><br>
+	<p>Description : </p><%= candidat.description %><br><br>
+	<%= link_to Supprimer, candidat_path, method:"delete", data:{confirm:"Supprimé?"} %>
+<% end %>

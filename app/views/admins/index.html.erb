@@ -1,0 +1,7 @@
+<h1>Liste de tous les admins : </h1>
+<%= @admin.each do |admin| %>
+	<p>
+		Nom et prénom : <%= admin.name %> | <%= admin.region %> | <%= admin.commune %> | <%= admin.fokontany %><br>
+	</p>
+	<%= link_to Supprimer, admin_path, method:"delete", data:{confirm:"Supprimé?"} %>
+<% end %>

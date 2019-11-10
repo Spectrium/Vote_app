@@ -1,0 +1,7 @@
+<p>Bienvenue dans la page d'administrateur !!!</p>
+<%  if user_signed_in?%>
+	<%= link_to "Date d'éléction", new_daty_path %><br><br>
+	<%= link_to "Se deconnecter", "/users/sign_out",method: :delete %>
+<% else %>
+	<%= link_to "Se connecter", new_user_session_path %>
+<% end %>

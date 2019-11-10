@@ -1,0 +1,43 @@
+<div>
+<p> Recherche </p>
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :full_name %>
+  <%= f.text_field :full_name_cont %>
+<span>  </span>
+  <%= f.label :CIN %>
+  <%= f.text_field :cin_start %> 
+
+  <%= f.submit %>
+<% end %>
+</div>
+
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Numéro</th>
+      <th scope="col">Nom et Prénons</th>
+      <th scope="col">CIN</th>
+      <% if admin_signed_in? %>
+        <th scope="col">Télephone</th>
+        <th scope="col">Supprimer</th>
+      <% end %>
+    </tr>
+  </thead>
+    <% i = 0 %>
+  <% @people.each do |recensement| %>
+  <tbody>
+    <tr>
+      <th scope="row"><%= i += 1%></th>
+      <td><%= link_to recensement.full_name, fokontany_recensement_path(@fokontany.id, recensement.id) %></td>
+      <td><%= recensement.cin %></td>
+      <% if admin_signed_in? %>
+        <td><%= recensement.contact %></td>
+        <td><i><%= link_to 'Supprimer', recensement_path(recensement.id), style:"color: red", data:{confirm:"Supprimé?"} %></i></td>
+      <% end %>
+    </tr>
+    <% end %> 
+  </tbody>
+</table>
+
+

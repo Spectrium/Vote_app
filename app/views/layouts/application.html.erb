@@ -1,15 +1,82 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Voting</title>
+    <title> Sahy Hifidy </title>
+    <link rel="icon" href="sahy.svg">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
   </head>
 
-  <body>
+      <body>  
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <%= link_to  "Sahy Hifidy", root_path , class:"navbar-brand"%>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% @date = Daty.last %>
+          <% if @date != nil %>
+            <% if Time.now.to_i <= @date.fin_propagande.to_i %>
+              <li class="nav-item active">
+                <%= link_to  "Candidats", candidats_path , class:"nav-link"%>
+              </li>
+            <% end %>
+            <% if Time.now.to_i >= @date.debut_vote.to_i && Time.now.to_i <= @date.fin_vote.to_i %>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= verification_path %>">Vote</a>
+              </li>
+            <% end %>
+          <% end %>
+          <li class="nav-item ">
+            <a class="nav-link" href="<%= regions_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Region</a>
+          </li>
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Résultat de vote
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="<%= result_rg_path %>">Regional</a>
+          <a class="dropdown-item" href="<%= result_cmn_path %>">Communale</a>
+        </div>
+        </ul>
+      </div>
+
+      <%= link_to "Liste des inscrits", recensements_affiche_path, class:"btn btn-outline-primary"%>
+
+    </nav>
+
     <%= yield %>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/48ba21fe93.js"></script>
+      <!-- Animation js -->
+      <script src="js/script.js"></script>
+
   </body>
+
+  <!-- Footer -->
+<footer class="page-footer font-small blue foo">
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3" id="footer">© 2019 Copyright:
+    <a href="https://github.com/Spectrium/Vote_app"> Spectrium.com</a>
+  </div>
+</footer>
+<!-- Footer -->
+
 </html>

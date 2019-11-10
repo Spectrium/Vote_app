@@ -1,0 +1,9 @@
+<%= form_tag url_for(action:'update'), method:'put' do %>
+	<input type="text" name="name" value="<%= @admin.name %>"  placeholder="Nom du responsable"><br>
+	<input type="text" name="email" value= "<%= @admin.email %>" placeholder="Fokontany@commune.com"><br>
+	<input type="text" name="password" value= "<%=  %>" placeholder="Password"><br>
+	<input type="text" name="region_name" value= "<%= @admin.region.name %>" placeholder="Region"><br>
+	<input type="text" name="commune_name" value= "<%= @admin.commune.name %>" placeholder="Commune"><br>
+	<input type="text" name="fokontany_name" value= "<%= @admin.fokontany.name %>" placeholder="Fokontany"><br>
+	<input type="submit" value="sauver"><br>
+<%end%>

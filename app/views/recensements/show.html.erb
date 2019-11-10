@@ -1,0 +1,13 @@
+<h1>A propos de notre electeur : </h1>
+
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Nom : <%= @recensements.full_name %></li>
+    <li class="list-group-item">CIN : <%= @recensements.cin %></li>
+    <li class="list-group-item">Nom du père : <%= @recensements.pere %></li>
+    <li class="list-group-item">Nom de la mère : <%= @recensements.mere %></li>
+    <li class="list-group-item">Logement : <%= @recensements.logement %></li>
+    <li class="list-group-item">Profession : <%= @recensements.travail %></li>
+    <li class="list-group-item">Contact : <%= @recensements.contact %></li>
+  </ul>
+<a href="/recensements/<%=@recensements.id%>" data-method="delete"><i class="fa fa-trash"></i></a></div>

@@ -1,0 +1,196 @@
+    <div class="hero-wrap img" id="back">
+	<div id="background-first">
+      <div class="container">
+      	<div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
+	        <div class="col-md-10 d-flex align-items-center ftco-animate">
+	        	<div class="text text-center mt-md-5">
+	            <h1 class="mb-5">L'application qui vous aide à soutenir vos opinions</h1>
+					<p class="sous-title typewrite" data-period="2000" data-type='[ "Des élections libres.","Des élections Transparentes.", "Des élections Incontestables." ]'></p>
+							<div class="ftco-counter ftco-no-pt ftco-no-pb">
+			        	<div class="row">
+				          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
+				            <div class="block-18">
+				              <div class="text d-flex">
+				              	<div class="icon mr-2">
+				              		<span class="flaticon-worldwide"></span>
+				              	</div>
+				              	<div class="desc text-left">
+					                <strong class="number" data-number="22">22</strong>
+					                <span>Region</span>
+				                </div>
+				              </div>
+				            </div>
+				          </div>
+				          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
+				            <div class="block-18 text-center">
+				              <div class="text d-flex">
+				              	<div class="icon mr-2">
+				              		<span class="flaticon-visitor"></span>
+				              	</div>
+				              	<div class="desc text-left">
+					                <strong class="number" data-number="1295"> 1 295</strong>
+					                <span>Commune</span>
+					              </div>
+				              </div>
+				            </div>
+				          </div>
+				          <div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
+				            <div class="block-18 text-center">
+				              <div class="text d-flex">
+				              	<div class="icon mr-2">
+				              		<span class="flaticon-resume"></span>
+				              	</div>
+				              	<div class="desc text-left">
+					                <strong class="number" data-number="80000">0</strong>
+					                <span>Fokontany</span>
+					              </div>
+				              </div>
+				            </div>
+				          </div>
+				        </div>
+			        </div>
+			    </div>
+	          </div>
+	        </div>
+	    	</div>
+      </div>
+    </div>
+	</div>
+   <section class="ftco-section ftco-no-pt ftco-no-pb">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-12">
+    				<div class="category-wrap">
+    					<div class="row no-gutters">
+    						<div class="col-md-2">
+    							<div class="top-category text-center no-border-left">
+    								<h3><a href="#"></a></h3>
+    				
+    								<p><span class="number"></span> <span></p>
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category text-center">
+    								<h3><a href="#">Verifier votre carte electorale</a></h3>
+    								<span class="icon flaticon-resume"></span>
+    							
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category text-center">
+    								<h3><a href="#">Voter facilement</a></h3>
+    								<span class="icon flaticon-team"></span>
+    						
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category text-center">
+    								<h3><a href="#">Suivez votre choix</a></h3>
+    								<span class="icon flaticon-accounting"></span>
+    						
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category text-center">
+    								<h3><a href="#">Obtenez des Resultats en temps réels</a></h3>
+    								<span class="icon flaticon-employees"></span>
+    						
+    							</div>
+    						</div>
+    						<div class="col-md-2">
+    							<div class="top-category text-center">
+    								<h3><a href="#"></a></h3>
+    								<p><span class="number"></span></p>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+<% @date = Daty.last %>
+<% if @date != nil%>
+<% if  Time.now.to_i <= @date.fin_propagande.to_i %>
+    <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+          	<span class="subheading"> </span>
+            <h2 class="mb-0">Liste des candidats</h2>
+          </div>
+        </div>
+        <div class="d-flex">
+        	<div class="ftco-animate">
+        		<ul class="category">
+                <% @liste.each do |liste|%>
+                  <li><a href="#"><%= liste.full_name %><br><span class="number"></span> 
+                    <span><%= liste.description %></span>
+                      <i class="ion-ios-arrow-forward"></i></a>
+                        <%= liste.parti %>
+                      </li>
+               <% end %>
+        	  </ul>
+        	</div>
+        </div>
+    	</div>
+    </section>
+<% end %>
+<% end %>
+
+    <section class="ftco-section services-section">
+        <h1 class="text-center">Liste des Candidat </h1>
+      <div class="container">
+        <div class="d-flex">
+         
+            <% @liste.each do |candidat| %>
+              <div class="card mr-2" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%= candidat.full_name %></h5>
+                  <p class="card-text"><%= candidat.description %></p>
+                  <a href="#" class="btn btn-primary"><%= candidat.votes.count %></a>  
+
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <% @date = Daty.last %>
+    <%if @date != nil %>
+	    <%if  @date.fin_vote.to_i <= Time.now.to_i %>
+		    <p>date de debut de propagande</p>
+		    <%= @date.debut_propagande%>
+		    <p>fin propagand</p>
+		    <%= @date.fin_propagande  %>
+		    <p>date debut vote</p>
+		    <%= @date.debut_vote %>
+		    <p>date fin</p>
+		    <%= @date.fin_vote%>
+	    <%end%>
+	<%end%>
+
+   <section class="ftco-section testimony-section">
+			<div class="container flexB">
+				<div class="row mb-4">
+				<div class="col-md-7 heading-section ftco-animate">
+            <h2 class="mb-4">Vote par internet</h2>
+            Choisir le vote par internet, c’est choisir d’opter pour la simplicité. Le vote électronique vous permet de gagner du temps tout en assurant un haut niveau de sécurité, de fiabilité et de confidentialité. La dématérialisation fait désormais partie de notre quotidien et nous sommes tous en permanence connectés.
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-md-7 heading-section ftco-animate">
+            <h2 class="mb-4">Le vote électronique, le choix de la simplicité</h2>
+            Nos outils de vote en ligne sont simples et intuitifs. Ils sont conçus pour être accessibles à tous les électeurs, qu’ils soient aguerris ou plus novices avec l’outil informatique.
+            Une assistance téléphonique dédiée à vos électeurs peut être mise en place pour simplifier la démarche et répondre à leurs interrogations à tout moment.
+            Voter par internet, c’est permettre à vos électeurs de voter sans contrainte horaire ou géographique, favorisant ainsi l’accessibilité et la participation. Vos électeurs peuvent voter depuis leur domicile, lieu de travail, sur une tablette, un smartphone, un ordinateur, via tous les navigateurs.
+          </div>
+        </div>
+	    </div>
+    </section>
+

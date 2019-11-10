@@ -1,0 +1,20 @@
+<%= form_tag url_for(action:'create'), method:"post" do %>
+    <form class="form-signin">
+  <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal"> information </h1>
+   <label for="inputEmail" class="sr-only"> Nom Complet </label>
+  <label for="inputEmail" class="sr-only"> Contact </label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only"> CIN </label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit"> Créer </button>
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+</form>
+
+
+<% end %>
