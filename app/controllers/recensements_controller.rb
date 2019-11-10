@@ -8,6 +8,13 @@ class RecensementsController < ApplicationController
     @people = @q.result
   end
 
+  def affiche
+    @recensement = Recensement.all
+
+    @q = @recensement.search(params[:q])
+    @people = @q.result
+  end
+
   def show
     @recensements = Recensement.find(params[:id])
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])

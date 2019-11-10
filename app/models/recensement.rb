@@ -1,6 +1,6 @@
 class Recensement < ApplicationRecord
   belongs_to :fokontany, optional: true
-
+  has_many :votes
   validates :full_name,
   presence: true
 
