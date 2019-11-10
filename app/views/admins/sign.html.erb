@@ -1,2 +1,6 @@
 <p>Bienvenue dans la page d'administrateur !!!</p>
-<%= link_to "Se connecter", new_admin_session_path %>
+<%  if admin_signed_in?%>
+	<%= link_to "Se deconnecter", "/admins/sign_out",method: :delete %>
+<% else %>
+	<%= link_to "Se connecter", new_admin_session_path %>
+<% end %>
