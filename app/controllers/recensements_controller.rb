@@ -1,5 +1,5 @@
 class RecensementsController < ApplicationController
-  before_action :testes, except: [:index]
+  before_action :testes, except: [:index, :affiche]
 
   def index
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
@@ -18,7 +18,7 @@ class RecensementsController < ApplicationController
   def show
     @recensements = Recensement.find(params[:id])
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
-    @recensement = Fokontany.find(id: @recensements.fokontany_id)
+    # @recensement = Fokontany.find(id: @recensements.fokontany_id)
   end
 
   def create
@@ -60,15 +60,11 @@ class RecensementsController < ApplicationController
   def testes
     @recensements = Recensement.find_by(id: params[:id])
     if admin_signed_in?
-      if current_admin.fokontany == @recensement.fokontany
+      # if current_admin.fokontany.name == @recensement.fokontany.name
         return true
       else
         redirect_to root_path
       end
-    else
-      redirect_to root_path
-    end
-
   end
 
 end
