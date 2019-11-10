@@ -3,7 +3,7 @@ class CommunesController < ApplicationController
 	before_action :test_user,only: [:destroy]
 
 	def index
-		@region = Region.find(id: params[:id_region])
+		@region = Region.find_by(id: params[:region_id])
 	end
 
 	def destroy
