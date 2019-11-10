@@ -41,7 +41,6 @@ class VotesController < ApplicationController
 	end
 
 	def valider
-		# @@electeur.update(code_vote: @@code)
 		code_valeur = params[:code_de_vérification].to_i
 		if @@code == code_valeur  
 			redirect_to new_vote_path
