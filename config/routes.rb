@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'communes/result', as: "result_cmn"
   get 'regions/result', as: "result_rg"
   get 'users/sign', as: "sign_user"
+  get 'recensements/affiche'
   root 'home#index'
   devise_for :admins
   
