@@ -13,7 +13,7 @@
           <%= candidat.parti %><br>
           <%=candidat.description %><br><br>
         </div>
-        <%= link_to "VOTER", candidat_votes_path(candidat_id), method:'post', data:{confirm:"Confirmé?"} %> 
+        <%= link_to "VOTER", candidat_votes_path(candidat.id), method:'post', data:{confirm:"Confirmé?"} %>
       </div>
     </div>
   </div>
