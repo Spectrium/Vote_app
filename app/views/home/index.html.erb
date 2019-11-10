@@ -140,14 +140,18 @@
     <section class="ftco-section services-section">
       <div class="container">
         <div class="d-flex">
+        
+            <% @liste.each do |candidat| %>
+              <div class="card mr-2" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%= candidat.full_name %></h5>
+                  <p class="card-text"><%= candidat.description %></p>
+                  <a href="#" class="btn btn-primary"><%= candidat.votes.count %></a>  
 
-          <div class="card mr-2" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-          </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
@@ -166,8 +170,6 @@
 		    <%= @date.fin_vote%>
 	    <%end%>
 	<%end%>
-<%= link_to "Verification", verification_path  %>
-
 
    <section class="ftco-section testimony-section">
 			<div class="container flexB">

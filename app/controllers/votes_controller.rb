@@ -41,7 +41,6 @@ class VotesController < ApplicationController
 	end
 
 	def valider
-<<<<<<< HEAD
 		@electeur = Recensement.all
 		test = 0
 		@eleceur.each do |elect|
@@ -53,14 +52,6 @@ class VotesController < ApplicationController
 			end
 		end
 		if test == 1 
-=======
-		puts "********************************************"
-		puts "METHODE VALIDER"
-		puts @@code
-		puts "********************************************"
-		code_valeur = params[:code_de_vérification].to_i
-		if @@code == code_valeur  
->>>>>>> 5f2ba8963c8e4f4c936d9ed34657ff342669ac7d
 			redirect_to new_vote_path
 		else
 			render "validation"
