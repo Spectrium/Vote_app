@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post 'votes/valider', as: "valider"
   get 'votes/reset', as: "reset"
   get 'admins/sign', as: "sign_admin"
+  get 'communes/result', as: "result_cmn"
+  get 'regions/result', as: "result_rg"
   get 'users/sign', as: "sign_user"
   get 'recensements/affiche'
   root 'home#index'

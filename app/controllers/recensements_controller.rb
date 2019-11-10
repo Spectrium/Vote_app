@@ -1,5 +1,5 @@
 class RecensementsController < ApplicationController
-
+  before_action :testes, except: [:index]
 
   def index
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
@@ -7,12 +7,18 @@ class RecensementsController < ApplicationController
 	  @q = @fokontany.recensements.search(params[:q])
     @people = @q.result
   end
+
   def affiche
     @recensement = Recensement.all
 
     @q = @recensement.search(params[:q])
     @people = @q.result
-    
+  end
+
+  def show
+    @recensements = Recensement.find(params[:id])
+    @recensement = Fokontany.find(@recensements.fokontany_id)
+
   end
 
   def create
@@ -45,15 +51,24 @@ class RecensementsController < ApplicationController
   	end
   end
 
-  def show
-    @recensements = Recensement.find(params[:id])
-    @recensement = Fokontany.find(@recensements.fokontany_id)
-  end
-
   def destroy
   	@recensement = Recensement.find(params[:id])
     @recensement.destroy
     redirect_to root_path
+  end
+  private
+  def testes
+    @recensements = Recensement.find_by(id: params[:id])
+    if admin_signed_in?
+      if current_admin.fokontany == @recensement.fokontany
+        return true
+      else
+        redirect_to root_path
+      end
+    else
+      redirect_to root_path
+    end
+
   end
 
 end

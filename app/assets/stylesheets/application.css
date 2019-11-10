@@ -64,3 +64,19 @@ body#back-sign{
   background-color: rgb(202, 192, 192);
 }
 
+.navbar-light .navbar-brand {
+  font-size: 2em;
+  margin-right: 2em;
+}
+
+.d-flex{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+.card{
+  margin-left: 3em;
+  margin-bottom: 1em;
+}

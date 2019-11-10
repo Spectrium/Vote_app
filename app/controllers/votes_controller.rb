@@ -4,11 +4,12 @@ class VotesController < ApplicationController
 	# after_action :validat ,only: [:verifiee]
 	def new
 		@candidat = Candidat.all
+		# @@elect = @@electeur
 		@vote = Vote.new
 	end
 
 	def create
-		@candidat = Candidat.find_by(id_candidat: params[:id])
+		@candidat = Candidat.find_by(id: params[:candidat_id])
 		@@electeur.update(has_voting: true, code_vote: '$')
 		@vote = Vote.new(candidat: @candidat, recensement: @@electeur)
 		redirect_to root_path
@@ -23,29 +24,42 @@ class VotesController < ApplicationController
 		@electeur.each do |electeur|
 			if electeur.full_name == params[:name] && electeur.cin == params[:cin]
 				@@electeur = Recensement.find_by(cin: params[:cin])
-				redirect_to validation_path
+				if @@electeur.has_voting != true
+					redirect_to validation_path
+				else
+					redirect_to root_path
+				end
 			end
 		end
 	end
 
 	def validation
-		@recensement = @@electeur
+		@@code = rand(999999)
+		puts "**************************"
+		puts @@code
+		puts "**************************"
 	end
 
 	def valider
-		if @@electeur.code_vote == params[:code_de_vérification]
+		@electeur = Recensement.all
+		test = 0
+		@eleceur.each do |elect|
+			if elect.code_vote == params[:code_de_vérification]
+				test = 1
+				break
+			else
+				test = 0
+			end
+		end
+		if test == 1 
 			redirect_to new_vote_path
 		else
 			render "validation"
 		end
+		
 	end
-	def reset
-		redirect_to "validation"
-	end
+
 	private
-	def validat
-		@@electeur.update(code_vote: rand(999999))
-	end
 
 	def daty
 		@date = Daty.last

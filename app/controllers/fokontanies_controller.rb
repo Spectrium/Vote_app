@@ -5,7 +5,9 @@ class FokontaniesController < ApplicationController
   def index
   	@commune = Commune.find_by(id: params[:commune_id])
   end
-
+  def result 
+		@fokontany = Fokontany.all
+	end
   def destroy
   	@fokontany = Fokontany.find(id: params[:id])
   	@fokontany.recensements.destroy_all
