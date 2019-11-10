@@ -1,7 +1,11 @@
 <h1>Liste de toutes les fokontany : </h1>
 <% @commune.fokontanies.each do |fokontany| %>
 	<%= link_to fokontany.name, fokontany_recensements_path(fokontany.id) %><br>
-	<%= link_to Supprimer, fokontany_path(fokontany.id), method:"delete", data:{confirm:"Supprimé?"} %>
+	<%
+=begin%>
+ <%= link_to Supprimer, fokontany_path(fokontany.id), method:"delete", data:{confirm:"Supprimé?"} %> 
+<%
+=end%>
 <% end %>
 
 

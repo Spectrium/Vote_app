@@ -1,4 +1,4 @@
-<h1><%= @recensement.full_name %></h1><br>
+
 <p>Entrer votre code de validation</p>
 <%= form_tag url_for(action:'valider'), method:'post' do %>
 	<input type="text" name="code_de_vérification" placeholder="code de vérification"><br>

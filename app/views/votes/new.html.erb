@@ -1,48 +1,38 @@
 
-
-
-
-
-
 <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Liste de toutes les candidats :</h1>
+  <h1 class="display-4"><h1>Liste de tous les candidats : </h1>
 
 </div>
 
-
-
-
-	<% @candidat.each do |candidat| %>
-
-
-<div class="container">
-  <div class="card-deck mb-3 text-center">
-    <div class="card mb-4 shadow-sm">
-      <div class="card-header">
+<% @candidat.each do |candidat| %>
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
         	<%= candidat.full_name %><br>
-	<%= candidat.parti %><br>
-	<%= candidat.description %><br><br>
-	<%
-=begin%>
+          <%= candidat.parti %><br>
+          <%=candidat.description %><br><br>
+        </div>
+        <%= link_to "VOTER", candidat_votes_path(candidat_id), method:'post', data:{confirm:"Confirmé?"} %> 
       </div>
+    </div>
+  </div>
+<% end %> 
 
 
 
-      <div class="card-body">
+
+    
+
+<!--       <div class="card-body">
         
         <ul class="list-unstyled mt-3 mb-4">
 
 
         </ul>
         	
- <%= link_to "VOTER", candidat_votes_path(candidat_id), method:'post', data:{confirm:"Confirmé?"} %> 
-<%
-=end%>
-      </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-     <% end %> 
 
+    </div>
+    </div>
+    </div>
+ -->
