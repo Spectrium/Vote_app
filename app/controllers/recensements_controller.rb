@@ -8,6 +8,11 @@ class RecensementsController < ApplicationController
     @people = @q.result
   end
 
+  def show
+    @recensements = Recensement.find(params[:id])
+    @recensement = Fokontany.find(@recensements.fokontany_id)
+  end
+
   def create
     @recensement = Recensement.all
     @recensement.each do |recensement|
@@ -38,11 +43,6 @@ class RecensementsController < ApplicationController
   	end
   end
 
-  def show
-    @recensements = Recensement.find(params[:id])
-    @recensement = Fokontany.find(@recensements.fokontany_id)
-  end
-
   def destroy
   	@recensement = Recensement.find(params[:id])
     @recensement.destroy
@@ -50,7 +50,7 @@ class RecensementsController < ApplicationController
   end
   private
   def testes
-    @recensements = Recensement.find_by(params[:id])
+    @recensements = Recensement.find_by(id: params[:id])
     if admin_signed_in?
       if current_admin.fokontany == @recensement.fokontany
         return true

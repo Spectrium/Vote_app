@@ -29,7 +29,7 @@
   <tbody>
     <tr>
       <th scope="row"><%= i += 1%></th>
-      <td><%= link_to recensement.full_name, fokontany_recensements_path(@fokontany.id, recensement.id) %></td>
+      <td><%= link_to recensement.full_name, fokontany_recensement_path(@fokontany.id, recensement.id) %></td>
       <td><%= recensement.cin %></td>
       <% if admin_signed_in? %>
         <td><%= recensement.contact %></td>

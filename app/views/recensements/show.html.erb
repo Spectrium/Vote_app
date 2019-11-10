@@ -1,14 +1,8 @@
 <h1>A propos de notre electeur : </h1>
 
-<%
-=begin%>
- <%= link_to Supprimer, recensement_path, method:"delete", data:{confirm:"Supprimé?"} %> 
-<%
-=end%>
-
 <div class="card">
   <div class="card-header bg-secondary">
-    Fokontany : <%= @recensement.name %>
+    Fokontany : <%= @fokontany.name %>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Nom : <%= @recensements.full_name %></li>
