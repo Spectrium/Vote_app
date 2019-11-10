@@ -1,6 +1,10 @@
 class DatiesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :test_user
+  # before_action :authenticate_user!
+  # before_action :test_user
+
+  def index
+    @date = Daty.last
+  end
 
   def new
     @date = Daty.new

@@ -26,12 +26,12 @@
         <ul class="navbar-nav mr-auto">
           <% @date = Daty.last %>
           <% if @date != nil %>
-            <% if Time.now >= @date.debut_propagande && Time.now <= @date.fin_propagande %>
+            <% if Time.now.to_i <= @date.fin_propagande.to_i %>
               <li class="nav-item active">
                 <%= link_to  "Candidats", candidats_path , class:"nav-link"%>
               </li>
             <% end %>
-            <% if Time.now >= @date.debut_vote && Time.now <= @date.fin_vote %>
+            <% if Time.now.to_i >= @date.debut_vote.to_i && Time.now.to_i <= @date.fin_vote.to_i %>
               <li class="nav-item">
                 <a class="nav-link" href="<%= verification_path %>">Vote</a>
               </li>

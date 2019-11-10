@@ -10,7 +10,8 @@ class RecensementsController < ApplicationController
 
   def show
     @recensements = Recensement.find(params[:id])
-    @recensement = Fokontany.find(@recensements.fokontany_id)
+    @fokontany = Fokontany.find_by(id: params[:fokontany_id])
+    @recensement = Fokontany.find(id: @recensements.fokontany_id)
   end
 
   def create
