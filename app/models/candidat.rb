@@ -1,3 +1,6 @@
 class Candidat < ApplicationRecord
- has_many :votes 
+
+	has_one_attached :profil
+ 	has_many :votes 
+
 end

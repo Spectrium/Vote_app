@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'users/sign', as: "sign_user"
   get 'recensements/affiche'
   root 'home#index'
+  
   devise_for :admins
   
   devise_for :users

@@ -31,7 +31,7 @@ fkt.length.times do |i|
                     commune_id: rand(Commune.first.id .. Commune.last.id))
 end
 
-5.times do |i|
+15.times do |i|
     Recensement.create(full_name: Faker::Name.name,
                         cin: Faker::Number.number(digits: 12),
                         contact: Faker::Number.number(digits: 10),
@@ -45,7 +45,7 @@ end
 end 
 
 User.create(email: "user@user.user", password: "useruser")
-Admin.create(email: "admin@admin.com", encrypted_password: "adminadmin")
+Admin.create(email: "admin@admin.com", password: "adminadmin")
 
 5.times do |i|
     Candidat.create(description: Faker::Quote.matz,

@@ -110,8 +110,9 @@
     	</div>
     </section>
 
+<% @date = Daty.last %>
 <% if @date != nil%>
-<% if @date.debut_propagande <= Time.now && Time.now <= @date.fin_propagande %>
+<% if  Time.now.to_i <= @date.fin_propagande.to_i %>
     <section class="ftco-section">
     	<div class="container">
     		<div class="row justify-content-center mb-5">
@@ -159,9 +160,9 @@
       </div>
     </section>
 
+    <% @date = Daty.last %>
     <%if @date != nil %>
-	    <%if  @date.fin_vote <= Tim.now %>
-		    @date.fin_vote <= Tim.now 
+	    <%if  @date.fin_vote.to_i <= Time.now.to_i %>
 		    <p>date de debut de propagande</p>
 		    <%= @date.debut_propagande%>
 		    <p>fin propagand</p>
