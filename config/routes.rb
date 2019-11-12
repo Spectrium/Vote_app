@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   resources :fokontanies do
     resources :recensements
   end
-  resources :recensements
   resources :admins
   resources :votes, only: [:new]
   resources :candidats do
