@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :admins
   get 'votes/verification', as: "verification"
   post 'votes/verifiee', as: "verifiee"
   get 'votes/validation', as: "validation"
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
   get 'recensements/affiche'
   root 'home#index'
   
-  devise_for :admins
   
   devise_for :users
 
@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   end
   resources :recherches,only: [:index]
   resources :admins
+  resources :recensements
   resources :votes, only: [:new]
   resources :candidats do
     resources :votes, except: [:new]
