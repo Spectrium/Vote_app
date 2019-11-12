@@ -42,19 +42,23 @@
           <li class="nav-item ">
             <a class="nav-link" href="<%= regions_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Region</a>
           </li>
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Résultat de vote
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<%= result_rg_path %>">Regional</a>
-          <a class="dropdown-item" href="<%= result_cmn_path %>">Communale</a>
-        </div>
+           <li class="nav-item ">
+            <a class="nav-link" href="<%= recensements_affiche_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Liste des inscrits</a>
+          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Résultat de vote
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<%= result_rg_path %>">Regional</a>
+            <a class="dropdown-item" href="<%= result_cmn_path %>">Communale</a>
+          </div>
         </ul>
       </div>
-
-      <%= link_to "Liste des inscrits", recensements_affiche_path, class:"btn btn-outline-primary"%>
+      <%=form_tag recherches_path ,method:'get' do%>
+      <input type="text" class="search" name="find" placeholder="Search...">
+      <input type="submit" hidden>
+      <%end%>       
 
     </nav>
 

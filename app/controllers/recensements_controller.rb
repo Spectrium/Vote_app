@@ -5,15 +5,12 @@ class RecensementsController < ApplicationController
   def index
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
 
-	  @q = @fokontany.recensements.search(params[:q])
-    @people = @q.result
+	  @people = @fokontany.recensements
+    
   end
 
   def affiche
-    @recensement = Recensement.all
-
-    @q = @recensement.search(params[:q])
-    @people = @q.result
+    @recensement = Recensement.all.order(full_name: :asc)
   end
 
   def show

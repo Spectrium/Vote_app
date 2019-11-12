@@ -1,0 +1,15 @@
+<% if @recensement.length == 0 %>
+<p>
+	Pas de résultat sur <%= @params %> (ATAOVY ETO ILAY SARY)
+</p>
+<% else %>
+<p>
+	<% @recensement.each do |recensement| %>
+		Nom : <%= recensement.full_name %><br>
+		CIN : <%= recensement.cin %><br>
+		Fokontany : <%= recensement.fokontany.name %><br>
+		Commune : <%= recensement.fokontany.commune.name %><br>
+		Region : <%= recensement.fokontany.commune.region.name %><br><br>
+	<% end %>
+</p>
+<% end %>

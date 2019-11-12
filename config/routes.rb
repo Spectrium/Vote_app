@@ -17,14 +17,15 @@ Rails.application.routes.draw do
 
   resources :daties
   resources :regions do 
-    resources :communes 
+    resources :communes
   end 
-  resources :communes  do
+  resources :communes,only: [:destroy]  do
     resources :fokontanies
   end
-  resources :fokontanies do
+  resources :fokontanies,only: [:destroy] do
     resources :recensements
   end
+  resources :recherches,only: [:index]
   resources :admins
   resources :votes, only: [:new]
   resources :candidats do
