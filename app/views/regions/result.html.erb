@@ -1,14 +1,43 @@
-<% @region.each do |region|%>
-<% k=0 %>
-    <%= region.name %>
-    <% region.communes.each do |commune|%>
-    
-        <%= commune.name %>
-        <% commune.fokontanies.each do |fokontany| %>
-        <% fokontany.recensements.each do |recensement|
+<ul class="list-group">
+  <li class="list-group-item">
+    <% @region.each do |region| %>
+<% k=0 %> </span>
+   <%= region.name %>
+    <% region.communes.each do |commune|%>   
+      <%= commune.name %> 
+</li>
+    <% commune.fokontanies.each do |fokontany| %>
+    <% fokontany.recensements.each do |recensement|
     k += recensement.votes.count %>
-        <% end %>
+
+     <% end %>      
     <% end %>
 <% end %>
-<%= k %>
+    <%= k %></span>
 <% end %>
+</ul>
+
+
+		
+
+
+
+       
+      
+
+
+
+         
+
+ 
+
+
+
+
+
+
+
+
+
+  
+

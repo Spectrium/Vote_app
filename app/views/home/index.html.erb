@@ -143,13 +143,12 @@
         <h1 class="text-center">Liste des Candidat </h1>
       <div class="container">
         <div class="d-flex">
-         
             <% @liste.each do |candidat| %>
               <div class="card mr-2" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="http://scd.rfi.fr/sites/filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/2011-02-17T115648Z_1261307332_GM1E72H1J9L01_RTRMADP_3_MADAGASCAR-RAVALOMANANA-SAFRICA_0_0.JPG" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><%= candidat.full_name %></h5>
-                  <p class="card-text"><%= candidat.description %></p>
+                  <h5 class="card-title">Marc Ravalomanana</h5>
+                  <p class="card-text">Marc Ravalomanana, né le 12 décembre 1949 à Imerinkasinina, est un homme d'État malgache. Il est maire d'Antananarivo de 1999 à 2002 et président de la République de Madagascar de 2002 à 2009, .</p>
                   <a href="#" class="btn btn-primary"><%= candidat.votes.count %></a>  
 
                 </div>

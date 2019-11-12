@@ -1,9 +1,4 @@
 <h1>Liste de toutes les commune : </h1>
 <% @region.communes.each do |commune| %>
 	<%= link_to commune.name, commune_fokontanies_path(commune.id) %><br>
-	<%
-=begin%>
- <%= link_to Supprimer, commune_path(commune.id), method:"delete", data:{confirm:"Supprimé?"} %> 
-<%
-=end%>
 <% end %>
