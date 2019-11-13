@@ -1,4 +1,24 @@
-<h1>Liste de toutes les commune : </h1>
+
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Liste de toutes les  les commune :</h1>
+</div>
+
 <% @region.communes.each do |commune| %>
-	<%= link_to commune.name, commune_fokontanies_path(commune.id) %><br>
-<% end %>
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+		<%= link_to commune.name, commune_fokontanies_path(commune.id) %><br>
+        </div>
+        <% if user_signed_in? %>
+       
+         <%= link_to Supprimer, commune_fokontanies_path(fokontany.id), method:"delete", data:{confirm:"Supprimé?"} %> 
+
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %> 
+

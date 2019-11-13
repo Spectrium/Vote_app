@@ -79,4 +79,5 @@ body#back-sign{
 .card{
   margin-left: 3em;
   margin-bottom: 1em;
+  -webkit-text-fill-color: black;
 }

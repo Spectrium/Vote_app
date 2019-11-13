@@ -1,5 +1,26 @@
-<h1>Liste de toutes les fokontany : </h1>
+
+  
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Liste de toutes les  fokontany :</h1>
+</div>
+
 <% @commune.fokontanies.each do |fokontany| %>
-	<%= link_to fokontany.name, fokontany_recensements_path(fokontany.id) %><br>
-<% end %>
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+        <%= link_to fokontany.name, fokontany_recensements_path(fokontany.id) %>
+        </div>
+        <% if user_signed_in? %>
+       
+         <%= link_to Supprimer, fokontany_path(fokontany.id), method:"delete", data:{confirm:"Supprimé?"} %> 
+
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %> 
+
 
