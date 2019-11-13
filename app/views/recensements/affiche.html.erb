@@ -3,10 +3,10 @@
 <%= search_form_for @q do |f| %>
 
   <%= f.label :full_name %>
-  <%= f.text_field :full_name_cont %>
+  <%= f.text_field :full_name_cont ,class:"form-control"%>
 <span>  </span>
   <%= f.label :CIN %>
-  <%= f.text_field :cin_start %> 
+  <%= f.text_field :cin_start ,class:"form-control" %> 
 
   <%= f.submit %>
 <% end %>
