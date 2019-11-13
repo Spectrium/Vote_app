@@ -15,10 +15,10 @@
 
   </head>
 
-      <body>  
+  <body>  
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-    <%= link_to  "Sahy Hifidy", root_path , class:"navbar-brand"%>
+      <%= link_to  "Sahy Hifidy", root_path , class:"navbar-brand"%>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -67,21 +67,15 @@
           </div>
         </ul>
       </div>
-      <%=form_tag recherches_path ,method:'get' do%>
-      <input type="text" class="search" name="find" placeholder="Search...">
-      <input type="submit" hidden>
+
+      <%=form_tag recherches_path , class:"form-inline my-2 my-lg-0" ,method:'get' do%>
+        <input type="text" class="search form-control mr-sm-2" name="find" placeholder="Search...">
+        <input type="submit" class="btn btn-outline-success my-2 my-sm-0">
       <%end%>       
 
     </nav>
 
     <%= yield %>
-    <!-- Footer -->
-  <footer class="page-footer font-small blue foo">
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3" id="footer">© 2019 Copyright:
-      <a href="https://github.com/Spectrium/Vote_app"> Spectrium.com</a>
-    </div>
-  </footer>
 
   </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
