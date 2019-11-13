@@ -42,23 +42,48 @@
           <li class="nav-item ">
             <a class="nav-link" href="<%= regions_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Region</a>
           </li>
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Résultat de vote
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="<%= result_rg_path %>">Regional</a>
-          <a class="dropdown-item" href="<%= result_cmn_path %>">Communale</a>
-        </div>
+           <li class="nav-item ">
+            <a class="nav-link" href="<%= recensements_affiche_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Liste des inscrits</a>
+          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item ">
+              <a class="nav-link" href="<%= new_daty_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Date</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<%= sign_user_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashbord</a>
+            </li>
+          <% end %>
+            <li class="nav-item ">
+              <a class="nav-link" href="<%= new_recensement_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Ajouter une personne</a>
+            </li>
+          
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Résultat de vote
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="<%= result_rg_path %>">Regional</a>
+            <a class="dropdown-item" href="<%= result_cmn_path %>">Communale</a>
+          </div>
         </ul>
       </div>
-
-      <%= link_to "Liste des inscrits", recensements_affiche_path, class:"btn btn-outline-primary"%>
+      <%=form_tag recherches_path ,method:'get' do%>
+      <input type="text" class="search" name="find" placeholder="Search...">
+      <input type="submit" hidden>
+      <%end%>       
 
     </nav>
 
     <%= yield %>
+    <!-- Footer -->
+  <footer class="page-footer font-small blue foo">
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" id="footer">© 2019 Copyright:
+      <a href="https://github.com/Spectrium/Vote_app"> Spectrium.com</a>
+    </div>
+  </footer>
+
+  </body>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -68,15 +93,6 @@
       <!-- Animation js -->
       <script src="js/script.js"></script>
 
-  </body>
-
-  <!-- Footer -->
-<footer class="page-footer font-small blue foo">
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3" id="footer">© 2019 Copyright:
-    <a href="https://github.com/Spectrium/Vote_app"> Spectrium.com</a>
-  </div>
-</footer>
 <!-- Footer -->
 
 </html>

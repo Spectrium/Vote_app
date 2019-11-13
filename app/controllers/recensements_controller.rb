@@ -1,18 +1,16 @@
 class RecensementsController < ApplicationController
+
   before_action :testes, except: [:index, :affiche]
 
   def index
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
 
-	  @q = @fokontany.recensements.search(params[:q])
-    @people = @q.result
+	  @people = @fokontany.recensements
+    
   end
 
   def affiche
-    @recensement = Recensement.all
-
-    @q = @recensement.search(params[:q])
-    @people = @q.result
+    @recensement = Recensement.all.order(full_name: :asc)
   end
 
   def show
@@ -30,7 +28,9 @@ class RecensementsController < ApplicationController
       end
     end
     
-  	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_admin.fokontany)
+  	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin],
+      pere: params[:nom_pere], mere: params[:nom_mere], logement: params[:logement],
+      travail: params[:travail], contact: params[:contact], fokontany: current_admin.fokontany)
   	if @recensement.save
   		redirect_to "/recensements"
   	else
@@ -43,7 +43,9 @@ class RecensementsController < ApplicationController
   end
 
   def update
-  	@recensement = Recensement.update(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_admin.fokontany)
+  	@recensement = Recensement.update(full_name: params[:full_name], cin: params[:cin],
+      pere: params[:nom_pere], mere: params[:nom_mere], logement: params[:logement],
+      travail: params[:travail], contact: params[:contact], fokontany: current_admin.fokontany)
   	if @recensement.save
   		redirect_to "/recensements"
   	else

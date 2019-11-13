@@ -1,6 +1,25 @@
-<%= form_tag url_for(action:'create'), method:"patch" do %>
-	<input type="text" name="full_name" value="<%= @recensement.full_name %>"> <br>
-	<input type="text" name="cin" value="<%= @recensement.cin %>"> <br>
-	<input type="text" name="contact" value="<%= @recensement.contact %>"> <br>
-	<input type="submit" value="Sauvegarder">
-<% end %>
+<div class="container">
+	<%= form_tag url_for(action:'create'), method:"post" do %>
+	    <form class="form-signin">
+	  <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+	  <h1 class="h3 mb-3 font-weight-normal"> information </h1>
+	  Nom Complet 
+	  <input type="text" class="form-control" value="<%= @recensement.full_name %>" name="full_name"><br>
+	  CIN
+	  <input type="text" class="form-control" value="<%= @recensement.cin %>" name="cin"><br>
+	  Nom du père
+	  <input type="text" class="form-control" value="<%= @recensement.pere %>" name="nom_pere"><br>
+	  Nom de la mère
+	  <input type="text" class="form-control" value="<%= @recensement.mere %>" name="nom_mere"><br>
+	  Logement
+	  <input type="text" class="form-control" value="<%= @recensement.logement %>" name="logement"><br>
+	  Travail
+	  <input type="text" class="form-control" value="<%= @recensement.travail %>" name="travail"><br>
+	  Contact
+	  <input type="text" class="form-control" value="<%= @recensement.contact %>" name="contact"><br>
+
+	  <button class="btn btn-lg btn-primary btn-block" type="submit"> Sauvegarder </button>
+	  <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
+	</form>
+	<% end %>
+</div>
