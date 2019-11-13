@@ -1,22 +1,20 @@
-<ul class="list-group">
-  <li class="list-group-item">
-    <% @region.each do |region| %>
-<% k=0 %> </span>
-   <%= region.name %>
-    <% region.communes.each do |commune|%>   
-      <%= commune.name %> 
-</li>
-    <% commune.fokontanies.each do |fokontany| %>
-    <% fokontany.recensements.each do |recensement|
-    k += recensement.votes.count %>
-
-     <% end %>      
-    <% end %>
+<% @region.each do |region| %>
+    <% k=0 %> 
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <%= region.name %>
+        <% region.communes.each do |commune|%>   
+          <% commune.name %> 
+            <% commune.fokontanies.each do |fokontany| %>
+              <% fokontany.recensements.each do |recensement|%>
+          <% k += recensement.votes.count %>     
+              <% end %>      
+            <% end %>
+        <% end %>
+          <span class="badge badge-primary badge-pill"><%= k %></span>
+    </li>
+  </ul>
 <% end %>
-    <%= k %></span>
-<% end %>
-</ul>
-
 
 		
 
