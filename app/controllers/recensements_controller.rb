@@ -19,22 +19,29 @@ class RecensementsController < ApplicationController
     # @recensement = Fokontany.find(id: @recensements.fokontany_id)
   end
 
+  def new
+    @admin = Admin.find_by(id: params[:id])
+    @recensement = Recensement.new
+  end
+
   def create
+    @fokontany = Fokontany.find(params[:fokontany_id])
     @recensement = Recensement.all
     @recensement.each do |recensement|
       if recensement.cin == params[:cin]
         flash[:danger] = "Habitant déjà éxisté"
         render "new"
+        break
       end
     end
     
   	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin],
       pere: params[:nom_pere], mere: params[:nom_mere], logement: params[:logement],
-      travail: params[:travail], contact: params[:contact], fokontany: current_admin.fokontany)
+      travail: params[:travail], contact: params[:contact], fokontany: @fokontany)
   	if @recensement.save
-  		redirect_to "/recensements"
+  		redirect_to fokontany_recensements_path(@fokontany.id)
   	else
-  		render "new"
+      render "new"
   	end
   end
 
@@ -62,11 +69,12 @@ class RecensementsController < ApplicationController
   def testes
     @recensements = Recensement.find_by(id: params[:id])
     if admin_signed_in?
-      # if current_admin.fokontany.name == @recensement.fokontany.name
+      if current_admin.fokontany.name == @recensement.fokontany.name
         return true
       else
         redirect_to root_path
       end
+    end
   end
 
 end
