@@ -5540,7 +5540,8 @@ button.bg-dark:focus {
 .d-flex {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
-  display: flex !important; }
+  display: flex !important;
+}
 
 .d-inline-flex {
   display: -webkit-inline-box !important;
@@ -9979,4 +9980,8 @@ textarea.form-control {
 
 a{
   text-decoration: none!important;
+}
+
+#cont{
+  background-color: rgba(39, 39, 39, 0.5);
 }

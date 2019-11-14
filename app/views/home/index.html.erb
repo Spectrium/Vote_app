@@ -171,7 +171,7 @@
     <section class="ftco-section services-section">
       <h1 class="text-center">Liste des Candidats </h1>
         <div class="container">
-          <div class="d-flex">
+          <div class="d-flex" id="cont">
             <% if @liste.length != 0 %>
               <% @liste.each do |candidat| %>
                 <div class="card mr-2" style="width: 18rem;height: 27rem;">
@@ -179,7 +179,7 @@
                   <div class="card-body">
                     <h5 class="card-title"><%=candidat.full_name%></h5>
                     <p class="card-text" id="scroll"><%=candidat.description%></p>
-                    <p > <span class="btn btn-primary"><%= candidat.votes.count %></span> 
+                    <p> <span class="btn btn-primary"><%= candidat.votes.count %></span> 
                         <span class="btn btn-primary">
                           <%if @total != 0%>
                               <%= (candidat.votes.count * 100)/@total %> %
