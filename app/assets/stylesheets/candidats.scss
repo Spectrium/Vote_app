@@ -20,5 +20,42 @@ p#scroll{
  }
 
  #foot{
-     background-color: black;
+     background-image: url("nav-bar.jpg");
+     background-position-y: 29em;
+     background-size: cover;
  }
+
+ .whi{
+     color:white!important;
+ }
+
+ #image{
+     background-image: url("logo.png");
+     width: 4em;
+     margin-right: 2.5em;
+ }
+
+ .logo{
+     width:3em;
+     margin-right: 3em;
+ }
+
+ div#shadow{
+     box-shadow: 0px -6px 23px;
+ }
+
+section#dark-back{
+    background-color: rgba(56, 56, 56, 0.5);
+}
+
+.d-flex{
+    padding: 2em;
+    padding-top: 4em;
+    padding-bottom: 4em;
+    border-radius: 4em;
+}
+
+#black{
+    background-color: rgba(0, 0, 0, 0.541);
+
+}
