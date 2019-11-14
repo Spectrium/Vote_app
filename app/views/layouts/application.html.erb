@@ -32,16 +32,25 @@
               </li>
             <% end %>
             <% if Time.now.to_i >= @date.debut_vote.to_i && Time.now.to_i <= @date.fin_vote.to_i %>
+            <% end %>
+          <% end %>
               <li class="nav-item">
                 <a class="nav-link" href="<%= verification_path %>">Vote</a>
               </li>
-            <% end %>
-          <% end %>
           <li class="nav-item ">
             <a class="nav-link" href="<%= regions_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Region</a>
           </li>
            <li class="nav-item ">
             <a class="nav-link" href="<%= recensements_affiche_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Liste des inscrits</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Résultat de vote
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="<%= result_rg_path %>">Regional</a>
+              <a class="dropdown-item" href="<%= result_cmn_path %>">Communale</a>
+            </div>
           </li>
           <% if user_signed_in? %>
             <li class="nav-item ">
@@ -50,26 +59,27 @@
             <li class="nav-item ">
               <a class="nav-link" href="<%= sign_user_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashbord</a>
             </li>
-          <% end %>
             <li class="nav-item ">
-              <a class="nav-link" href="<%= new_recensement_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Ajouter une personne</a>
+              <a class="nav-link" href="<%= destroy_user_session_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" data-method="delete">Se deconnecter</a>
             </li>
-          
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Résultat de vote
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="<%= result_rg_path %>">Regional</a>
-            <a class="dropdown-item" href="<%= result_cmn_path %>">Communale</a>
-          </div>
+          <% end %>          
+          <%  if admin_signed_in?%>
+            <li class="nav-item ">
+              <a class="nav-link" href="<%= admin_path(current_admin.id) %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Dashbord</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="<%= destroy_admin_session_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" data-method="delete">Se deconnecter</a>
+            </li>
+
+          <% end %>
         </ul>
       </div>
 
       <%=form_tag recherches_path , class:"form-inline my-2 my-lg-0" ,method:'get' do%>
         <input type="text" class="search form-control mr-sm-2" name="find" placeholder="Search...">
         <input type="submit" class="btn btn-outline-success my-2 my-sm-0">
-      <%end%>       
+      <%end%>     
+        
 
     </nav>
     <%= yield %>

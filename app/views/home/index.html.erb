@@ -168,31 +168,32 @@
 	  <% end %>
   <% end %>
 
-    <section class="ftco-section services-section" id="dark-back">
-        <h1 class="text-center" id="text">Liste des Candidat </h1>
-      <div class="container" id="black">
-        <div class="d-flex">
-            <% @liste.each do |candidat| %>
-              <div class="card mr-2" style="width: 18rem;height: 27rem;">
-                <img src="http://scd.rfi.fr/sites/filesrfi/dynimagecache/0/0/3500/1977/1024/578/sites/images.rfi.fr/files/aef_image/2018-09-07t192646z_171278973_rc12acc37310_rtrmadp_3_usa-election-obama_0.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title"><%=candidat.full_name%></h5>
-                  <p class="card-text" id="scroll"><%=candidat.description%></p>
-                  <p > <span class="btn btn-primary" class="whi"><%= candidat.votes.count %></span> 
-                      <span class="btn btn-primary" class="whi">
-                        <%if @total != 0%>
-                            <%= (candidat.votes.count * 100)/@total %> %
-                        <%else%>
-                            0%
-                        <%end %>
-                      </span> 
-                  </p>  
+    <section class="ftco-section services-section">
+      <h1 class="text-center">Liste des Candidats </h1>
+        <div class="container">
+          <div class="d-flex">
+            <% if @liste.length != 0 %>
+              <% @liste.each do |candidat| %>
+                <div class="card mr-2" style="width: 18rem;height: 27rem;">
+                  <img src="http://scd.rfi.fr/sites/filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/2011-02-17T115648Z_1261307332_GM1E72H1J9L01_RTRMADP_3_MADAGASCAR-RAVALOMANANA-SAFRICA_0_0.JPG" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%=candidat.full_name%></h5>
+                    <p class="card-text" id="scroll"><%=candidat.description%></p>
+                    <p > <span class="btn btn-primary"><%= candidat.votes.count %></span> 
+                        <span class="btn btn-primary">
+                          <%if @total != 0%>
+                              <%= (candidat.votes.count * 100)/@total %> %
+                          <%else%>
+                              0%
+                          <%end %>
+                        </span> 
+                    </p>  
+                  </div>
                 </div>
-              </div>
+              <% end %>
             <% end %>
           </div>
         </div>
-      </div>
     </section>
     <!--    
         <% @date = Daty.last %>

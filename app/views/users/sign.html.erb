@@ -1,7 +1,32 @@
-<p>Bienvenue dans la page d'administrateur !!!</p>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Bienvenue dans la page d'administrateur</h1>
+</div>
+	
+
 <%  if user_signed_in?%>
-	<%= link_to "Date d'éléction", new_daty_path %><br><br>
-	<%= link_to "Se deconnecter", "/users/sign_out",method: :delete %>
+
+
+<div id="notfound">
+<div class="notfound">
+
+<h2> 
+<%= link_to "Date d'éléction", new_daty_path %><br><br>
+<%= link_to "Se deconnecter", "/users/sign_out",method: :delete %>
+
+</h2>
+
+</div>
+		
 <% else %>
-	<%= link_to "Se connecter", new_user_session_path %>
+
+<div id="notfound">
+<div class="notfound">
+
+<%= link_to "Se connecter", new_user_session_path, class: "btn tbn-primary"%>
+
+</div>
+		
+
+   
 <% end %>

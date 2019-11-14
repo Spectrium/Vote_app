@@ -1,0 +1,20 @@
+<h1>A propos du responsable dans le Fokontany : </h1>
+
+<div class="card">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Nom : <%= @admin.name %></li>
+    <% if @admin.region_id != nil %>
+    	<li class="list-group-item">Region : <%= @admin.region.name %></li>
+    <% end %>
+    <% if @admin.commune_id != nil %>
+    	<li class="list-group-item">Commune : <%= @admin.commune.name %></li>
+    <% end %>
+    <% if @admin.fokontany_id != nil %>
+    	<li class="list-group-item">Fokontany : <%= @admin.fokontany.name %></li>
+    <% end %>
+    <li class="list-group-item">Email : <%= @admin.email %></li>
+  </ul>
+<a href="<%= edit_admin_path(@admin.id) %>"><i class="fa fa-edit"></i>Editer</a></div><br><br>
+<% if @admin.fokontany_id != nil %>
+	<a class="nav-link" href="<%= new_fokontany_recensement_path(@admin.fokontany.id) %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Ajouter une personne</a>
+<% end %>
