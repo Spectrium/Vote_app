@@ -1,18 +1,16 @@
 class RecensementsController < ApplicationController
+
   before_action :testes, except: [:index, :affiche]
 
   def index
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
 
-	  @q = @fokontany.recensements.search(params[:q])
-    @people = @q.result
+	  @people = @fokontany.recensements
+    
   end
 
   def affiche
-    @recensement = Recensement.all
-
-    @q = @recensement.search(params[:q])
-    @people = @q.result
+    @recensement = Recensement.all.order(full_name: :asc)
   end
 
   def show
@@ -21,20 +19,29 @@ class RecensementsController < ApplicationController
     # @recensement = Fokontany.find(id: @recensements.fokontany_id)
   end
 
+  def new
+    @admin = Admin.find_by(id: params[:id])
+    @recensement = Recensement.new
+  end
+
   def create
+    @fokontany = Fokontany.find(params[:fokontany_id])
     @recensement = Recensement.all
     @recensement.each do |recensement|
       if recensement.cin == params[:cin]
         flash[:danger] = "Habitant déjà éxisté"
         render "new"
+        break
       end
     end
     
-  	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_admin.fokontany)
+  	@recensement = Recensement.new(full_name: params[:full_name], cin: params[:cin],
+      pere: params[:nom_pere], mere: params[:nom_mere], logement: params[:logement],
+      travail: params[:travail], contact: params[:contact], fokontany: @fokontany)
   	if @recensement.save
-  		redirect_to "/recensements"
+  		redirect_to fokontany_recensements_path(@fokontany.id)
   	else
-  		render "new"
+      render "new"
   	end
   end
 
@@ -43,7 +50,9 @@ class RecensementsController < ApplicationController
   end
 
   def update
-  	@recensement = Recensement.update(full_name: params[:full_name], cin: params[:cin], contact: params[:contact], fokontany: current_admin.fokontany)
+  	@recensement = Recensement.update(full_name: params[:full_name], cin: params[:cin],
+      pere: params[:nom_pere], mere: params[:nom_mere], logement: params[:logement],
+      travail: params[:travail], contact: params[:contact], fokontany: current_admin.fokontany)
   	if @recensement.save
   		redirect_to "/recensements"
   	else
@@ -60,11 +69,12 @@ class RecensementsController < ApplicationController
   def testes
     @recensements = Recensement.find_by(id: params[:id])
     if admin_signed_in?
-      # if current_admin.fokontany.name == @recensement.fokontany.name
+      if current_admin.fokontany.name == @recensement.fokontany.name
         return true
       else
         redirect_to root_path
       end
+    end
   end
 
 end

@@ -1,11 +1,15 @@
 
 <% @commune.each do |commune|%>
-	<% k=0 %>
-    <%= commune.name %>
-    <% commune.fokontanies.each do |fokontany| %>
-	    <% fokontany.recensements.each do |recensement|
-		   k += recensement.votes.count %>
-	    <% end %>
-	<% end %>
-	<%= k %>
+  <% k=0 %>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <%= commune.name %>
+          <% commune.fokontanies.each do |fokontany| %>
+            <% fokontany.recensements.each do |recensement|%>
+              <% k += recensement.votes.count %>
+            <% end %>
+          <% end %>
+        <span class="badge badge-primary badge-pill"><%= k %></span>
+      </li>
+    </ul>
 <% end %>
