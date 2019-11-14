@@ -34,7 +34,8 @@ class VotesController < ApplicationController
 	end
 
 	def validation
-		@@code = rand(999999)
+		@@code = rand(100000..999999)
+		@@electeur.update(code_vote: @@code)
 		puts "**************************"
 		puts @@code
 		puts "**************************"
@@ -43,13 +44,18 @@ class VotesController < ApplicationController
 	def valider
 		@electeur = Recensement.all
 		test = 0
-		@eleceur.each do |elect|
-			if elect.code_vote == params[:code_de_vérification]
+		@electeur.each do |elect|
+			if elect.code_vote.to_i == params[:code_de_vérification].to_i
 				test = 1
 				break
 			else
 				test = 0
 			end
+
+		puts "**************************"
+		puts elect.code_vote.to_i
+		puts params[:code_de_vérification].to_i
+		puts "************************"
 		end
 		if test == 1 
 			redirect_to new_vote_path
