@@ -7,7 +7,7 @@ class CandidatsController < ApplicationController
 	end
 
 	def show
-		
+		@candidat = Candidat.find(params[:id])
 	end
 
 	def new
@@ -24,21 +24,18 @@ class CandidatsController < ApplicationController
 	end
 
 	def edit
-		@candidat = Candidat.find(id: params[:id])
+		@candidat = Candidat.find(params[:id])
 	end
 
 	def update
-		@candidat = Candidat.update(full_name: params[:full_name], parti: params[:parti], description: params[:description])
-		if @candidat.save
-			redirect_to "/"
-		else
-			render "edit"
-		end
+		@candidat = Candidat.find(params[:id])
+		@candidat.update(full_name: params[:full_name], parti: params[:parti], description: params[:description])
+		redirect_to "/"
 	end
 
 	def destroy
-		@candidat = Candidat.find(id: params[:id])
-		@candidat.vote.destroy_all
+		@candidat = Candidat.find(params[:id])
+		@candidat.votes.destroy_all
 		@candidat.destroy
 		redirect_to "/"
 	end
