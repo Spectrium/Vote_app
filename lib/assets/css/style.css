@@ -9028,7 +9028,7 @@ h1, h2, h3, h4, h5,
   margin: 0 auto; }
 
 .services-section {
-  background-image: url("https://i.ytimg.com/vi/sc8RpRztBIc/maxresdefault.jpg");
+  background-image: url("https://www.gffm.fr/wp-content/uploads/drapeau-3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -9972,7 +9972,7 @@ textarea.form-control {
 }
 
 .sous-title{
-  margin-bottom: 3em;
+  margin-bottom: 0em;
   font-size: 1.5em;
   transition: transform .2s; /* Animation */
 }
