@@ -1,7 +1,6 @@
 class CandidatsController < ApplicationController
-
-	before_action :authenticate_user!
-	before_action :test_user
+	before_action :authenticate_user!,except: [:index]
+	before_action :test_user,except: [:index]
 
 	def index
 		@candidat = Candidat.all
@@ -62,5 +61,15 @@ class CandidatsController < ApplicationController
 		else
 			redirect_to root_path
 		end		
+	end
+	private
+
+	def daty
+		@date = Daty.last
+		if @date.debut_vote >= Time.now || @date.fin_vote <= Time.now
+			return true
+		else
+			redirect_to root_path
+		end
 	end
 end

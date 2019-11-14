@@ -14668,3 +14668,1852 @@ Processing by RecensementsController#index as HTML
   Rendered recensements/index.html.erb within layouts/application (8.1ms)
 Completed 200 OK in 74ms (Views: 69.8ms | ActiveRecord: 0.5ms)
 
+  [1m[36mDaty Load (0.8ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.6ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.8ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.8ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.8ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (1.3ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.6ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.7ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (1.0ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.7ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.7ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+Started POST "/daties" for ::1 at 2019-11-14 23:37:31 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by DatiesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"I1v2HdO6OrrY2kMLkZ7xBPeU+69ScVSNO1dl8i9rAfROYQypbELHJcibJwmOJGs/usbevkiDpR2SH8rVlgCWMg==", "debut_propagande"=>"2019-11-14", "debut_propagande_time"=>"19:00", "fin_propagande"=>"2019-11-16", "fin_propagande_time"=>"15:25", "debut_vote"=>"2019-11-16", "debut_vote_time"=>"04:05", "fin_vote"=>"2019-11-16", "fin_vote_time"=>"23:09"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/daties_controller.rb:25
+  [1m[36mDaty Create (0.6ms)[0m  [1m[32mINSERT INTO "daties" ("debut_propagande", "fin_propagande", "debut_vote", "fin_vote", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["debut_propagande", "2019-11-14 19:00:00"], ["fin_propagande", "2019-11-16 15:25:00"], ["debut_vote", "2019-11-16 04:05:00"], ["fin_vote", "2019-11-16 23:09:00"], ["created_at", "2019-11-14 20:37:32.173106"], ["updated_at", "2019-11-14 20:37:32.173106"]]
+  ↳ app/controllers/daties_controller.rb:25
+  [1m[35m (18.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/daties_controller.rb:25
+Redirected to http://localhost:3000/
+Completed 302 Found in 50ms (ActiveRecord: 25.6ms)
+
+
+Started GET "/" for ::1 at 2019-11-14 23:37:32 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.7ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:173
+  Rendered home/index.html.erb within layouts/application (12.3ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 6213ms (Views: 6129.2ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-14 23:37:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-14 23:37:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mDaty Load (0.7ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mDaty Load (0.7ms)[0m  [1m[34mSELECT "daties".* FROM "daties"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (1.1ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 1]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.8ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 2]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.4ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 3]]
+  [1m[35m (9.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.4ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 4]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.8ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 5]]
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.4ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 6]]
+  [1m[35m (9.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 7]]
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.7ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 8]]
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 9]]
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.4ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 10]]
+  [1m[35m (9.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.7ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 11]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 12]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 13]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.7ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 14]]
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 15]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 16]]
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.7ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 17]]
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 18]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 19]]
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.6ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 20]]
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 21]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 22]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.8ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 23]]
+  [1m[35m (7.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 24]]
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 25]]
+  [1m[35m (10.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.7ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 26]]
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.4ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 27]]
+  [1m[35m (9.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 28]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.6ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 29]]
+  [1m[35m (8.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.2ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 30]]
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 31]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.7ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 32]]
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 33]]
+  [1m[35m (9.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDaty Destroy (0.3ms)[0m  [1m[31mDELETE FROM "daties" WHERE "daties"."id" = $1[0m  [["id", 34]]
+  [1m[35m (10.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/candidats" for ::1 at 2019-11-14 23:40:55 +0300
+Processing by CandidatsController#index as HTML
+Completed 401 Unauthorized in 38ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-11-14 23:40:56 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (58.4ms)
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 217ms (Views: 191.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-14 23:40:56 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-14 23:49:45 +0300
+Started GET "/js/script.js" for ::1 at 2019-11-14 23:49:45 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.5ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/views/home/index.html.erb:156
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/views/home/index.html.erb:159
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:173
+  Rendered home/index.html.erb within layouts/application (8.6ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 135ms (Views: 97.1ms | ActiveRecord: 14.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-14 23:53:52 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.6ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:147
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 178ms (Views: 123.5ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-14 23:53:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-14 23:53:53 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:01:12 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.5ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 146ms (Views: 131.3ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:01:12 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:01:13 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:30:16 +0300
+  [1m[35m (25.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/alymiratana/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (55.1ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (65.8ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (46.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (4.7ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 2747ms (Views: 2321.3ms | ActiveRecord: 250.2ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:30:20 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:30:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:30:32 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.4ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 139ms (Views: 126.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:30:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:31:28 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.2ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 136ms (Views: 121.7ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:31:28 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:31:29 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/recensements/initialisation" for ::1 at 2019-11-15 00:31:30 +0300
+Processing by RecensementsController#show as HTML
+  Parameters: {"id"=>"initialisation"}
+Started GET "/recensements/favicon.svg" for ::1 at 2019-11-15 00:31:30 +0300
+Processing by RecensementsController#show as SVG
+  Parameters: {"id"=>"favicon"}
+  [1m[36mRecensement Load (54.9ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:81
+  [1m[36mRecensement Load (45.8ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:81
+  [1m[36mCACHE Recensement Load (0.0ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:17
+Completed 404 Not Found in 86ms (ActiveRecord: 62.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recensement with 'id'=initialisation):
+  
+app/controllers/recensements_controller.rb:17:in `show'
+  [1m[36mCACHE Recensement Load (0.0ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:17
+Completed 404 Not Found in 97ms (ActiveRecord: 92.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recensement with 'id'=favicon):
+  
+app/controllers/recensements_controller.rb:17:in `show'
+Started GET "/" for ::1 at 2019-11-15 00:32:33 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.5ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 189ms (Views: 137.1ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:32:33 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:32:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:32:35 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.2ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (2.8ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 165ms (Views: 150.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:32:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/recensements/initialisation" for ::1 at 2019-11-15 00:32:37 +0300
+Processing by RecensementsController#show as HTML
+  Parameters: {"id"=>"initialisation"}
+  [1m[36mRecensement Load (0.3ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:82
+  [1m[36mCACHE Recensement Load (0.0ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:17
+Completed 404 Not Found in 18ms (ActiveRecord: 8.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recensement with 'id'=initialisation):
+  
+app/controllers/recensements_controller.rb:17:in `show'
+Started GET "/" for ::1 at 2019-11-15 00:33:35 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.4ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 181ms (Views: 134.2ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:33:35 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:33:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:33:38 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.8ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (3.8ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 152ms (Views: 136.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:33:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/recensements/initialisation" for ::1 at 2019-11-15 00:33:40 +0300
+Processing by RecensementsController#show as HTML
+  Parameters: {"id"=>"initialisation"}
+  [1m[36mRecensement Load (0.4ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:82
+  [1m[36mCACHE Recensement Load (0.0ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:17
+Completed 404 Not Found in 15ms (ActiveRecord: 4.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recensement with 'id'=initialisation):
+  
+app/controllers/recensements_controller.rb:17:in `show'
+  [1m[36mRecensement Load (9.4ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+Started GET "/" for ::1 at 2019-11-15 00:35:06 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.2ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (1.3ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (3.0ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 175ms (Views: 116.9ms | ActiveRecord: 23.9ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:35:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:35:07 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:35:09 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.7ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.4ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 156ms (Views: 139.6ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:35:09 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/recensements/initialisation" for ::1 at 2019-11-15 00:35:10 +0300
+Processing by RecensementsController#show as HTML
+  Parameters: {"id"=>"initialisation"}
+  [1m[36mRecensement Load (0.8ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:82
+  [1m[36mCACHE Recensement Load (0.0ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:17
+Completed 404 Not Found in 19ms (ActiveRecord: 6.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recensement with 'id'=initialisation):
+  
+app/controllers/recensements_controller.rb:17:in `show'
+Started GET "/" for ::1 at 2019-11-15 00:39:20 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.1ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.3ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (4.2ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 179ms (Views: 132.7ms | ActiveRecord: 17.7ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:39:21 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:39:22 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:39:24 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.2ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.2ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (3.7ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 141ms (Views: 129.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:39:24 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/recensements/initialisation" for ::1 at 2019-11-15 00:39:25 +0300
+Processing by RecensementsController#show as HTML
+  Parameters: {"id"=>"initialisation"}
+  [1m[36mRecensement Load (0.8ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:80
+  [1m[36mCACHE Recensement Load (0.0ms)[0m  [1m[34mSELECT  "recensements".* FROM "recensements" WHERE "recensements"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:17
+Completed 404 Not Found in 21ms (ActiveRecord: 6.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Recensement with 'id'=initialisation):
+  
+app/controllers/recensements_controller.rb:17:in `show'
+Started GET "/" for ::1 at 2019-11-15 00:40:38 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.4ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (2.5ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 158ms (Views: 138.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:40:38 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:40:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-11-15 00:40:40 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.3ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.3ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE Daty Load (0.1ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 172ms (Views: 155.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:40:41 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PUT "/recensements/initialisation" for ::1 at 2019-11-15 00:40:42 +0300
+Processing by RecensementsController#initialisation as HTML
+  Parameters: {"authenticity_token"=>"Y17Qj/11RRG8g+XzRXMbUWInpHaPbZzcxcalK/Woc3dLIlsnQGIhQKdoo+OQILSe/ISBf0EzTFei5xnAnxyiNA=="}
+  [1m[36mRecensement Load (0.6ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ app/controllers/recensements_controller.rb:66
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "532053395034"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "2650489275"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (21.5ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.704045"], ["id", 2]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (12.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "832044341022"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "2134883262"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.743123"], ["id", 3]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "474031102373"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "8345643681"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.3ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.754267"], ["id", 5]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "971139824455"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "2175351777"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.768517"], ["id", 6]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "934514019039"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "9058459467"], ["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.780621"], ["id", 7]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "213901344160"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "5321722981"], ["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.3ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.802485"], ["id", 8]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "153138931591"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "9686981506"], ["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.814577"], ["id", 9]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "101845270812"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "1678503730"], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.3ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.833317"], ["id", 10]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "372669141750"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "8744047619"], ["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.3ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.845916"], ["id", 13]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "878004261881"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "8715913251"], ["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.853815"], ["id", 14]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "220477577421"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "1548200428"], ["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.3ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.865512"], ["id", 15]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "025124328965"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "0310022542"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (1.1ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.877455"], ["id", 16]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "032015147210"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "0310020250"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.888064"], ["id", 17]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "380907815838"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "9114656414"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.5ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.900277"], ["id", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (15.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "321035429768"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "3651113303"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.921431"], ["id", 4]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (16.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "120148003159"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "0320015478"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.943963"], ["id", 18]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "613811466497"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "3680163600"], ["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (2.6ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.955705"], ["id", 12]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["cin", "495715744611"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 AND "recensements"."id" != $2 LIMIT $3[0m  [["contact", "2082945127"], ["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[36mRecensement Update (0.4ms)[0m  [1m[33mUPDATE "recensements" SET "has_voting" = $1, "updated_at" = $2 WHERE "recensements"."id" = $3[0m  [["has_voting", false], ["updated_at", "2019-11-14 21:40:42.980246"], ["id", 11]]
+  ↳ app/controllers/recensements_controller.rb:67
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/recensements_controller.rb:67
+Redirected to http://localhost:3000/
+Completed 302 Found in 309ms (ActiveRecord: 187.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-15 00:40:42 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.2ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.3ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:113
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:145
+  Rendered home/index.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 139ms (Views: 129.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 00:40:43 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[36mRecensement Load (0.8ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m

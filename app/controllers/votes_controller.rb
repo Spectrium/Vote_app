@@ -1,7 +1,5 @@
 class VotesController < ApplicationController
-	# before_action :daty
-	# before_action :validat,only: [:reset]
-	# after_action :validat ,only: [:verifiee]
+	before_action :daty
 	def new
 		@candidat = Candidat.all
 		# @@elect = @@electeur
@@ -11,7 +9,7 @@ class VotesController < ApplicationController
 	def create
 		@candidat = Candidat.find_by(id: params[:candidat_id])
 		@@electeur.update(has_voting: true, code_vote: '$')
-		@vote = Vote.new(candidat: @candidat, recensement: @@electeur)
+		@vote = Vote.create(candidat: @candidat, recensement: @@electeur)
 		redirect_to root_path
 	end
 
@@ -51,11 +49,6 @@ class VotesController < ApplicationController
 			else
 				test = 0
 			end
-
-		puts "**************************"
-		puts elect.code_vote.to_i
-		puts params[:code_de_vérification].to_i
-		puts "************************"
 		end
 		if test == 1 
 			redirect_to new_vote_path

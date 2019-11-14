@@ -11,9 +11,17 @@ class DatiesController < ApplicationController
   end
 
   def create
-    @date = Daty.new(debut_propagande: params[:debut_propagande]+params[:debut_propagande_time], fin_propagande: params[:fin_propagande]+params[:fin_propagande_time],
-    debut_vote: params[:debut_vote]+params[:debut_vote_time], fin_vote: params[:fin_vote]+params[:fin_vote_time])
+    debut_prop = params[:debut_propagande].to_time + calcul_time(params[:debut_propagande_time])
+    fin_prop = params[:fin_propagande].to_time + calcul_time(params[:fin_propagande_time])
+    debut_vote = params[:debut_vote].to_time + calcul_time(params[:debut_vote_time])
+    fin_vote = params[:fin_vote].to_time + calcul_time(params[:fin_vote_time])
+    @date = Daty.new(debut_propagande: debut_prop, fin_propagande: fin_prop,debut_vote: debut_vote, fin_vote: fin_vote)
     if @date.save
+      @recensement = Recensement.all
+      recense = []
+      @recensement.each do |recensement|
+        recensement.update(has_voting: false)
+      end
       redirect_to "/"
     else
       render "new"
@@ -25,8 +33,11 @@ class DatiesController < ApplicationController
   end
 
   def update
-    @date = Daty.update(debut_propagande: params[:debut_propagande]+params[:debut_propagande_time], fin_propagande: params[:fin_propagande]+params[:fin_propagande_time],
-    debut_vote: params[:debut_vote]+params[:debut_vote_time], fin_vote: params[:fin_vote]+params[:fin_vote_time])
+    debut_prop = params[:debut_propagande].to_time + calcul_time(params[:debut_propagande_time])
+    fin_prop = params[:fin_propagande].to_time + calcul_time(params[:fin_propagande_time])
+    debut_vote = params[:debut_vote].to_time + calcul_time(params[:debut_vote_time])
+    fin_vote = params[:fin_vote].to_time + calcul_time(params[:fin_vote_time])
+    @date = Daty.new(debut_propagande: debut_prop, fin_propagande: fin_prop,debut_vote: debut_vote, fin_vote: fin_vote)
     if @date.save
       redirect_to "/"
     else
@@ -59,6 +70,10 @@ class DatiesController < ApplicationController
     else
       redirect_to root_path
     end   
+  end
+  def calcul_time(valeur)
+    time = valeur.to_time.hour * 3600+3 * 3600 + valeur.to_time.min * 60 
+    return time
   end
 
 end

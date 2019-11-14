@@ -113,63 +113,35 @@
 <% @date = Daty.last %>
 	<% if @date != nil%>
     <% if  Time.now.to_i <= @date.fin_propagande.to_i %>
-      <section class="ftco-section">
-        <div class="container">
-          <div class="row justify-content-center mb-5">
-            <div class="col-md-7 heading-section text-center ftco-animate">
-              <span class="subheading"> </span>
-                <h2 class="mb-0">Liste des candidats</h2>
-            </div>
-          </div>
-          <div class="d-flex">
-            <div class="ftco-animate">
-              <ul class="category">
-                <% @liste.each do |liste|%>
-                  <li>
-                    <a href="#"><%= liste.full_name %><br>
-                      <span class="number"></span> 
-                      <span><%= liste.description %></span>
-                        <i class="ion-ios-arrow-forward"></i>
-                    </a>
-                    <%= liste.parti %>
-                  </li>
+      <section class="ftco-section services-section">
+        <h1 class="text-center">Liste des Candidats </h1>
+          <div class="container">
+            <div class="d-flex">
+              <% if @liste.length != 0 %>
+                <% @liste.each do |candidat| %>
+                  <div class="card mr-2" style="width: 18rem;height: 27rem;">
+                    <img src="http://scd.rfi.fr/sites/filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/2011-02-17T115648Z_1261307332_GM1E72H1J9L01_RTRMADP_3_MADAGASCAR-RAVALOMANANA-SAFRICA_0_0.JPG" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"><%=candidat.full_name%></h5>
+                      <p class="card-text" id="scroll"><%=candidat.description%></p>
+                      <p > <span class="btn btn-primary"><%= candidat.votes.count %></span> 
+                          <span class="btn btn-primary">
+                            <%if @total != 0%>
+                                <%= (candidat.votes.count * 100)/@total %> %
+                            <%else%>
+                                0%
+                            <%end %>
+                          </span> 
+                      </p>  
+                    </div>
+                  </div>
                 <% end %>
-              </ul>
+              <% end %>
             </div>
           </div>
-        </div>
       </section>
 	  <% end %>
   <% end %>
-
-    <section class="ftco-section services-section">
-      <h1 class="text-center">Liste des Candidats </h1>
-        <div class="container">
-          <div class="d-flex">
-            <% if @liste.length != 0 %>
-              <% @liste.each do |candidat| %>
-                <div class="card mr-2" style="width: 18rem;height: 27rem;">
-                  <img src="http://scd.rfi.fr/sites/filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/2011-02-17T115648Z_1261307332_GM1E72H1J9L01_RTRMADP_3_MADAGASCAR-RAVALOMANANA-SAFRICA_0_0.JPG" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><%=candidat.full_name%></h5>
-                    <p class="card-text" id="scroll"><%=candidat.description%></p>
-                    <p > <span class="btn btn-primary"><%= candidat.votes.count %></span> 
-                        <span class="btn btn-primary">
-                          <%if @total != 0%>
-                              <%= (candidat.votes.count * 100)/@total %> %
-                          <%else%>
-                              0%
-                          <%end %>
-                        </span> 
-                    </p>  
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
-    </section>
-    <!--    
         <% @date = Daty.last %>
         <%if @date != nil %>
     	    <%if  @date.fin_vote.to_i <= Time.now.to_i %>
@@ -182,5 +154,6 @@
     		    <p>date fin</p>
     		    <%= @date.fin_vote%>
     	    <%end%>
-    	<%end%> -->
+    	<%end%>
 </div>
+

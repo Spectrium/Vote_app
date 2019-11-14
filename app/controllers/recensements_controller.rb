@@ -1,6 +1,6 @@
 class RecensementsController < ApplicationController
 
-  before_action :testes, except: [:index, :affiche]
+  before_action :testes, except: [:index, :affiche, :initialisation]
 
   def index
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
