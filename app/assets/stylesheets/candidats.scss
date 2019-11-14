@@ -57,6 +57,20 @@ section#dark-back{
 }
 
 #black{
-    background-color: rgba(0, 0, 0, 0.541);
+    background-color: rgba(0, 0, 0, 0.781);
 
+}
+
+.table-1{
+    background-image: rgba(71, 71, 71, 0.459);
+}
+
+.table-1:hover{
+    background-color: rgba(79, 179, 54, 0.514);
+}
+
+.table{
+    background-image: url("https://previews.123rf.com/images/roystudio/roystudio1511/roystudio151100306/48782019-old-paper-texture-background-white-grunge-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
