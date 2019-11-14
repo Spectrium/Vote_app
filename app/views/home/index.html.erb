@@ -60,7 +60,7 @@
     	<div class="container">
     		<div class="row">
     			<div class="col-md-12">
-    				<div class="category-wrap">
+    				<div class="category-wrap" id="shadow">
     					<div class="row no-gutters">
     						<div class="col-md-2">
     							<div class="top-category text-center no-border-left">
@@ -109,6 +109,32 @@
     		</div>
     	</div>
    </section>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+  		<%= image_tag  "V1.png", class:"d-block w-100",alt:"first slide" %>
+    </div>
+    <div class="carousel-item">
+    	<%= image_tag  "V2.png", class:"d-block w-100", alt:"second slide" %>
+    </div>
+    <div class="carousel-item">
+     	<%= image_tag  "V3.png", class:"d-block w-100", alt:"fird slide" %>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
 
 <% @date = Daty.last %>
 	<% if @date != nil%>
@@ -142,6 +168,35 @@
       </section>
 	  <% end %>
   <% end %>
+
+    <section class="ftco-section services-section">
+      <h1 class="text-center">Liste des Candidats </h1>
+        <div class="container">
+          <div class="d-flex" id="cont">
+            <% if @liste.length != 0 %>
+              <% @liste.each do |candidat| %>
+                <div class="card mr-2" style="width: 18rem;height: 27rem;">
+                  <img src="http://scd.rfi.fr/sites/filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/2011-02-17T115648Z_1261307332_GM1E72H1J9L01_RTRMADP_3_MADAGASCAR-RAVALOMANANA-SAFRICA_0_0.JPG" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%=candidat.full_name%></h5>
+                    <p class="card-text" id="scroll"><%=candidat.description%></p>
+                    <p> <span class="btn btn-primary"><%= candidat.votes.count %></span> 
+                        <span class="btn btn-primary">
+                          <%if @total != 0%>
+                              <%= (candidat.votes.count * 100)/@total %> %
+                          <%else%>
+                              0%
+                          <%end %>
+                        </span> 
+                    </p>  
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+    </section>
+
         <% @date = Daty.last %>
         <%if @date != nil %>
     	    <%if  @date.fin_vote.to_i <= Time.now.to_i %>
@@ -157,3 +212,41 @@
     	<%end%>
 </div>
 
+  <!-- Footer -->
+  <footer class="page-footer font-small teal pt-4">
+    <!-- Footer Text -->
+    <div class="container-fluid text-center text-md-left">
+      <!-- Grid row -->
+      <div class="row">
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Footer text 1</h5>
+          <p class="footer-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita sapiente sint, nulla, nihil
+            repudiandae commodi voluptatibus corrupti animi sequi aliquid magnam debitis, maxime quam recusandae
+            harum esse fugiat. Itaque, culpa?</p>
+        </div>
+        <!-- Grid column -->
+        <hr class="clearfix w-100 d-md-none pb-3">
+        <!-- Grid column -->
+        <div class="col-md-6 mb-md-0 mb-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase font-weight-bold">Footer text 2</h5>
+          <p class="footer-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio deserunt fuga perferendis modi earum
+            commodi aperiam temporibus quod nulla nesciunt aliquid debitis ullam omnis quos ipsam, aspernatur id
+            excepturi hic.</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+    <!-- Footer Text -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" id="foot">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+    <!-- Footer -->
