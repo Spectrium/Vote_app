@@ -7929,7 +7929,7 @@ button.bg-dark:focus {
 
 .text-center {
   text-align: center !important; 
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   color: white;
 }
 
@@ -9028,7 +9028,10 @@ h1, h2, h3, h4, h5,
   margin: 0 auto; }
 
 .services-section {
-  background: linear-gradient(to right, #292929 0%, #3a3a3a 100%);
+  background-image: url("https://i.ytimg.com/vi/sc8RpRztBIc/maxresdefault.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .services {
   -moz-transition: all 0.3s ease;
