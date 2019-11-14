@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 p#scroll{
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: 9em;
 }
 

@@ -30,11 +30,11 @@
               </li>
             <% end %>
             <% if Time.now.to_i >= @date.debut_vote.to_i && Time.now.to_i <= @date.fin_vote.to_i %>
+            <% end %>
+          <% end %>
               <li class="nav-item">
                 <a class="nav-link" href="<%= verification_path %>">Vote</a>
               </li>
-            <% end %>
-          <% end %>
           <li class="nav-item ">
             <a class="nav-link" href="<%= regions_path %>" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">Region</a>
           </li>
