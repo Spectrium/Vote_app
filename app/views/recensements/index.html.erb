@@ -15,7 +15,11 @@
   <tbody class="table-1">
     <tr>
       <th scope="row"><%= i += 1%></th>
-      <td><%= link_to recensement.full_name, fokontany_recensement_path(@fokontany.id, recensement.id) %></td>
+      <% if admin_signed_in? %>
+        <td><%= link_to recensement.full_name, fokontany_recensement_path(@fokontany.id, recensement.id) %></td>
+      <% else %>
+        <td><%= recensement.full_name %></td>
+      <% end %>
       <td><%= recensement.cin %></td>
       <% if admin_signed_in? %>
         <td><%= recensement.contact %></td>
@@ -25,5 +29,3 @@
     <% end %> 
   </tbody>
 </table>
-
-
