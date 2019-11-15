@@ -106,3 +106,32 @@ section#dark-back{
 }
 }
 
+#background-admin{
+    background-image: url("background-admin.jpg");
+}
+
+.titre{
+    color: black;
+    margin-bottom:4em;
+    margin-top:2em;
+}
+
+.contenue{
+    text-align: center;
+    padding: 5em;
+
+}
+
+input#bout{
+    padding:1em;
+    font-size: 2em;
+    border-radius: 1em;
+    border-color: black;
+    background-color: transparent;
+    width: 21em;
+}
+
+input#bout:hover{
+    color: rgb(32, 136, 6);
+    border-color: rgb(9, 155, 28);
+}

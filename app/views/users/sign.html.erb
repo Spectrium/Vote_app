@@ -1,32 +1,11 @@
-
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-  <h1 class="display-4">Bienvenue dans la page d'administrateur</h1>
-</div>
-	
-
-<%  if user_signed_in?%>
-
-
-<div id="notfound">
-<div class="notfound">
-
-<h2> 
-<%= link_to "Date d'éléction", new_daty_path %><br><br>
-<%= link_to "Se deconnecter", "/users/sign_out",method: :delete %>
-
-</h2>
-
-</div>
-		
-<% else %>
-
-<div id="notfound">
-<div class="notfound">
-
-<%= link_to "Se connecter", new_user_session_path, class: "btn tbn-primary"%>
-
-</div>
-		
-
-   
-<% end %>
+<section class="contenue" id="background-admin">
+    <h1 class="titre">Bienvenue dans la page d'administrateur</h1>
+    <%  if user_signed_in?%>
+          <h2> 
+            <%= link_to "Date d'éléction", new_daty_path %><br><br>
+            <%= link_to "Se deconnecter", "/users/sign_out",method: :delete %>
+          </h2>    
+        <% else %>
+         <%= button_to  "connecter", new_user_session_path,id:"bout" %>
+    <% end %>
+</section>
