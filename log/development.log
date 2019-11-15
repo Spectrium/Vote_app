@@ -14671,6 +14671,7 @@ Completed 200 OK in 74ms (Views: 69.8ms | ActiveRecord: 0.5ms)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 39fdc8663e1c62c980af7e5e520d03f27f20f3bf
 =======
 Started GET "/js/script.js" for ::1 at 2019-11-14 14:59:31 +0100
@@ -43797,3 +43798,5 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+=======
+>>>>>>> development
