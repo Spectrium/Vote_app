@@ -37,8 +37,9 @@ p#scroll{
  }
 
  .logo{
-     width:3em;
-     margin-right: 3em;
+     position: absolute;
+     width:9em;
+    left: -27px;
  }
 
  div#shadow{
@@ -77,5 +78,14 @@ section#dark-back{
 
 .shadow-card{
     box-shadow: 0px 3px 6px 2px #135a50;
+}
+
+#marge{
+    margin-left: 7em;
+}
+
+#dark-sect{
+    background-color: rgba(46, 46, 46, 0.596);
+    padding: 2em;
 }
 
