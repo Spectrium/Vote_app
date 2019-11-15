@@ -44,12 +44,6 @@ a.nav-link:hover{
   box-shadow: 3px 1px 37px;
 }
 
-body#back-sign{
-  background-image: url('image_7.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: center;
-}
 
 .nav-link{
     margin-right: 3px;
