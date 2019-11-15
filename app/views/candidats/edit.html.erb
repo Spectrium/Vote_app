@@ -1,3 +1,20 @@
+<h1>Modification d'un candidat</h1>
+
+<h3>Profil actuel</h3>
+<%if @candidat.profil.attached?%>
+	<%= image_tag @candidat.profil, alt: 'profil' %>
+	<%= form_tag candidat_profils_path(@candidat.id), multipart: true do %>
+		<%= file_field_tag :profil %>
+		<%= submit_tag "mettre à jour" %>
+	<% end %>
+<%else%>
+	<p>=== Il n'y a pas encore de profil lié à cet candidat ===</p>
+	<%= form_tag candidat_profils_path(@candidat.id), multipart: true do %>
+		<%= file_field_tag :profil %>
+		<%= submit_tag "mettre à jour" %>
+	<% end %>
+<%end%>
+
 <%= form_tag url_for(action:'update'), method:'put' do %>
 	<input type="text" name="full_name" value="<%= @candidat.full_name %>"><br>
 	<input type="text" name="parti" value="<%= @candidat.parti %>"><br>

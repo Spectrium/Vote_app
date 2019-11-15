@@ -142,15 +142,19 @@
       <section class="ftco-section services-section">
         <h1 class="text-center">Liste des Candidats </h1>
           <div class="container">
-            <div class="d-flex">
+            <div class="d-flex" id="cont">
               <% if @liste.length != 0 %>
                 <% @liste.each do |candidat| %>
                   <div class="card mr-2" style="width: 18rem;height: 27rem;">
-                    <img src="http://scd.rfi.fr/sites/filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/2011-02-17T115648Z_1261307332_GM1E72H1J9L01_RTRMADP_3_MADAGASCAR-RAVALOMANANA-SAFRICA_0_0.JPG" class="card-img-top" alt="...">
+                    <%if candidat.profil.attached? %>
+                        <%= image_tag candidat.profil, alt:'profil', class:"image card-img-top" %>
+                    <%else%>
+                      <img src="http://scd.rfi.fr/sites/filesrfi/imagecache/rfi_16x9_1024_578/sites/images.rfi.fr/files/aef_image/2011-02-17T115648Z_1261307332_GM1E72H1J9L01_RTRMADP_3_MADAGASCAR-RAVALOMANANA-SAFRICA_0_0.JPG" class="card-img-top" alt="...">
+                    <%end%>
                     <div class="card-body">
                       <h5 class="card-title"><%=candidat.full_name%></h5>
                       <p class="card-text" id="scroll"><%=candidat.description%></p>
-                      <p > <span class="btn btn-primary"><%= candidat.votes.count %></span> 
+                      <p> <span class="btn btn-primary"><%= candidat.votes.count %></span> 
                           <span class="btn btn-primary">
                             <%if @total != 0%>
                                 <%= (candidat.votes.count * 100)/@total %> %

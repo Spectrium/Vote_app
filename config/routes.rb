@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post 'votes/valider', as: "valider"
   get 'votes/reset', as: "reset"
   get 'admins/sign', as: "sign_admin"
+  get 'fokontanies/result', as: "result_fkt"
   get 'communes/result', as: "result_cmn"
   get 'regions/result', as: "result_rg"
   get 'users/sign', as: "sign_user"
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
   resources :votes, only: [:new]
   resources :candidats do
     resources :votes, except: [:new]
+    resources :profils, only: [:create]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
