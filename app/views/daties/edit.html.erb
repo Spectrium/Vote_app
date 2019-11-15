@@ -1,15 +1,19 @@
-<%= form_tag url_for(action:'update'), method:'put' do %>
-	debut_propagande<br>
-	<input type="date" name="debut_propagande" min= <%=Time.now%>>
-	<input type="time" name="debut_propagande_time" value="00:00"><br>
-	fin_propagande<br>
-	<input type="date" name="fin_propagande" min= <%=Time.now%>>
-	<input type="time" name="fin_propagande_time" value="00:00"><br>
-	debut_vote<br>
-	<input type="date" name="debut_vote" min= <%=Time.now%>>
-	<input type="time" name="debut_vote_time" value="00:00"><br>
-	fin_vote<br>
-	<input type="date" name="fin_vote" min= <%=Time.now%>>
-	<input type="time" name="fin_vote_time" value="00:00"><br>
-	<input type="submit" value="Créer"><br>
-<%end%>
+<div class="container">
+	<div class="row">
+		<%= form_tag url_for(action:'update'), method:'put' do %>
+			debut_propagande<br>
+			<input type="date" name="debut_propagande" min= <%=Time.now%>>
+			<input type="time" name="debut_propagande_time" value="00:00"><br>
+			fin_propagande<br>
+			<input type="date" name="fin_propagande" min= <%=Time.now%>>
+			<input type="time" name="fin_propagande_time" value="00:00"><br>
+			debut_vote<br>
+			<input type="date" name="debut_vote" min= <%=Time.now%>>
+			<input type="time" name="debut_vote_time" value="00:00"><br>
+			fin_vote<br>
+			<input type="date" name="fin_vote" min= <%=Time.now%>>
+			<input type="time" name="fin_vote_time" value="00:00"><br>
+			<input type="submit" value="Créer"><br>
+		<%end%>	
+	</div>
+</div>

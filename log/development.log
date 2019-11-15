@@ -1,47 +1,3 @@
-<<<<<<< HEAD
-Started GET "/" for ::1 at 2019-11-14 15:08:28 +0100
-  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
-Processing by HomeController#index as HTML
-  [1m[36mDaty Load (0.8ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/controllers/home_controller.rb:4
-  [1m[36mCandidat Load (3.0ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
-  ↳ app/controllers/home_controller.rb:7
-  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
-  ↳ app/controllers/home_controller.rb:8
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
-  ↳ app/controllers/home_controller.rb:8
-  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
-  ↳ app/controllers/home_controller.rb:8
-  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
-  ↳ app/controllers/home_controller.rb:8
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
-  ↳ app/controllers/home_controller.rb:8
-  Rendering home/index.html.erb within layouts/application
-  [1m[36mCACHE Daty Load (0.1ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/views/home/index.html.erb:113
-  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
-  ↳ app/views/home/index.html.erb:155
-  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
-  ↳ app/views/home/index.html.erb:155
-  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
-  ↳ app/views/home/index.html.erb:155
-  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
-  ↳ app/views/home/index.html.erb:155
-  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
-  ↳ app/views/home/index.html.erb:155
-  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/views/home/index.html.erb:172
-  Rendered home/index.html.erb within layouts/application (18.3ms)
-  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
-  ↳ app/views/layouts/application.html.erb:25
-Completed 200 OK in 4947ms (Views: 4760.9ms | ActiveRecord: 34.6ms)
-
-
-Started GET "/js/script.js" for ::1 at 2019-11-14 15:08:33 +0100
-  
-ActionController::RoutingError (No route matches [GET] "/js/script.js"):
-=======
   [1m[35m (1673.0ms)[0m  [1m[35mCREATE DATABASE "voting_development" ENCODING = 'unicode'[0m
   ↳ bin/rails:9
   [1m[35m (958.0ms)[0m  [1m[35mCREATE DATABASE "voting_test" ENCODING = 'unicode'[0m
@@ -2277,7 +2233,6 @@ puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
   
 ActionController::RoutingError (No route matches [GET] "/images/company-3.jpg"):
->>>>>>> 39fdc8663e1c62c980af7e5e520d03f27f20f3bf
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -2306,14 +2261,8 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-<<<<<<< HEAD
-Started GET "/js/script.js" for ::1 at 2019-11-14 15:08:34 +0100
-  
-ActionController::RoutingError (No route matches [GET] "/js/script.js"):
-=======
   
 ActionController::RoutingError (No route matches [GET] "/images/bg_1.jpg"):
->>>>>>> 39fdc8663e1c62c980af7e5e520d03f27f20f3bf
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -2342,8 +2291,6 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
-<<<<<<< HEAD
-=======
 Started GET "/fonts/ionicons/fonts/ionicons.woff2?v=4.0.0-19" for ::1 at 2019-11-09 14:18:47 +0300
 Started GET "/fonts/flaticon/font/Flaticon.woff" for ::1 at 2019-11-09 14:18:47 +0300
 Started GET "/images/image_1.jpg" for ::1 at 2019-11-09 14:18:47 +0300
@@ -14721,6 +14668,7 @@ Processing by RecensementsController#index as HTML
   Rendered recensements/index.html.erb within layouts/application (8.1ms)
 Completed 200 OK in 74ms (Views: 69.8ms | ActiveRecord: 0.5ms)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 39fdc8663e1c62c980af7e5e520d03f27f20f3bf
 =======
@@ -32879,3 +32827,5 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+=======
+>>>>>>> development

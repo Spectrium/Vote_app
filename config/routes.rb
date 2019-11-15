@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+
   get 'votes/verification', as: "verification"
   post 'votes/verifiee', as: "verifiee"
   get 'votes/validation', as: "validation"
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'recensements/affiche'
   root 'home#index'
   
-  
+  devise_for :admins
   devise_for :users
 
   resources :daties
