@@ -16,10 +16,8 @@
   </head>
   <body>  
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">  
-      <%= image_tag  "logo.png", class:"logo" %>
-    
-        <a class="nav-link" id="marge" href="<%= root_path %>">Accueil</a>
-  
+      <a class="nav-link" href="<%= root_path %>"><%= image_tag  "logo.png", class:"logo" %></a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -35,7 +33,7 @@
             <% end %>
             <% if Time.now.to_i >= @date.debut_vote.to_i && Time.now.to_i <= @date.fin_vote.to_i %>
               <li class="nav-item">
-                <a class="nav-link" href="<%= verification_path %>">Vote</a>
+                <a class="nav-link" id="marge" href="<%= verification_path %>">Vote</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -79,14 +77,11 @@
 
           <% end %>
         </ul>
-      </div>
-
-      <%=form_tag recherches_path , class:"form-inline my-2 my-lg-0" ,method:'get' do%>
+          <%=form_tag recherches_path , class:"form-inline my-2 my-lg-0" ,method:'get' do%>
         <input type="text" class="search form-control mr-sm-2" name="find" placeholder="Search...">
         <input type="submit" class="btn btn-outline-success my-2 my-sm-0">
-      <%end%>     
-  
-
+      <%end%>   
+      </div>
     </nav>
     <%= yield %>
   </body>

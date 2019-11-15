@@ -37,10 +37,17 @@ p#scroll{
  }
 
  .logo{
-     position: absolute;
-     width:9em;
-    left: -27px;
+    position: absolute;
+    width:7em;
+    left: -13px;
+    transition: transform .2s;
+    margin: 0 auto;
+    top: -20px;
  }
+
+.logo:hover{
+    transform: scale(1.5);
+}
 
  div#shadow{
      box-shadow: 0px -6px 23px;
@@ -87,5 +94,15 @@ section#dark-back{
 #dark-sect{
     background-color: rgba(46, 46, 46, 0.596);
     padding: 2em;
+}
+
+.mr-auto, .mx-auto{
+    margin-left: 6em;
+}
+
+@media (min-width: 576px){
+.form-inline .form-control{
+    margin-left: 6em;
+}
 }
 

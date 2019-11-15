@@ -9253,6 +9253,14 @@ textarea.form-control {
 #map {
   width: 100%; }
   @media (max-width: 767.98px) {
+    .logo{
+      position: absolute;
+      width: 2em;
+      left: -13px;
+      transition: transform .2s;
+      margin: 0 auto;
+      top: -15px;
+    }
     #map {
       height: 300px; } }
 
