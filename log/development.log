@@ -50482,6 +50482,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/regions" for ::1 at 2019-11-15 10:58:49 +0100
   [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -50496,6 +50497,717 @@ Completed 200 OK in 895ms (Views: 831.4ms | ActiveRecord: 16.4ms)
 
 
 Started GET "/js/script.js" for ::1 at 2019-11-15 10:58:50 +0100
+=======
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:4
+  [1m[35m (333.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_development"[0m
+  ↳ bin/rails:4
+  [1m[35m (431.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "voting_test"[0m
+  ↳ bin/rails:4
+  [1m[35m (1150.6ms)[0m  [1m[35mCREATE DATABASE "voting_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (944.6ms)[0m  [1m[35mCREATE DATABASE "voting_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:4
+  [1m[35m (141.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (143.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8648845049267613225)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateRegions (20191105033843)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (105.3ms)[0m  [1m[35mCREATE TABLE "regions" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105033843_create_regions.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105033843"]]
+  ↳ bin/rails:4
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateCommunes (20191105034500)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (114.7ms)[0m  [1m[35mCREATE TABLE "communes" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_9f434ab280"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+)[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[35m (38.4ms)[0m  [1m[35mCREATE  INDEX  "index_communes_on_region_id" ON "communes"  ("region_id")[0m
+  ↳ db/migrate/20191105034500_create_communes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034500"]]
+  ↳ bin/rails:4
+  [1m[35m (25.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateFokontanies (20191105034821)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (149.1ms)[0m  [1m[35mCREATE TABLE "fokontanies" ("id" bigserial primary key, "name" character varying, "commune_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_132f108351"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+)[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[35m (51.3ms)[0m  [1m[35mCREATE  INDEX  "index_fokontanies_on_commune_id" ON "fokontanies"  ("commune_id")[0m
+  ↳ db/migrate/20191105034821_create_fokontanies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105034821"]]
+  ↳ bin/rails:4
+  [1m[35m (24.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateRecensements (20191105035018)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (239.4ms)[0m  [1m[35mCREATE TABLE "recensements" ("id" bigserial primary key, "full_name" character varying, "cin" character varying, "contact" character varying, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_99d0ceb6b3"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[35m (52.1ms)[0m  [1m[35mCREATE  INDEX  "index_recensements_on_fokontany_id" ON "recensements"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105035018_create_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105035018"]]
+  ↳ bin/rails:4
+  [1m[35m (23.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateUsers (20191105044852)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (164.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "nom" character varying, "is_admin" boolean, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_b3a8faedd1"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_9184d5befc"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_30f62a9966"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (50.0ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_region_id" ON "users"  ("region_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (41.1ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_commune_id" ON "users"  ("commune_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[35m (41.6ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_fokontany_id" ON "users"  ("fokontany_id")[0m
+  ↳ db/migrate/20191105044852_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105044852"]]
+  ↳ bin/rails:4
+  [1m[35m (31.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateCandidats (20191105050357)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (98.5ms)[0m  [1m[35mCREATE TABLE "candidats" ("id" bigserial primary key, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191105050357_create_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105050357"]]
+  ↳ bin/rails:4
+  [1m[35m (19.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateVotes (20191105054035)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (54.5ms)[0m  [1m[35mCREATE TABLE "votes" ("id" bigserial primary key, "recensement_id" bigint, "candidat_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_d447487f18"
+FOREIGN KEY ("recensement_id")
+  REFERENCES "recensements" ("id")
+, CONSTRAINT "fk_rails_be6e557969"
+FOREIGN KEY ("candidat_id")
+  REFERENCES "candidats" ("id")
+)[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (62.5ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_recensement_id" ON "votes"  ("recensement_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[35m (66.3ms)[0m  [1m[35mCREATE  INDEX  "index_votes_on_candidat_id" ON "votes"  ("candidat_id")[0m
+  ↳ db/migrate/20191105054035_create_votes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105054035"]]
+  ↳ bin/rails:4
+  [1m[35m (16.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeviseToUsers (20191105122129)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (315.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:7
+  [1m[35m (268.0ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:8
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:15
+  [1m[35m (70.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:40
+  [1m[35m (52.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/migrate/20191105122129_add_devise_to_users.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191105122129"]]
+  ↳ bin/rails:4
+  [1m[35m (22.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateAdmins (20191106125219)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (143.1ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "name" character varying, "region_id" bigint, "commune_id" bigint, "fokontany_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_40c6f8ed2d"
+FOREIGN KEY ("region_id")
+  REFERENCES "regions" ("id")
+, CONSTRAINT "fk_rails_0a1859b170"
+FOREIGN KEY ("commune_id")
+  REFERENCES "communes" ("id")
+, CONSTRAINT "fk_rails_f076676ad5"
+FOREIGN KEY ("fokontany_id")
+  REFERENCES "fokontanies" ("id")
+)[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (39.1ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_region_id" ON "admins"  ("region_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (41.8ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_commune_id" ON "admins"  ("commune_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[35m (54.3ms)[0m  [1m[35mCREATE  INDEX  "index_admins_on_fokontany_id" ON "admins"  ("fokontany_id")[0m
+  ↳ db/migrate/20191106125219_create_admins.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191106125219"]]
+  ↳ bin/rails:4
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateDaties (20191107163206)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (44.8ms)[0m  [1m[35mCREATE TABLE "daties" ("id" bigserial primary key, "debut_propagande" timestamp, "fin_propagande" timestamp, "debut_vote" timestamp, "fin_vote" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191107163206_create_daties.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107163206"]]
+  ↳ bin/rails:4
+  [1m[35m (16.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddHasVotingToRecensements (20191107181341)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "recensements" ADD "has_voting" boolean[0m
+  ↳ db/migrate/20191107181341_add_has_voting_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181341"]]
+  ↳ bin/rails:4
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddFullNameToCandidats (20191107181353)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "candidats" ADD "full_name" character varying[0m
+  ↳ db/migrate/20191107181353_add_full_name_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181353"]]
+  ↳ bin/rails:4
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddPartiToCandidats (20191107181402)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "candidats" ADD "parti" character varying[0m
+  ↳ db/migrate/20191107181402_add_parti_to_candidats.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191107181402"]]
+  ↳ bin/rails:4
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddNaissanceToRecensements (20191109155027)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "recensements" ADD "naissance" character varying[0m
+  ↳ db/migrate/20191109155027_add_naissance_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155027"]]
+  ↳ bin/rails:4
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddPereToRecensements (20191109155047)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "recensements" ADD "pere" character varying[0m
+  ↳ db/migrate/20191109155047_add_pere_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155047"]]
+  ↳ bin/rails:4
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddMereToRecensements (20191109155100)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "recensements" ADD "mere" character varying[0m
+  ↳ db/migrate/20191109155100_add_mere_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155100"]]
+  ↳ bin/rails:4
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddLogementToRecensements (20191109155117)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "recensements" ADD "logement" character varying[0m
+  ↳ db/migrate/20191109155117_add_logement_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155117"]]
+  ↳ bin/rails:4
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddTravailToRecensements (20191109155130)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "recensements" ADD "travail" character varying[0m
+  ↳ db/migrate/20191109155130_add_travail_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155130"]]
+  ↳ bin/rails:4
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddCodeVoteToRecensements (20191109155148)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "recensements" ADD "code_vote" character varying[0m
+  ↳ db/migrate/20191109155148_add_code_vote_to_recensements.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191109155148"]]
+  ↳ bin/rails:4
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to AddDeviseToAdmins (20191112215903)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (283.1ms)[0m  [1m[35mALTER TABLE "admins" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191112215903_add_devise_to_admins.rb:7
+  [1m[35m (256.6ms)[0m  [1m[35mALTER TABLE "admins" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  ↳ db/migrate/20191112215903_add_devise_to_admins.rb:8
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_token" character varying[0m
+  ↳ db/migrate/20191112215903_add_devise_to_admins.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "admins" ADD "reset_password_sent_at" timestamp[0m
+  ↳ db/migrate/20191112215903_add_devise_to_admins.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "admins" ADD "remember_created_at" timestamp[0m
+  ↳ db/migrate/20191112215903_add_devise_to_admins.rb:15
+  [1m[35m (62.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  ↳ db/migrate/20191112215903_add_devise_to_admins.rb:40
+  [1m[35m (53.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  ↳ db/migrate/20191112215903_add_devise_to_admins.rb:41
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191112215903"]]
+  ↳ bin/rails:4
+  [1m[35m (24.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+Migrating to CreateActiveStorageTables (20191114225637)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (138.7ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20191114225637_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (54.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/migrate/20191114225637_create_active_storage_tables.active_storage.rb:4
+  [1m[35m (145.6ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  ↳ db/migrate/20191114225637_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (51.7ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/migrate/20191114225637_create_active_storage_tables.active_storage.rb:16
+  [1m[35m (74.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/migrate/20191114225637_create_active_storage_tables.active_storage.rb:16
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191114225637"]]
+  ↳ bin/rails:4
+  [1m[35m (17.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-11-15 07:49:04.976251"], ["updated_at", "2019-11-15 07:49:04.976251"]]
+  ↳ bin/rails:4
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8648845049267613225)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[36mRecensement Load (0.8ms)[0m  [1m[34mSELECT "recensements".* FROM "recensements"[0m
+  ↳ db/seeds.rb:10
+  [1m[36mFokontany Load (0.7ms)[0m  [1m[34mSELECT "fokontanies".* FROM "fokontanies"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCommune Load (0.8ms)[0m  [1m[34mSELECT "communes".* FROM "communes"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mRegion Load (0.7ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRegion Create (0.9ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Analamanga"], ["created_at", "2019-11-15 07:49:05.198333"], ["updated_at", "2019-11-15 07:49:05.198333"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (29.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRegion Create (0.5ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Diana"], ["created_at", "2019-11-15 07:49:05.231320"], ["updated_at", "2019-11-15 07:49:05.231320"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRegion Create (0.6ms)[0m  [1m[32mINSERT INTO "regions" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Sava"], ["created_at", "2019-11-15 07:49:05.242041"], ["updated_at", "2019-11-15 07:49:05.242041"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.5ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mCommune Create (1.4ms)[0m  [1m[32mINSERT INTO "communes" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Antananarivo"], ["region_id", 2], ["created_at", "2019-11-15 07:49:05.273692"], ["updated_at", "2019-11-15 07:49:05.273692"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.5ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.5ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mCommune Create (0.7ms)[0m  [1m[32mINSERT INTO "communes" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Talatamaty"], ["region_id", 1], ["created_at", "2019-11-15 07:49:05.291113"], ["updated_at", "2019-11-15 07:49:05.291113"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mRegion Load (0.3ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" ORDER BY "regions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mRegion Load (0.4ms)[0m  [1m[34mSELECT  "regions".* FROM "regions" WHERE "regions"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mCommune Create (0.6ms)[0m  [1m[32mINSERT INTO "communes" ("name", "region_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ivato"], ["region_id", 1], ["created_at", "2019-11-15 07:49:05.301179"], ["updated_at", "2019-11-15 07:49:05.301179"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[36mCommune Load (0.5ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCommune Load (0.4ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFokontany Create (1.3ms)[0m  [1m[32mINSERT INTO "fokontanies" ("name", "commune_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ivandry"], ["commune_id", 2], ["created_at", "2019-11-15 07:49:05.321624"], ["updated_at", "2019-11-15 07:49:05.321624"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mCommune Load (0.5ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCommune Load (0.4ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFokontany Create (0.8ms)[0m  [1m[32mINSERT INTO "fokontanies" ("name", "commune_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Androdra"], ["commune_id", 3], ["created_at", "2019-11-15 07:49:05.333570"], ["updated_at", "2019-11-15 07:49:05.333570"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mCommune Load (0.5ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mCommune Load (0.4ms)[0m  [1m[34mSELECT  "communes".* FROM "communes" ORDER BY "communes"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFokontany Create (0.7ms)[0m  [1m[32mINSERT INTO "fokontanies" ("name", "commune_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ambomanarina"], ["commune_id", 3], ["created_at", "2019-11-15 07:49:05.344830"], ["updated_at", "2019-11-15 07:49:05.344830"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "954067153909"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "2581156852"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (1.2ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Heath Stanton"], ["cin", "954067153909"], ["contact", "2581156852"], ["fokontany_id", 2], ["created_at", "2019-11-15 07:49:05.484414"], ["updated_at", "2019-11-15 07:49:05.484414"], ["pere", "Super Saiyan 3 Goku"], ["mere", "Kaime"], ["logement", "20370 D'Amore Lodge"], ["travail", "Assistant"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "195247431995"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "7762969341"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.7ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Bruce Roob"], ["cin", "195247431995"], ["contact", "7762969341"], ["fokontany_id", 3], ["created_at", "2019-11-15 07:49:05.505231"], ["updated_at", "2019-11-15 07:49:05.505231"], ["pere", "Su Shenlong"], ["mere", "Caesar Clown"], ["logement", "5762 Conchita Falls"], ["travail", "Executive"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (11.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "136906336659"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "3192572236"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.7ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Sheldon Stiedemann"], ["cin", "136906336659"], ["contact", "3192572236"], ["fokontany_id", 3], ["created_at", "2019-11-15 07:49:05.527479"], ["updated_at", "2019-11-15 07:49:05.527479"], ["pere", "Puar"], ["mere", "Bellamy"], ["logement", "22002 Vennie Squares"], ["travail", "Specialist"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (10.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "185100869877"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "2667706979"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.7ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Miss Marianela Hudson"], ["cin", "185100869877"], ["contact", "2667706979"], ["fokontany_id", 3], ["created_at", "2019-11-15 07:49:05.549918"], ["updated_at", "2019-11-15 07:49:05.549918"], ["pere", "Puar"], ["mere", "Sadi"], ["logement", "399 Cormier Fall"], ["travail", "Liaison"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (10.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "471948636351"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "9416825133"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.8ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Sammy Wiegand"], ["cin", "471948636351"], ["contact", "9416825133"], ["fokontany_id", 2], ["created_at", "2019-11-15 07:49:05.570143"], ["updated_at", "2019-11-15 07:49:05.570143"], ["pere", "San Shenlong"], ["mere", "Kaime"], ["logement", "98635 Naoma Isle"], ["travail", "Developer"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (12.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "725366585947"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "1946104125"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.6ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Leandro Lockman"], ["cin", "725366585947"], ["contact", "1946104125"], ["fokontany_id", 1], ["created_at", "2019-11-15 07:49:05.592498"], ["updated_at", "2019-11-15 07:49:05.592498"], ["pere", "Super Saiyan Goku"], ["mere", "Rebecca"], ["logement", "684 O'Connell Freeway"], ["travail", "Strategist"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (13.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "348235880997"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "2282304895"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.6ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Randell Corkery"], ["cin", "348235880997"], ["contact", "2282304895"], ["fokontany_id", 3], ["created_at", "2019-11-15 07:49:05.615015"], ["updated_at", "2019-11-15 07:49:05.615015"], ["pere", "Baba"], ["mere", "Rebecca"], ["logement", "14107 Miguel Keys"], ["travail", "Planner"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.6ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "713205773214"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "9180375241"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.7ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Brande Halvorson"], ["cin", "713205773214"], ["contact", "9180375241"], ["fokontany_id", 1], ["created_at", "2019-11-15 07:49:05.638028"], ["updated_at", "2019-11-15 07:49:05.638028"], ["pere", "Super Saiyan 2 Goku"], ["mere", "Gold D. Roger"], ["logement", "22248 Gutmann Village"], ["travail", "Administrator"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (11.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "123426908777"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "6528530477"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.5ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Monty Orn"], ["cin", "123426908777"], ["contact", "6528530477"], ["fokontany_id", 3], ["created_at", "2019-11-15 07:49:05.659738"], ["updated_at", "2019-11-15 07:49:05.659738"], ["pere", "Android 19"], ["mere", "Rob Lucci"], ["logement", "1108 Lueilwitz Courts"], ["travail", "Agent"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (12.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "399311306867"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "8258851653"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.8ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Ellsworth Bergstrom"], ["cin", "399311306867"], ["contact", "8258851653"], ["fokontany_id", 1], ["created_at", "2019-11-15 07:49:05.682096"], ["updated_at", "2019-11-15 07:49:05.682096"], ["pere", "Gohan"], ["mere", "Jyabura"], ["logement", "43743 Mariana Fork"], ["travail", "Facilitator"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "508768266843"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "4826927295"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.8ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Evita Buckridge"], ["cin", "508768266843"], ["contact", "4826927295"], ["fokontany_id", 1], ["created_at", "2019-11-15 07:49:05.703647"], ["updated_at", "2019-11-15 07:49:05.703647"], ["pere", "Android 20"], ["mere", "Buggy"], ["logement", "8925 Hirthe Rapid"], ["travail", "Facilitator"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (12.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "486547385609"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "2496880769"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.6ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Brianne Oberbrunner"], ["cin", "486547385609"], ["contact", "2496880769"], ["fokontany_id", 3], ["created_at", "2019-11-15 07:49:05.726918"], ["updated_at", "2019-11-15 07:49:05.726918"], ["pere", "Goku Black"], ["mere", "Ben Beckmann"], ["logement", "2473 Alva Wall"], ["travail", "Supervisor"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.5ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.3ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "820213418151"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "1577834186"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.6ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Cory Smith"], ["cin", "820213418151"], ["contact", "1577834186"], ["fokontany_id", 2], ["created_at", "2019-11-15 07:49:05.747539"], ["updated_at", "2019-11-15 07:49:05.747539"], ["pere", "Vegeta"], ["mere", "Vergo"], ["logement", "737 O'Conner Divide"], ["travail", "Associate"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (13.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.3ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.3ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "229237624210"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "4323966750"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.8ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Carey Muller DVM"], ["cin", "229237624210"], ["contact", "4323966750"], ["fokontany_id", 2], ["created_at", "2019-11-15 07:49:05.770049"], ["updated_at", "2019-11-15 07:49:05.770049"], ["pere", "Su Shenlong"], ["mere", "Sentoumaru"], ["logement", "864 Lissa Extension"], ["travail", "Assistant"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (12.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[36mFokontany Load (0.4ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mFokontany Load (0.3ms)[0m  [1m[34mSELECT  "fokontanies".* FROM "fokontanies" ORDER BY "fokontanies"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."cin" = $1 LIMIT $2[0m  [["cin", "906102318517"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "recensements" WHERE "recensements"."contact" = $1 LIMIT $2[0m  [["contact", "6674389585"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mRecensement Create (0.6ms)[0m  [1m[32mINSERT INTO "recensements" ("full_name", "cin", "contact", "fokontany_id", "created_at", "updated_at", "pere", "mere", "logement", "travail") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["full_name", "Virgina Hagenes"], ["cin", "906102318517"], ["contact", "6674389585"], ["fokontany_id", 1], ["created_at", "2019-11-15 07:49:05.793330"], ["updated_at", "2019-11-15 07:49:05.793330"], ["pere", "Demon King Piccolo"], ["mere", "Gladius"], ["logement", "946 Emard Meadows"], ["travail", "Executive"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (11.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user@user.user"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-11-15 07:49:05.974463"], ["updated_at", "2019-11-15 07:49:05.974463"], ["email", "user@user.user"], ["encrypted_password", "$2a$11$5/rMajPQx/KylOjdd6vL2u4lvWJUpZ8rwC.2yrWt4I6KFbFSEY.Kq"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:48
+  [1m[36mAdmin Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "admins" WHERE "admins"."email" = $1 LIMIT $2[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mAdmin Create (1.2ms)[0m  [1m[32mINSERT INTO "admins" ("created_at", "updated_at", "email", "encrypted_password") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["created_at", "2019-11-15 07:49:06.152176"], ["updated_at", "2019-11-15 07:49:06.152176"], ["email", "admin@admin.com"], ["encrypted_password", "$2a$11$dxuYi/G9OLhAhMZYb/zdFewVHbPCjTGxEZ42PDdBGOQD8.6dcq8wO"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (8.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.8ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "You want to enjoy life, don't you? If you get your job done quickly and your job is fun, that's good isn't it? That's the purpose of life, partly. Your life is better."], ["created_at", "2019-11-15 07:49:06.183406"], ["updated_at", "2019-11-15 07:49:06.183406"], ["full_name", "Malena"], ["parti", "Pegasus Seed"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.5ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Plant a memory, plant a tree, do it today for tomorrow."], ["created_at", "2019-11-15 07:49:06.220124"], ["updated_at", "2019-11-15 07:49:06.220124"], ["full_name", "Shee Vaneer"], ["parti", "Magical Boomerang"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.4ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Everyone has an individual background. Someone may come from Python, someone else may come from Perl, and they may be surprised by different aspects of the language. Then they come up to me and say, 'I was surprised by this feature of the language, so therefore Ruby violates the principle of least surprise.' Wait. Wait. The principle of least surprise is not for you only."], ["created_at", "2019-11-15 07:49:06.231306"], ["updated_at", "2019-11-15 07:49:06.231306"], ["full_name", "Chaas Qeta"], ["parti", "Nice Fire Rod"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (8.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.5ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Most of the tasks we do are for humans. For example, a tax calculation is counting numbers so the government can pull money out from my wallet, but government consists of humans."], ["created_at", "2019-11-15 07:49:06.242337"], ["updated_at", "2019-11-15 07:49:06.242337"], ["full_name", "Barta"], ["parti", "Kokiri Sword"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mCandidat Create (0.5ms)[0m  [1m[32mINSERT INTO "candidats" ("description", "created_at", "updated_at", "full_name", "parti") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["description", "Man is driven to create; I know I really love to create things. And while I'm not good at painting, drawing, or music, I can write software."], ["created_at", "2019-11-15 07:49:06.253157"], ["updated_at", "2019-11-15 07:49:06.253157"], ["full_name", "Belari"], ["parti", "Fireshield Earrings"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+Started GET "/" for ::1 at 2019-11-15 10:49:21 +0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fenohery/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.6ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (1.1ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:139
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:206
+  Rendered home/index.html.erb within layouts/application (853.1ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 1431ms (Views: 1325.9ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:49:23 +0300
+>>>>>>> development
   
 ActionController::RoutingError (No route matches [GET] "/js/script.js"):
   
@@ -50526,7 +51238,11 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/js/script.js" for ::1 at 2019-11-15 10:58:51 +0100
+=======
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:49:30 +0300
+>>>>>>> development
   
 ActionController::RoutingError (No route matches [GET] "/js/script.js"):
   
@@ -50557,6 +51273,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/regions/1/communes" for ::1 at 2019-11-15 10:59:09 +0100
 Processing by CommunesController#index as HTML
   Parameters: {"region_id"=>"1"}
@@ -50574,6 +51291,48 @@ Completed 200 OK in 227ms (Views: 211.9ms | ActiveRecord: 9.4ms)
 Started GET "/regions/1/js/script.js" for ::1 at 2019-11-15 10:59:10 +0100
   
 ActionController::RoutingError (No route matches [GET] "/regions/1/js/script.js"):
+=======
+Started GET "/" for ::1 at 2019-11-15 10:50:27 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.4ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.6ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:139
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[36mCACHE Daty Load (0.7ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:206
+  Rendered home/index.html.erb within layouts/application (16.5ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 170ms (Views: 153.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:50:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+>>>>>>> development
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -50602,6 +51361,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/communes/2/fokontanies" for ::1 at 2019-11-15 10:59:14 +0100
 Processing by FokontaniesController#index as HTML
   Parameters: {"commune_id"=>"2"}
@@ -50661,6 +51421,48 @@ Completed 200 OK in 225ms (Views: 207.9ms | ActiveRecord: 10.2ms)
 Started GET "/recensements/js/script.js" for ::1 at 2019-11-15 10:59:18 +0100
   
 ActionController::RoutingError (No route matches [GET] "/recensements/js/script.js"):
+=======
+Started GET "/" for ::1 at 2019-11-15 10:50:34 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.7ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (1.0ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:139
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:206
+  Rendered home/index.html.erb within layouts/application (13.6ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 217ms (Views: 200.1ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:50:34 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+>>>>>>> development
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -50689,6 +51491,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/regions" for ::1 at 2019-11-15 10:59:20 +0100
 Processing by RegionsController#index as HTML
   Rendering regions/index.html.erb within layouts/application
@@ -50732,6 +51535,20 @@ Completed 200 OK in 485ms (Views: 482.0ms | ActiveRecord: 1.9ms)
 
 
 Started GET "/js/script.js" for ::1 at 2019-11-15 10:59:21 +0100
+=======
+Started GET "/regions" for ::1 at 2019-11-15 10:50:36 +0300
+Processing by RegionsController#index as HTML
+  Rendering regions/index.html.erb within layouts/application
+  [1m[36mRegion Load (0.8ms)[0m  [1m[34mSELECT "regions".* FROM "regions"[0m
+  ↳ app/views/regions/index.html.erb:5
+  Rendered regions/index.html.erb within layouts/application (20.0ms)
+  [1m[36mDaty Load (0.6ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 143ms (Views: 126.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:50:36 +0300
+>>>>>>> development
   
 ActionController::RoutingError (No route matches [GET] "/js/script.js"):
   
@@ -50762,21 +51579,37 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/" for ::1 at 2019-11-15 10:59:23 +0100
 Processing by HomeController#index as HTML
   [1m[36mDaty Load (0.6ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   ↳ app/controllers/home_controller.rb:4
   [1m[36mCandidat Load (5.0ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+=======
+Started GET "/" for ::1 at 2019-11-15 10:50:37 +0300
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (0.7ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+>>>>>>> development
   ↳ app/controllers/home_controller.rb:7
   [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
   ↳ app/controllers/home_controller.rb:8
   [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
   ↳ app/controllers/home_controller.rb:8
+<<<<<<< HEAD
   [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
   ↳ app/controllers/home_controller.rb:8
   [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
   ↳ app/controllers/home_controller.rb:8
   [1m[35m (1.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+=======
+  [1m[35m (8.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+>>>>>>> development
   ↳ app/controllers/home_controller.rb:8
   Rendering home/index.html.erb within layouts/application
   [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
@@ -50793,6 +51626,7 @@ Processing by HomeController#index as HTML
   ↳ app/views/home/index.html.erb:188
   [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   ↳ app/views/home/index.html.erb:206
+<<<<<<< HEAD
   Rendered home/index.html.erb within layouts/application (20.9ms)
   [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   ↳ app/views/layouts/application.html.erb:27
@@ -50800,6 +51634,10 @@ Completed 200 OK in 207ms (Views: 156.5ms | ActiveRecord: 17.6ms)
 
 
 Started GET "/js/script.js" for ::1 at 2019-11-15 10:59:23 +0100
+=======
+  Rendered home/index.html.erb within layouts/application (16.6ms)
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:50:37 +0300
+>>>>>>> development
   
 ActionController::RoutingError (No route matches [GET] "/js/script.js"):
   
@@ -50830,6 +51668,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/sign" for ::1 at 2019-11-15 11:00:51 +0100
 Processing by UsersController#sign as HTML
   Rendering users/sign.html.erb within layouts/application
@@ -50842,6 +51681,16 @@ Completed 200 OK in 169ms (Views: 164.2ms | ActiveRecord: 3.5ms)
 Started GET "/users/js/script.js" for ::1 at 2019-11-15 11:00:52 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/js/script.js"):
+=======
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 343ms (Views: 316.8ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:50:37 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+>>>>>>> development
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -50870,9 +51719,53 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/js/script.js" for ::1 at 2019-11-15 11:00:52 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/js/script.js"):
+=======
+Started GET "/" for ::1 at 2019-11-15 10:57:00 +0100
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by HomeController#index as HTML
+  [1m[36mDaty Load (0.5ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/home_controller.rb:4
+  [1m[36mCandidat Load (3.1ms)[0m  [1m[34mSELECT "candidats".* FROM "candidats"[0m
+  ↳ app/controllers/home_controller.rb:7
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/controllers/home_controller.rb:8
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/controllers/home_controller.rb:8
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:139
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 1]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 2]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 3]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 4]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "votes" WHERE "votes"."candidat_id" = $1[0m  [["candidat_id", 5]]
+  ↳ app/views/home/index.html.erb:188
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:206
+  Rendered home/index.html.erb within layouts/application (742.6ms)
+  [1m[36mCACHE Daty Load (0.0ms)[0m  [1m[34mSELECT  "daties".* FROM "daties" ORDER BY "daties"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 1185ms (Views: 1071.4ms | ActiveRecord: 26.8ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/popper.min.js.map"):
+>>>>>>> development
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -50886,7 +51779,16 @@ activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+<<<<<<< HEAD
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+=======
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+>>>>>>> development
 actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
 rack (2.0.7) lib/rack/method_override.rb:22:in `call'
@@ -50901,6 +51803,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/sign" for ::1 at 2019-11-15 11:07:33 +0100
 Processing by UsersController#sign as HTML
   Rendering users/sign.html.erb within layouts/application
@@ -50913,6 +51816,10 @@ Completed 200 OK in 433ms (Views: 430.9ms | ActiveRecord: 0.9ms)
 Started GET "/users/js/script.js" for ::1 at 2019-11-15 11:07:34 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/js/script.js"):
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/bootstrap.min.js.map"):
+>>>>>>> development
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -50926,7 +51833,16 @@ activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+<<<<<<< HEAD
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+=======
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+>>>>>>> development
 actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
 rack (2.0.7) lib/rack/method_override.rb:22:in `call'
@@ -50941,9 +51857,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/js/script.js" for ::1 at 2019-11-15 11:07:39 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/js/script.js"):
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/assets/js/aos.js.map"):
+>>>>>>> development
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -50957,7 +51878,16 @@ activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+<<<<<<< HEAD
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+=======
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+>>>>>>> development
 actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
 rack (2.0.7) lib/rack/method_override.rb:22:in `call'
@@ -50972,6 +51902,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/sign" for ::1 at 2019-11-15 11:08:36 +0100
 Processing by UsersController#sign as HTML
   Rendering users/sign.html.erb within layouts/application
@@ -50984,6 +51915,11 @@ Completed 200 OK in 127ms (Views: 125.2ms | ActiveRecord: 0.6ms)
 Started GET "/users/js/script.js" for ::1 at 2019-11-15 11:08:36 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/js/script.js"):
+=======
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:57:02 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/assets/aos.css.map"):
+>>>>>>> development
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -50997,7 +51933,16 @@ activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagge
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
 activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+<<<<<<< HEAD
 sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+=======
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:65:in `block (3 levels) in broadcast'
+activesupport (5.2.3) lib/active_support/logger_silence.rb:21:in `silence'
+activesupport (5.2.3) lib/active_support/logger.rb:63:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+>>>>>>> development
 actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
 rack (2.0.7) lib/rack/method_override.rb:22:in `call'
@@ -51012,9 +51957,14 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/js/script.js" for ::1 at 2019-11-15 11:08:36 +0100
   
 ActionController::RoutingError (No route matches [GET] "/users/js/script.js"):
+=======
+  
+ActionController::RoutingError (No route matches [GET] "/js/script.js"):
+>>>>>>> development
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
@@ -51043,6 +51993,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
   
 ActionController::RoutingError (No route matches [GET] "/assets/js/popper.min.js.map"):
   
@@ -59959,6 +60910,9 @@ Completed 200 OK in 147ms (Views: 117.0ms | ActiveRecord: 7.3ms)
 
 
 Started GET "/js/script.js" for ::1 at 2019-11-15 12:14:49 +0100
+=======
+Started GET "/js/script.js" for ::1 at 2019-11-15 10:57:03 +0100
+>>>>>>> development
   
 ActionController::RoutingError (No route matches [GET] "/js/script.js"):
   
