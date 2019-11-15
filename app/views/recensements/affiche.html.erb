@@ -1,22 +1,26 @@
-<table class="table table-striped table-dark">
-  <thead>
+<table class="table">
+  <thead class="thead-dark">
     <tr>
       <th scope="col">#</th>
       <th scope="col">Nom et Prénons</th>
       <th scope="col">CIN</th>
-      <th scope="col">Télephone</th>
-      <th scope="col">delete</th>
+      <% if user_signed_in? %>
+        <th scope="col">Télephone</th>
+        <th scope="col">Information</th> 
+      <% end %>
     </tr>
   </thead>
     <% i = 0 %>
   <% @recensement.each do |recensement| %>
-  <tbody>
+  <tbody class="table-1">
     <tr>
       <th scope="row"><%= i += 1%></th>
       <td><%= recensement.full_name %></td>
       <td><%= recensement.cin %></td>
-      <td><%= recensement.contact %></td>
-      <td><a href="/recensements/<%=recensement.id%>" > info </a></td>
+      <% if user_signed_in? || admin_signed_in?%>
+        <td><%= recensement.contact %></td>
+        <td><a href="/recensements/<%=recensement.id%>" > Voir </a></td>
+      <% end %>
     </tr>
     <% end %> 
   </tbody>

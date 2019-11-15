@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 p#scroll{
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     height: 9em;
 }
 
@@ -15,3 +16,93 @@ p#scroll{
     width: 39em;
     margin-left: 0em;
 }
+ p.footer-content{
+    color: black;   
+ }
+
+ #foot{
+     background-image: url("nav-bar.jpg");
+     background-position-y: 29em;
+     background-size: cover;
+ }
+
+ .whi{
+     color:white!important;
+ }
+
+ #image{
+     background-image: url("logo.png");
+     width: 4em;
+     margin-right: 2.5em;
+ }
+
+ .logo{
+    position: absolute;
+    width:7em;
+    left: -13px;
+    transition: transform .2s;
+    margin: 0 auto;
+    top: -20px;
+ }
+
+.logo:hover{
+    transform: scale(1.5);
+}
+
+ div#shadow{
+     box-shadow: 0px -6px 23px;
+ }
+
+section#dark-back{
+    background-color: rgba(56, 56, 56, 0.5);
+}
+
+.d-flex{
+    padding: 2em;
+    padding-top: 4em;
+    padding-bottom: 4em;
+    border-radius: 4em;
+}
+
+#black{
+    background-color: rgba(0, 0, 0, 0.781);
+
+}
+
+.table-1{
+    background-image: rgba(71, 71, 71, 0.459);
+}
+
+.table-1:hover{
+    background-color: rgba(79, 179, 54, 0.514);
+}
+
+.table{
+    background-image: url("https://previews.123rf.com/images/roystudio/roystudio1511/roystudio151100306/48782019-old-paper-texture-background-white-grunge-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.shadow-card{
+    box-shadow: 0px 3px 6px 2px #135a50;
+}
+
+#marge{
+    margin-left: 7em;
+}
+
+#dark-sect{
+    background-color: rgba(46, 46, 46, 0.596);
+    padding: 2em;
+}
+
+.mr-auto, .mx-auto{
+    margin-left: 6em;
+}
+
+@media (min-width: 576px){
+.form-inline .form-control{
+    margin-left: 6em;
+}
+}
+

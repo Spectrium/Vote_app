@@ -444,7 +444,9 @@ pre {
 
 .pre-scrollable {
   max-height: 340px;
-  overflow-y: scroll; }
+  overflow-y: scroll; 
+  overflow-x: hidden; 
+}
 
 .container {
   width: 100%;
@@ -5538,7 +5540,8 @@ button.bg-dark:focus {
 .d-flex {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
-  display: flex !important; }
+  display: flex !important;
+}
 
 .d-inline-flex {
   display: -webkit-inline-box !important;
@@ -7927,7 +7930,7 @@ button.bg-dark:focus {
 
 .text-center {
   text-align: center !important; 
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   color: white;
 }
 
@@ -9026,7 +9029,10 @@ h1, h2, h3, h4, h5,
   margin: 0 auto; }
 
 .services-section {
-  background: linear-gradient(to right, #292929 0%, #3a3a3a 100%);
+  background-image: url("https://www.gffm.fr/wp-content/uploads/drapeau-3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .services {
   -moz-transition: all 0.3s ease;
@@ -9247,6 +9253,14 @@ textarea.form-control {
 #map {
   width: 100%; }
   @media (max-width: 767.98px) {
+    .logo{
+      position: absolute;
+      width: 2em;
+      left: -13px;
+      transition: transform .2s;
+      margin: 0 auto;
+      top: -15px;
+    }
     #map {
       height: 300px; } }
 
@@ -9967,7 +9981,7 @@ textarea.form-control {
 }
 
 .sous-title{
-  margin-bottom: 3em;
+  margin-bottom: 0em;
   font-size: 1.5em;
   transition: transform .2s; /* Animation */
 }
@@ -9975,3 +9989,8 @@ textarea.form-control {
 a{
   text-decoration: none!important;
 }
+
+#cont{
+  background-color: rgba(39, 39, 39, 0.5);
+}
+

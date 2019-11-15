@@ -1,7 +1,5 @@
 class VotesController < ApplicationController
-	# before_action :daty
-	# before_action :validat,only: [:reset]
-	# after_action :validat ,only: [:verifiee]
+	before_action :daty
 	def new
 		@candidat = Candidat.all
 		# @@elect = @@electeur
@@ -11,7 +9,7 @@ class VotesController < ApplicationController
 	def create
 		@candidat = Candidat.find_by(id: params[:candidat_id])
 		@@electeur.update(has_voting: true, code_vote: '$')
-		@vote = Vote.new(candidat: @candidat, recensement: @@electeur)
+		@vote = Vote.create(candidat: @candidat, recensement: @@electeur)
 		redirect_to root_path
 	end
 
@@ -34,7 +32,8 @@ class VotesController < ApplicationController
 	end
 
 	def validation
-		@@code = rand(999999)
+		@@code = rand(100000..999999)
+		@@electeur.update(code_vote: @@code)
 		puts "**************************"
 		puts @@code
 		puts "**************************"
@@ -43,8 +42,8 @@ class VotesController < ApplicationController
 	def valider
 		@electeur = Recensement.all
 		test = 0
-		@eleceur.each do |elect|
-			if elect.code_vote == params[:code_de_vérification]
+		@electeur.each do |elect|
+			if elect.code_vote.to_i == params[:code_de_vérification].to_i
 				test = 1
 				break
 			else

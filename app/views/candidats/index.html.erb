@@ -2,6 +2,6 @@
 <% @candidat.each do |candidat| %>
 	<p>Nom et prénom : </p><%= candidat.full_name %><br>
 	<p>Mouvance : </p><%= candidat.parti %><br>
-	<p>Description : </p><%= candidat.description %><br><br>
-	<%= link_to Supprimer, candidat_path, method:"delete", data:{confirm:"Supprimé?"} %>
+	<p>Description : </p><%= candidat.description %><br>
+	<%= link_to "Edit", edit_candidat_path(candidat.id) %> | <%= link_to "Supprimer", candidat_path(candidat.id), method:"delete", data:{confirm:"Supprimé?"} %><br><br>
 <% end %>

@@ -1,6 +1,6 @@
 class RecensementsController < ApplicationController
-
-  before_action :testes, except: [:index, :affiche]
+  before_action :test_signed, only: [:show]
+  before_action :testes, except: [:index, :affiche, :initialisation]
 
   def index
     @fokontany = Fokontany.find_by(id: params[:fokontany_id])
@@ -74,6 +74,16 @@ class RecensementsController < ApplicationController
       else
         redirect_to root_path
       end
+    end
+  end
+
+  def test_signed
+    if admin_signed_in?
+      return true
+    elsif user_signed_in?
+      return true
+    else
+      redirect_to root_path
     end
   end
 
