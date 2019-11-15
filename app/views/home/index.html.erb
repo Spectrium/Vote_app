@@ -173,6 +173,36 @@
 	  <% end %>
   <% end %>
 
+    <section class="ftco-section services-section">
+    <div id="dark-sect">
+      <h1 class="text-center">Liste des Candidats </h1>
+        <div class="container">
+          <div class="d-flex">
+            <% if @liste.length != 0 %>
+              <% @liste.each do |candidat| %>
+                <div class="card mr-2 shadow-card" style="width: 18rem;height: 27rem;">
+                  <img src="https://www.jeuneafrique.com/medias/2019/01/31/31003hr_-592x296-1558775749.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <h5 class="card-title"><%=candidat.full_name%></h5>
+                    <p class="card-text" id="scroll"><%=candidat.description%></p>
+                    <p> <span class="btn btn-outline-primary"><%= candidat.votes.count%></span> 
+                        <span class="btn btn-outline-primary">
+                          <%if @total != 0%>
+                              <%= (candidat.votes.count * 100)/@total %> %
+                          <%else%>
+                              0%
+                          <%end %>
+                        </span> 
+                    </p>  
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
         <% @date = Daty.last %>
         <%if @date != nil %>
     	    <%if  @date.fin_vote.to_i <= Time.now.to_i %>

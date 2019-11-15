@@ -15,8 +15,11 @@
 
   </head>
   <body>  
-    <nav class="navbar navbar-expand-lg navbar-light bg-light pl-5 sticky-top">
-      <a href="/"><%= image_tag  "logo.png", class:"logo" %></a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">  
+      <%= image_tag  "logo.png", class:"logo" %>
+    
+        <a class="nav-link" id="marge" href="<%= root_path %>">Accueil</a>
+  
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -82,7 +85,7 @@
         <input type="text" class="search form-control mr-sm-2" name="find" placeholder="Search...">
         <input type="submit" class="btn btn-outline-success my-2 my-sm-0">
       <%end%>     
-        
+  
 
     </nav>
     <%= yield %>
