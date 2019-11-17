@@ -26,7 +26,6 @@
 //= require js/aos
 //= require js/jquery.animateNumber.min
 //= require js/scrollax.min
-//= require js/google-map
 //= require js/main
 
 //= require jquery
