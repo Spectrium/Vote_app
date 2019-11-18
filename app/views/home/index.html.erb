@@ -154,8 +154,8 @@
                     <div class="card-body">
                       <h5 class="card-title"><%=candidat.full_name%></h5>
                       <p class="card-text" id="scroll"><%=candidat.description%></p>
-                      <p> <span class="btn btn-outline-primary"><%= candidat.votes.count %></span> 
-                          <span class="btn btn-outline-danger">
+                      <p> <span class="btn btn-outline-success"><%= candidat.votes.count %></span> 
+                          <span class="btn btn-outline-success">
                             <%if @total != 0%>
                                 <%= (candidat.votes.count * 100)/@total %> %
                             <%else%>
@@ -185,8 +185,8 @@
                   <div class="card-body">
                     <h5 class="card-title"><%=candidat.full_name%></h5>
                     <p class="card-text" id="scroll"><%=candidat.description%></p>
-                    <p> <span class="btn btn-outline-primary"><%= candidat.votes.count%></span> 
-                        <span class="btn btn-outline-danger">
+                    <p> <span class="btn btn-outline-success"><%= candidat.votes.count%></span> 
+                        <span class="btn btn-outline-success">
                           <%if @total != 0%>
                               <%= (candidat.votes.count * 100)/@total %> %
                           <%else%>
